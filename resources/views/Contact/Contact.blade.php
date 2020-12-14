@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{'Processes'}}">Home</a></li>
-              <li class="breadcrumb-item active"> Contact</li>
+              <li class="breadcrumb-item active">Contact</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -33,37 +33,30 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-            
+                <thead>
                   <tr>
-                    <th style="width: 30%;">From</th>
-                    <td>-</td>
-                   
-                 </tr>
-                 <tr>
-                    <th>Email</th>
-                    <td>-</td>
-                    
-                 </tr>
-                 <tr>
-                    <th>Phone</th>
-                    <td>-</td>
-                    
-                 </tr> 
-                 <tr>
+                    <th>Customer Name</th>
                     <th>Massage</th>
+                    <th>  Date </th>
+                    <th>Details</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
                     <td>-</td>
-                     
-                 </tr>
-                 <tr>
-                    <th>answer</th>
-                    <td><textarea rows="2" cols="100" name="comment" form="usrform" placeholder="Enter text here..."></textarea></td>
-                 </tr>
-                 <tr>
-                    <th>Action          </th>
-                        <td>
-                           <span style="width: 20%;float: right; background: greenyellow;"><a style="margin-left: 35%;color: currentcolor;" href="{{'Processes'}}">Send</a></span>
-                        </td>
-                 </tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td style=" BACKGROUND: #007bff;">  <a style="margin-left: 30%;color: WHITE;" href="{{'ContactDetails'}}">Details</a></td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                  <th>Customer Name</th>
+                    <th>Massage</th>
+                    <th>  Date </th>
+                    <th>Details</th>
+                  </tr>
+                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->

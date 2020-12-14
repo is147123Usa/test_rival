@@ -69,7 +69,9 @@ Route::get('/DisputesDetails',[DisputesController::class,'DisputesDetails']);
 //end Disputes section
  // contact section
 Route::get('/Contact',[ContactController::class,'Contact']);
+Route::get('/ContactDetails',[ContactController::class,'ContactDetails']);
  //end contact section
  //notification section
 Route::get('/Notifications',[NotificationsController::class,'Notifications']);
+Route::get('/SendNotifications',[NotificationsController::class,'SendNotifications']);
  //end notification section
