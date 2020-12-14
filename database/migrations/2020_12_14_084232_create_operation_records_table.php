@@ -19,8 +19,9 @@ class CreateOperationRecordsTable extends Migration
             $table->string('status');
             $table->string('depit');
             $table->string('crdit');
-            $table->float('amount',8, 2);
-            $table->string('refer_no');
+            $table->float('balance_before',8, 2);
+            $table->float('balance_after',8, 2);
+            $table->string('refer_no')->nullable();
             $table->longText('notes')->nullable();
             
             $table->unsignedBigInteger('oprationType')->nullable();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQutationOrderItemsTable extends Migration
+class CreateQutitionItemsDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateQutationOrderItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('qutation_order_items', function (Blueprint $table) {
+        Schema::create('order_items_details', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('price');
+            $table->string('img');
             $table->string('item_desc');
-            $table->unsignedBigInteger('qutation_order_id')->nullable();
-            $table->foreign('qutation_order_id')->references('id')->on('qutation_orders');
+            
+            $table->unsignedBigInteger('item_id')->nullable();
+            $table->foreign('item_id')->references('id')->on('qutation_order_items');
+
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreateQutationOrderItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qutation_order_items');
+        Schema::dropIfExists('qutition_items_details');
     }
 }

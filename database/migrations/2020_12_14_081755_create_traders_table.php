@@ -20,7 +20,6 @@ class CreateTradersTable extends Migration
             $table->string('account_status');
             $table->unsignedBigInteger('spicalizition_id')->nullable();
             $table->foreign('spicalizition_id')->references('id')->on('categories');
-
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
