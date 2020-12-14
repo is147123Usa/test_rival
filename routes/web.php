@@ -9,6 +9,8 @@ use App\http\Controllers\ShowroomController;
 use App\http\Controllers\QuotationController;
 use App\http\Controllers\DeliveryController;
 use App\http\Controllers\DisputesController;
+use App\http\Controllers\ContactController;
+use App\http\Controllers\NotificationsController;
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -66,3 +68,4 @@ Route::get('/DeliveryDetails',[DeliveryController::class,'DeliveryDetails']);
 Route::get('/Disputes',[DisputesController::class,'Disputes']);
 Route::get('/DisputesDetails',[DisputesController::class,'DisputesDetails']);
 //end Disputes section
+Route::get('/Notifications',[NotificationsController::class,'Notifications']);
