@@ -6,8 +6,15 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    public function login(){
+        return view('/uath.login');
+    }
+    public function Register(){
+        
+        return view('/uath.Register');
+    }
     public function Users(){
-        return view('/Users.Users');
+       // return view('/Users.Users');
     }
     public function UsersDetails(){
         return view('/Users.UsersDetails');
@@ -24,4 +31,5 @@ class UsersController extends Controller
     public function invoicePrint(){
         return view('/Users.invoicePrint');
     }
+
 }
