@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
  
 
 Route::get('/index2',[layoutsController::class,'index2']);
-Route::get('/index3',[layoutsController::class,'index3']);
+//Route::get('/index3',[layoutsController::class,'index3']);
 Route::get('/statistics',[HomeController::class,'statistics']);
 Route::get('/Processes',[HomeController::class,'Processes']);
 //Wallet section
@@ -45,7 +45,7 @@ Route::get('/UserDeals',[UsersController::class,'UserDeals']);
 Route::get('/UserInvoices',[UsersController::class,'UserInvoices']);
 Route::get('/invoicePrint',[UsersController::class,'invoicePrint']);
 //end invoice section
-//end user section
+
 //sellers section
 Route::get('/Sellers',[SellersController::class,'Sellers']);
 Route::get('/SellerDetails',[SellersController::class,'SellerDetails']);
@@ -68,4 +68,9 @@ Route::get('/DeliveryDetails',[DeliveryController::class,'DeliveryDetails']);
 Route::get('/Disputes',[DisputesController::class,'Disputes']);
 Route::get('/DisputesDetails',[DisputesController::class,'DisputesDetails']);
 //end Disputes section
+ // contact section
+Route::get('/Contact',[ContactController::class,'Contact']);
+ //end contact section
+ //notification section
 Route::get('/Notifications',[NotificationsController::class,'Notifications']);
+ //end notification section

@@ -263,6 +263,12 @@
                   <p>Disputes</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{'Notifications'}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Notifications </p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">

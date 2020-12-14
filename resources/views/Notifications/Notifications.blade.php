@@ -42,6 +42,7 @@
                     <td><textarea rows="2" cols="100" name="comment" form="usrform" placeholder="Enter text here..."></textarea></td>
                  </tr>
                  <tr>
+                 <th> Upluad</th>
                     <td> 
                       <label for="img">Select image:</label>
                       <input type="file" id="img" name="img" accept="image/*"> 
