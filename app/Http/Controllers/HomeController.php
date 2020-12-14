@@ -13,4 +13,5 @@ class HomeController extends Controller
     public function statistics(){
         return view('Home.statistics');
     }
+    
 }
