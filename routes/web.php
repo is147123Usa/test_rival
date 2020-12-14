@@ -26,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 
  
 
+Route::get('',[HomeController::class,'Processes']);
+
 Route::get('/index2',[layoutsController::class,'index2']);
 Route::get('/index3',[layoutsController::class,'index3']);
 Route::get('/statistics',[HomeController::class,'statistics']);
