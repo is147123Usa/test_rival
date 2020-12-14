@@ -10,4 +10,7 @@ class ContactController extends Controller
     public function Contact(){
         return view('Contact.Contact');
     }
+    public function ContactDetails(){
+        return view('Contact.ContactDetails');
+    }
 }
