@@ -27,7 +27,7 @@ class CreateOperationRecordsTable extends Migration
             $table->foreign('oprationType')->references('id')->on('operation_types');
 
             $table->unsignedBigInteger('wallet_id')->nullable();
-            $table->foreign('wallet_id')->references('id')->on('operation_records');
+            $table->foreign('wallet_id')->references('id')->on('wallets');
             $table->timestamps();
         });
     }
