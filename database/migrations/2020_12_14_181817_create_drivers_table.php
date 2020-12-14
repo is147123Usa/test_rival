@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQutationsTable extends Migration
+class CreateDriversTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,19 @@ class CreateQutationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('qutations', function (Blueprint $table) {
+        Schema::create('drivers', function (Blueprint $table) {
             $table->id();
             $table->string('status');
             $table->float('total', 8, 2);
             $table->float('delivery_fee', 8, 2)->nullable();
             $table->boolean('includeDelivery')->nullable();
+
+            $table->unsignedBigInteger('driver_id')->nullable();
+            $table->foreign('driver_id')->references('id')->on('users');
             
-            $table->unsignedBigInteger('trader_id')->nullable();
-            $table->foreign('trader_id')->references('id')->on('users');
-            
+            $table->unsignedBigInteger('proveType_id')->nullable();
+            $table->foreign('proveType_id')->references('id')->on('prove_types');
+
             $table->timestamps();
         });
     }
@@ -34,6 +37,6 @@ class CreateQutationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qutations');
+        Schema::dropIfExists('drivers');
     }
 }
