@@ -25,8 +25,13 @@ class CreateOrders extends Migration
             $table->string('sub-total');
             $table->string('total');
             
-            $table->unsignedBigInteger('delivery_id')->nullable();
-            $table->foreign('delivery_id')->references('id')->on('delivery_offers');
+            $table->unsignedBigInteger('qutation_id')->nullable();
+            $table->foreign('qutation_id')->references('id')->on('qutations');
+
+            $table->unsignedBigInteger('client_id')->nullable();
+            $table->foreign('client_id')->references('id')->on('users');
+
+           
 
             $table->unsignedBigInteger('trader_id');
             $table->foreign('trader_id')->references('id')->on('traders');

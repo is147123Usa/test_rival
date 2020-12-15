@@ -15,14 +15,14 @@ class CreateDriversTable extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->float('total', 8, 2);
-            $table->float('delivery_fee', 8, 2)->nullable();
-            $table->boolean('includeDelivery')->nullable();
-
-            $table->unsignedBigInteger('driver_id')->nullable();
-            $table->foreign('driver_id')->references('id')->on('users');
-            
+            $table->string('carNumber');
+            $table->string('license_no');
+            $table->string('carType');
+            $table->string('img')->nullable();
+            $table->string('ssl');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('account_status')->default('reviewing');
             $table->unsignedBigInteger('proveType_id')->nullable();
             $table->foreign('proveType_id')->references('id')->on('prove_types');
 
