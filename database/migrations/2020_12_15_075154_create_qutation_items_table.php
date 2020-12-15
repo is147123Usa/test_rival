@@ -18,9 +18,12 @@ class CreateQutationItemsTable extends Migration
             $table->string('price');
             $table->string('img');
             $table->string('item_desc');
+            $table->longText('note')->nullable();
+
             $table->unsignedBigInteger('qutition_id')->nullable();
             $table->foreign('qutition_id')->references('id')->on('qutations');
-            $table->longText('note')->nullable();
+            $table->unsignedBigInteger('qutation_order_item_id')->nullable();
+            $table->foreign('qutation_order_item_id')->references('id')->on('qutation_order_items');
             $table->timestamps();
         });
     }

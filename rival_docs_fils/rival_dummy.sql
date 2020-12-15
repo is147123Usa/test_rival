@@ -52,7 +52,15 @@ INSERT INTO `qutation_orders` (`qutastion_status`, `payMethod`, `client_id`, `ca
 -- Dumping data for table `qutation_orders`
 --
 
-INSERT INTO `qutation_order_items` ( `name`, `item_desc`, `qutation_order_id`, `created_at`, `updated_at`) VALUES
-('رفوف جدار خشبية', 'رف خشبي الون احمر',1, NULL, NULL),
-('رفوف جدار خشبية', 'رف خشبي الون احمر',1, NULL, NULL);
+
+INSERT INTO `qutation_order_items` (`id`, `name`, `item_desc`, `qutation_order_id`, `created_at`, `updated_at`) VALUES
+(1, 'رفوف جدار خشبية', 'رف خشبي الون احمر', 1, NULL, NULL),
+(2, 'كرسي خشبي ', 'رف خشبي الون احمر', 1, NULL, NULL);
+
+--
+-- Dumping data for table `qutations`
+--
+
+INSERT INTO `qutations` (`id`, `status`, `total`, `delivery_fee`, `includeDelivery`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+(1, 'panding', 0.00, 0.00, 0, 1, 2, NULL, NULL);
 
