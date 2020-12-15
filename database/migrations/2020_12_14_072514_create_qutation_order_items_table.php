@@ -17,7 +17,7 @@ class CreateQutationOrderItemsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('item_desc');
-            $table->unsignedBigInteger('qutation_order_id')->nullable();
+            $table->unsignedBigInteger('qutation_order_id');
             $table->foreign('qutation_order_id')->references('id')->on('qutation_orders');
             $table->timestamps();
         });

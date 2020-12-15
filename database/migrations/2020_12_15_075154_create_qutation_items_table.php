@@ -19,8 +19,8 @@ class CreateQutationItemsTable extends Migration
             $table->string('img');
             $table->string('item_desc');
             $table->unsignedBigInteger('qutition_id')->nullable();
-            $table->foreign('qutition_id')->references('id')->on('qutitions');
-            $table->logText('note')->nullable();
+            $table->foreign('qutition_id')->references('id')->on('qutations');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }
