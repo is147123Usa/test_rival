@@ -19,7 +19,6 @@ class CreateOrders extends Migration
             $table->string('operation_code');
             $table->string('payment_method')->nallable();
             $table->string('delivery_location')->nallable();
-            $table->string('delivery_location')->nallable();
             $table->string('deosInclude_delivery');
             $table->string('delivery_fees')->nallable();
             $table->string('tax');
