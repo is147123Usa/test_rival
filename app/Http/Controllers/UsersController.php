@@ -15,6 +15,7 @@ class UsersController extends Controller
     }
     public function Users(){
        // return view('/Users.Users');
+       return view('/Users.Users');
     }
     public function UsersDetails(){
         return view('/Users.UsersDetails');
