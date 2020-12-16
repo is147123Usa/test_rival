@@ -16,7 +16,7 @@ class CreateDeliveryOffersTable extends Migration
         Schema::create('delivery_offers', function (Blueprint $table) {
             $table->id();
             $table->string('fees');
-            $table->string('status');
+            $table->string('status')->default('pending');
             $table->string('max_rate');
             $table->string('min_rate');
             $table->unsignedBigInteger('driver_id')->nullable();

@@ -12,6 +12,8 @@ use App\Models\trader;
 use App\Models\Admin;
 use App\Models\ContactForm;
 use App\Models\Contention;
+use App\Models\Delivery_offer;
+
 
 
 
@@ -27,7 +29,7 @@ class HomeController extends Controller
     }
     public function test(){
         //echo "testing";
-        $data = Contention::all();
+        $data = Delivery_offer::all();
 
         //dd(data);
         return view('test.index',compact('data'));

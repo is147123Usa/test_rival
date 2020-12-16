@@ -14,5 +14,17 @@ class Delivery_offer extends Model
         'max_rate','min_rate',
         'driver_id','order_id'
     ];
+    public function driver()
+    {
+      // return $this->belongsTo('App\Models\Country');
+      return $this->belongsTo(Driver::class);
+    }
+    public function order()
+    {
+      // return $this->belongsTo('App\Models\Country');
+      return $this->belongsTo(Order::class);
+    }
+
+
     
 }

@@ -1,6 +1,6 @@
 
 @foreach($data as $value)
-    {{$value->id}}
-     {{$value->driver->cabtin_name}}     
-    {{$value->created_at}}
+{{$value->order->operation_code}}
+{{$value->fees}}
+{{$value->created_at}}
 @endforeach
