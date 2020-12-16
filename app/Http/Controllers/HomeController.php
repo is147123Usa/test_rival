@@ -8,6 +8,8 @@ use App\Models\City;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Qutation;
+use App\Models\trader;
+
 
 class HomeController extends Controller
 {
@@ -20,7 +22,7 @@ class HomeController extends Controller
     }
     public function test(){
         //echo "testing";
-        $data = Qutation::all();
+        $data = Trader::all();
         
         return view('test.index',compact('data'));
     }
