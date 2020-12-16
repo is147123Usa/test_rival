@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\City;
 
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Qutation;
 
 class HomeController extends Controller
 {
@@ -18,7 +20,7 @@ class HomeController extends Controller
     }
     public function test(){
         //echo "testing";
-        $data = City::all();
+        $data = Qutation::all();
         
         return view('test.index',compact('data'));
     }

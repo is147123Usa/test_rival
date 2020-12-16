@@ -9,6 +9,6 @@ class Trader extends Model
 {
     use HasFactory;
     protected $table = "traders";
-    protected $fillable = ['user_id','activityName','CRN','account_status','spicalizition_id','user_id'];
+    protected $fillable = ['user_id','activityName','CRN','account_status','spicalizition_id'];
     
 }

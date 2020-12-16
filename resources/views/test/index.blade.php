@@ -1,6 +1,6 @@
 
 @foreach($data as $value)
     {{$value->id}}
-    {{$value->name}}
+    {{$value->delivery_fee}}
     {{$value->created_at}}
 @endforeach
