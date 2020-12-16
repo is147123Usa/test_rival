@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ContactForm extends Model
 {
     use HasFactory;
-    protected $table = "admins";
-    protected $fillable = ['user_id'];
+    protected $table = "contact_forms";
+    protected $fillable = ['status','body','reply','sender_id'];
     
 }
