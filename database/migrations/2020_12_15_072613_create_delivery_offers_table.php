@@ -20,7 +20,7 @@ class CreateDeliveryOffersTable extends Migration
             $table->string('max_rate');
             $table->string('min_rate');
             $table->unsignedBigInteger('driver_id')->nullable();
-            $table->foreign('driver_id')->references('id')->on('users');
+            $table->foreign('driver_id')->references('id')->on('drivers');
             $table->unsignedBigInteger('order_id')->nullable();
             $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();

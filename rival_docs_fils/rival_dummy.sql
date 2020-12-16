@@ -182,3 +182,19 @@ INSERT INTO `qutation_order_items` (`id`, `name`, `item_desc`, `qutation_order_i
 
 INSERT INTO `traders` (`id`, `activityName`, `CRN`, `account_status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (NULL, 'AL-MENSAH', '210029911', 'verified', 1, 2, NULL, NULL);
+
+
+--
+-- Dumping data for table `contentions`
+--
+
+INSERT INTO `contentions` (`id`, `title`, `status`, `sup_commendation`, `sup_investigtion`, `complain_reason`, `order_id`, `claimant_id`, `supervisor_id`, `driver_id`, `created_at`, `updated_at`) VALUES
+(NULL, 'test Contentions', 'panding', 'test Contentionstest Contentions ', 'test Contentionstest Contentions', 'test Contentionstest Contentionstest Contentions', 1, 1, 1, 1, '2020-12-15 21:00:00', '2020-12-15 21:00:00');
+
+
+--
+-- Dumping data for table `delivery_offers`
+--
+
+INSERT INTO `delivery_offers` (`id`, `fees`, `status`, `max_rate`, `min_rate`, `driver_id`, `order_id`, `created_at`, `updated_at`) VALUES
+(null, '100', 'pending', '18', '12', 4, 1, '2020-12-15 21:00:00', '2020-12-15 21:00:00');
