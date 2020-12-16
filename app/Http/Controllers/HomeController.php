@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Qutation;
 use App\Models\trader;
+use App\Models\ContactForm;
+
 
 
 class HomeController extends Controller
@@ -22,8 +24,9 @@ class HomeController extends Controller
     }
     public function test(){
         //echo "testing";
-        $data = Trader::all();
+        $data = ContactForm::all();
         
+        //dd(data);
         return view('test.index',compact('data'));
     }
     
