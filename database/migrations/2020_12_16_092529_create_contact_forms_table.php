@@ -17,10 +17,10 @@ class CreateContactFormsTable extends Migration
             $table->id();
             $table->string('status')->default('panding');;
             $table->longText('body')->nullable();
-            $table->longText('complain_reason');
+            $table->longText('reply')->nullable();
+
             $table->unsignedBigInteger('sender_id')->nullable();
             $table->foreign('sender_id')->references('id')->on('users');
-            $table->unsignedBigInteger('claimant_id')->nullable();
             $table->timestamps();
         });
     }
