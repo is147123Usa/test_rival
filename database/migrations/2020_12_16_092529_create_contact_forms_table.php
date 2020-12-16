@@ -18,7 +18,6 @@ class CreateContactFormsTable extends Migration
             $table->string('status')->default('panding');;
             $table->longText('body')->nullable();
             $table->longText('reply')->nullable();
-
             $table->unsignedBigInteger('sender_id')->nullable();
             $table->foreign('sender_id')->references('id')->on('users');
             $table->timestamps();

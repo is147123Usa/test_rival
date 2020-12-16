@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ Route::get('test',[HomeController::class,'test']);
 
 Route::get('',[HomeController::class,'Processes']);
 Route::get('/index2',[layoutsController::class,'index2']);
