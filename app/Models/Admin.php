@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Admin extends Model
 {
     use HasFactory;
-    protected $table = "countries";
-    protected $fillable = [
-        'name','name_en'
-    ];
-    public function country()
+    protected $table = "admins";
+    protected $fillable = ['user_id'];
+    
+    public function user()
     {
       // return $this->belongsTo('App\Models\Country');
-      return $this->belongsTo(Country::class);
+      return $this->belongsTo(User::class);
     }
-
 }

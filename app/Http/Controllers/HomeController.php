@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\City;
 
+use App\Models\User;
+
 class HomeController extends Controller
 {
    
@@ -16,9 +18,8 @@ class HomeController extends Controller
     }
     public function test(){
         //echo "testing";
-       $data = City::with('country')
-       ->orderBy('id','desc')
-       ->get();
+        $data = City::all();
+        
         return view('test.index',compact('data'));
     }
     
