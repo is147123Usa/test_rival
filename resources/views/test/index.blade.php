@@ -1,6 +1,6 @@
 
 @foreach($data as $value)
     {{$value->id}}
-    {{$value->user->name}}
+     {{$value->driver->cabtin_name}}     
     {{$value->created_at}}
 @endforeach

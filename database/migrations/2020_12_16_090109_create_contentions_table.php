@@ -21,7 +21,7 @@ class CreateContentionsTable extends Migration
             $table->longText('sup_investigtion')->nullable();
             $table->longText('complain_reason');
             $table->unsignedBigInteger('order_id')->nullable();
-            $table->foreign('order_id')->references('id')->on('users');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->unsignedBigInteger('claimant_id')->nullable();
             $table->foreign('claimant_id')->references('id')->on('users');
             $table->unsignedBigInteger('supervisor_id')->nullable();

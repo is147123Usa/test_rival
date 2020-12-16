@@ -11,6 +11,8 @@ use App\Models\Qutation;
 use App\Models\trader;
 use App\Models\Admin;
 use App\Models\ContactForm;
+use App\Models\Contention;
+
 
 
 
@@ -25,7 +27,7 @@ class HomeController extends Controller
     }
     public function test(){
         //echo "testing";
-        $data = Admin::all();
+        $data = Contention::all();
 
         //dd(data);
         return view('test.index',compact('data'));
