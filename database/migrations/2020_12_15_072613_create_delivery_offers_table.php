@@ -17,6 +17,8 @@ class CreateDeliveryOffersTable extends Migration
             $table->id();
             $table->string('fees');
             $table->string('status');
+            $table->string('max_rate');
+            $table->string('min_rate');
             $table->unsignedBigInteger('driver_id')->nullable();
             $table->foreign('driver_id')->references('id')->on('users');
             $table->unsignedBigInteger('order_id')->nullable();
