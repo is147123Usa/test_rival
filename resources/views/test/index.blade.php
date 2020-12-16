@@ -1,8 +1,6 @@
 
 @foreach($data as $value)
-    {{$value->id}}
-    {{$value->activityName}}
-    {{$value->user->name}}
-    {{$value->spicalizition->name}}
-    {{$value->created_at}}
+{{$value->order->operation_code}}
+{{$value->fees}}
+{{$value->created_at}}
 @endforeach
