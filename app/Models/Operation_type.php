@@ -11,4 +11,5 @@ class Operation_type extends Model
     protected $table = "operation_types";
     protected $fillable = ['name','name_en'];
     
+    
 }

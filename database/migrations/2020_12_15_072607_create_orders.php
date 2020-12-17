@@ -24,7 +24,8 @@ class CreateOrders extends Migration
             $table->string('tax');
             $table->string('sub-total');
             $table->string('total');
-            
+            $table->string('status')->default('pending');;
+
             $table->unsignedBigInteger('qutation_id')->nullable();
             $table->foreign('qutation_id')->references('id')->on('qutations');
 

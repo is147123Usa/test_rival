@@ -1,6 +1,4 @@
-
 @foreach($data as $value)
-{{$value->driver->id}}
-{{$value->fees}}
-{{$value->created_at}}
+    {{$value->wallet->wallet_no}}
+    {{$value->created_at}}
 @endforeach
