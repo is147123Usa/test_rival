@@ -1,4 +1,4 @@
 @foreach($data as $value)
-    {{$value->wallet->wallet_no}}
+    {{$value->id}}
     {{$value->created_at}}
 @endforeach
