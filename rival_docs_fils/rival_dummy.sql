@@ -14,7 +14,7 @@ INSERT INTO `countries` ( `name`, `name_en`, `created_at`, `updated_at`) VALUES
 --
 INSERT INTO `cities` ( `name`, `name_en`, `country_id`, `created_at`, `updated_at`) VALUES
 ( 'الرياض', 'riyadh', 1, NULL, NULL);
-
+    
 
 --
 -- Dumping data for table `prove_types`
