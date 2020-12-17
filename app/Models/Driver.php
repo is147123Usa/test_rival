@@ -13,14 +13,14 @@ class Driver extends Model
         'cabtin_name','carNumber',
         'license_no','carType',
         'img','ssl','user_id',
-        'account_status','proveType_id'
+        'account_status','prove_type_id'
 ];
 public function user()
 {
   // return $this->belongsTo('App\Models\Country');
   return $this->belongsTo(User::class);
 }
-public function proveType()
+public function prove_type()
 {
   // return $this->belongsTo('App\Models\Country');
   return $this->belongsTo(Prove_type::class);

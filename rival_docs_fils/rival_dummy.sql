@@ -55,7 +55,7 @@ INSERT INTO `traders` ( `activityName`, `CRN`, `account_status`, `spicalizition_
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`id`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `user_id`, `proveType_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `drivers` (`id`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `user_id`, `prove_type_id`, `created_at`, `updated_at`) VALUES
 (NULL, '12121212', '12121', 'toyota', 'img/ss.png', '213443567', 4, 1, '2020-12-14 21:00:00', NULL);
 
 
@@ -125,7 +125,7 @@ INSERT INTO `contact_forms` (`id`, `status`, `body`, `reply`, `sender_id`, `crea
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `user_id`, `account_status`, `proveType_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `user_id`, `account_status`, `prove_type_id`, `created_at`, `updated_at`) VALUES
 (NULL, NULL, '12121212', '12121', 'toyota', 'img/ss.png', '213443567', 4, 'reviewing', 1, '2020-12-14 18:00:00', NULL);
 
 

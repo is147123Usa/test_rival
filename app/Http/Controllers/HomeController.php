@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Qutation;
 use App\Models\Qutation_item;
-use App\Models\trader;
+use App\Models\Trader;
 use App\Models\Wallet;
 use App\Models\Driver;
 use App\Models\Delivery_offer;
@@ -35,7 +35,7 @@ class HomeController extends Controller
         
 
         //dd(data);
-        $data = Qutation_item::all();
+        $data = Driver::all();
         return view('test.index',compact('data'));
     }
 }
