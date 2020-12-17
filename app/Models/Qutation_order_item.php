@@ -10,5 +10,9 @@ class Qutation_order_item extends Model
     use HasFactory;
     protected $table = "qutation_order_items";
     protected $fillable = ['name','item_desc','qutation_order_id',];
+    public function qutation_order()
+    { 
+    return $this->belongsTo(Qutation_order::class);
+    }
     
 }

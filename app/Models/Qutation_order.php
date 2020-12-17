@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Qutation_order extends Model
 {
     use HasFactory;
-    protected $table = "admins";
-    protected $fillable = ['client_id','qutastion_status','cat_id','payMethod'];
+    protected $table = "qutation_orders";
+    protected $fillable = ['qutastion_status','cat_id','payMethod','client_id'];
    
-    public function user()
+    public function client()
     {
     // return $this->belongsTo('App\Models\Country');
     return $this->belongsTo(User::class);
     }
-    public function category()
+    public function cat()
     {
     // return $this->belongsTo('App\Models\Country');
     return $this->belongsTo(Category::class);

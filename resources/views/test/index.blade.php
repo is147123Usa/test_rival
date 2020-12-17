@@ -1,4 +1,6 @@
 @foreach($data as $value)
-    {{$value->id}}
-    {{$value->created_at}}
+     
+     {{$value->qutation_order_item}}
+     {{$value->id}}
+
 @endforeach
