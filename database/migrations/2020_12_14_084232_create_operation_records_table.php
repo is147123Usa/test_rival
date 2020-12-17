@@ -16,7 +16,7 @@ class CreateOperationRecordsTable extends Migration
         Schema::create('operation_records', function (Blueprint $table) {
             $table->id();
             $table->longText('OprationDesc');
-            $table->string('status');
+            $table->string('status')->default('pending');
             $table->string('depit');
             $table->string('crdit');
             $table->float('balance_before',8, 2);
@@ -24,8 +24,8 @@ class CreateOperationRecordsTable extends Migration
             $table->string('refer_no')->nullable();
             $table->longText('notes')->nullable();
             
-            $table->unsignedBigInteger('oprationType')->nullable();
-            $table->foreign('oprationType')->references('id')->on('operation_types');
+            $table->unsignedBigInteger('opration_type_id')->nullable();
+            $table->foreign('opration_type_id')->references('id')->on('operation_types');
 
             $table->unsignedBigInteger('wallet_id')->nullable();
             $table->foreign('wallet_id')->references('id')->on('wallets');

@@ -13,8 +13,20 @@ class Operation_record extends Model
         'OprationDesc','status',
         'depit','crdit',
         'balance_before','balance_after',
-        'refer_no','notes','oprationType',
+        'refer_no','notes','oprationType_id',
         'wallet_id'
 ];
+public function oprationType()
+    {
+    // return $this->belongsTo('App\Models\Country');
+    return $this->belongsTo(Operation_type::class);
+    }
+    
+public function wallet()
+    {
+    // return $this->belongsTo('App\Models\Country');
+    return $this->belongsTo(Wallet::class);
+    }
+    
     
 }

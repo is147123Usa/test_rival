@@ -9,6 +9,10 @@ class Wallet extends Model
 {
     use HasFactory;
     protected $table = "wallets";
-    protected $fillable = ['user_id','balance','password','wallet_no','user_id'];
-    
+    protected $fillable = ['balance','password','wallet_no','user_id'];
+    public function user()
+    {
+      // return $this->belongsTo('App\Models\Country');
+      return $this->belongsTo(User::class);
+    }
 }

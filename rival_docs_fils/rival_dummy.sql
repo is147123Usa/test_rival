@@ -197,4 +197,4 @@ INSERT INTO `contentions` (`id`, `title`, `status`, `sup_commendation`, `sup_inv
 --
 
 INSERT INTO `delivery_offers` (`id`, `fees`, `status`, `max_rate`, `min_rate`, `driver_id`, `order_id`, `created_at`, `updated_at`) VALUES
-(null, '100', 'pending', '18', '12', 4, 1, '2020-12-15 21:00:00', '2020-12-15 21:00:00');
+(null, '100', 'pending', '18', '12', 1, 1, '2020-12-15 21:00:00', '2020-12-15 21:00:00');

@@ -15,5 +15,16 @@ class Driver extends Model
         'img','ssl','user_id',
         'account_status','proveType_id'
 ];
+public function user()
+{
+  // return $this->belongsTo('App\Models\Country');
+  return $this->belongsTo(User::class);
+}
+public function proveType()
+{
+  // return $this->belongsTo('App\Models\Country');
+  return $this->belongsTo(Prove_type::class);
+}
+
     
 }

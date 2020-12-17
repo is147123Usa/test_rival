@@ -10,5 +10,9 @@ class Notification extends Model
     use HasFactory;
     protected $table = "notifiations";
     protected $fillable = ['name','name_en','user_id'];
-    
+    public function user()
+    {
+    // return $this->belongsTo('App\Models\Country');
+    return $this->belongsTo(User::class);
+    }
 }

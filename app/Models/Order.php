@@ -13,7 +13,22 @@ class Order extends Model
         'operation_code','payment_method',
         'delivery_location','deosInclude_delivery',
         'delivery_fees','tax','sub-total','total',
-        'qutation_id','client_id','trader_id'
-];
+        'qutation_id','client_id','trader_id'    
+    ];
+    public function qutation()
+    {
+    // return $this->belongsTo('App\Models\Country');
+    return $this->belongsTo(Qutation::class);
+    }
+    public function client()
+    {
+    // return $this->belongsTo('App\Models\Country');
+    return $this->belongsTo(User::class);
+    }
+    public function trader()
+    {
+    // return $this->belongsTo('App\Models\Country');
+    return $this->belongsTo(Trader::class);
+    }
     
 }
