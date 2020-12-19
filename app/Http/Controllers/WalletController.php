@@ -12,8 +12,10 @@ class WalletController extends Controller
 
         return view('Wallet.index',compact('WalletsList'));
     }
-    public function show(){
-        return view('Wallet.show');
+    public function show($wallet_id){
+        $WalletsList = Wallet::find($wallet_id);
+        //dd($WalletsList);
+        return view('Wallet.show',compact('WalletsList'));
     }
     public function MoneyTransferWD(){
         return view('Wallet.MoneyTransferWD');

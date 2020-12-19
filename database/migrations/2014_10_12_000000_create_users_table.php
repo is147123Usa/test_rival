@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('localization');
             $table->string('player_id');
-
+            $table->string('isSuspend')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

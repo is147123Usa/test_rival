@@ -54,7 +54,7 @@
                     <td>{{$value->lastActivity}}</td>
                     <td>{{$value->created_at}}</td>
                     <td >  <a style="padding: 5px;
-    margin: 5px;" class="btn btn-info" href="{{'/Wallet/'}}{{$value->id}}">view</a><a style="padding:5px;margin:5px;"  class="btn btn-secondary" href="{{'Details'}}">edit</a><a style="padding:5px;margin:5px;"class="btn btn-warning" href="{{'Details'}}">suspend</a> <a style="padding:5px;margin:5px;"class="btn btn-warning" href="{{'Details'}}">Un`suspend</a></td>
+    margin: 5px;" class="btn btn-info" href="{{'/Wallet/'}}{{$value->id}}">view</a><a style="padding:5px;margin:5px;"class="btn btn-warning" href="{{'Details'}}">suspend</a> <a style="padding:5px;margin:5px;"class="btn btn-warning" href="{{'Details'}}">Unsuspend</a></td>
                   </tr>
                   @endforeach
                   </tbody>

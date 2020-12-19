@@ -26,7 +26,12 @@
           <div class="col-12">
            
             <!-- /.card -->
-
+          <style>
+            .btn{
+              padding:5px;
+              margin:5px;
+            }
+          </style>
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">  Wallet Details <span style="color: rgb(0, 255, 64);background: #6c757d;">Mohamed</span></h3>
@@ -36,36 +41,40 @@
                 <table id="example1" class="table table-bordered table-striped">
             
                   <tr>
-                    <th style="width: 30%;">Wallet ID</th>
-                    <td>-</td>
-                    <td>-</td>
+                    <th style="width: 20%;">Wallet ID</th>
+                    <td  style="width: 30%;">{{$WalletsList->wallet_no}}</td>
+                    <th style="width: 20%;">Wallet Owner</th>
+                    <td  style="width: 30%;">{{$WalletsList->user->name}}</td>
                  </tr>
                  <tr>
-                    <th>Balance</th>
-                    <td>-</td>
-                    <td>-</td>
+                 <th style="width: 20%;">balance</th>
+                    <td  style="width: 30%;">{{$WalletsList->balance}}</td>
+                    <th style="width: 20%;">Last Activity</th>
+                    <td  style="width: 30%;">{{$WalletsList->lastActivity}}</td>
                  </tr>
                  <tr>
-                    <th>transfer Receive moneyte</th>
-                    <td>-</td>
-                    <td><a style="margin-left: 45%; " href="{{'MoneyTransferWD'}}">Details</a></td>
+                    <th style="width:20%">User Type</th>
+                     
+                    <td  >@if($WalletsList->user->group_id == 1){{'client'}}@endif</td>
+                    <th  > Wallet situation</th>
+                    <td  > <button href="" class="btn btn-success" disabled>Active</button> <button href="" class="btn btn-warning" disabled>Suspended</button></td>
                  </tr> 
+                 
+                 
+                
+                </table>
+                <table>
                  <tr>
-                    <th>Invoices</th>
-                    <td>-</td>
-                    <td><a style="margin-left: 45%; " href="{{'Processes'}}">Details</a></td>
-                 </tr>
-                 <tr>
-                    <th colspan="2">Wallet situation </th>
-                    <td>-</td>
-                 </tr>
-                 <tr>
-                    <th colspan="2">Action          </th>
-                        <td>
-                           <span style="background:red; width: 50%;float: right;"> <a style="margin-left: 45%;color: wheat;"href="{{'Processes'}}">Stop</a> </span>
-                           <span style="width: 50%;float: right; background: greenyellow;"><a style="margin-left: 45%;color: currentcolor;" href="{{'Processes'}}">active</a></span>
-                        </td>
-                 </tr>
+                <th style="width:20%;">Actions</th>
+                <th style="width:80%;"></th>
+                </tr>
+                <tr>
+                <td style="width:20%;"></td>
+                <td style="width:80%;"><button href="" class="btn btn-success">Active</button> <button href="" class="btn btn-warning">Suspend</button>
+                
+                <a class="btn btn-info" href="{{'Processes'}}">Invoices</a> <a class="btn btn-success" href="{{'Processes'}}">  Wallet statement</a>
+                </td>
+                </tr>
                 </table>
               </div>
               <!-- /.card-body -->

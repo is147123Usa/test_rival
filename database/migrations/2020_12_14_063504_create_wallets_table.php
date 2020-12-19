@@ -21,6 +21,7 @@ class CreateWalletsTable extends Migration
             $table->string('wallet_no');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps('lastActivity');
             $table->timestamps();
         });
     }
