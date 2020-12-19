@@ -22,7 +22,7 @@ class CreateWalletsTable extends Migration
             $table->string('isSuspend')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps('lastActivity');
+            $table->string('lastActivity');
             $table->timestamps();
         });
     }
