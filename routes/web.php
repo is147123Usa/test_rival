@@ -31,8 +31,8 @@ Route::get('/index2',[layoutsController::class,'index2']);
 Route::get('/statistics',[HomeController::class,'statistics']);
 Route::get('/Processes',[HomeController::class,'Processes']);
 //Wallet section
-Route::get('/Wallet',[WalletController::class,'Wallet']);
-Route::get('/Details',[WalletController::class,'Details']);
+Route::get('/Wallet',[WalletController::class,'index']);
+Route::get('/Wallet/{wallet_id}',[WalletController::class,'show']);
 Route::get('/MoneyTransferWD',[WalletController::class,'MoneyTransferWD']);
 //end Wallet section
 //user section

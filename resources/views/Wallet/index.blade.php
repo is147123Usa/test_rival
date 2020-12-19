@@ -35,34 +35,36 @@
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>Customer Name</th>
+                  <th>Customer Name</th>
                     <th>Balance</th>
-                    <th>Creditor</th>
-                    <th>Debit</th>
-                    <th>Wallet ID </th>
-                    <th>  Date </th>
+                    <th>Wallet ID </th>      
+                    <th>last Activity</th>
+                    <th>created_at</th>
                     <th>Details</th>
                   </tr>
                   </thead>
                   <tbody>
+                  @foreach($WalletsList as $value)
                   <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td style=" BACKGROUND: #007bff;">  <a style="margin-left: 30%;color: WHITE;" href="{{'Details'}}">Details</a></td>
+                    <td>{{$value->user->name}}</td>
+                    <td>{{$value->balance}}</td>
+                     
+                    <td>{{$value->wallet_no}}</td>
+                    
+                    <td>{{$value->lastActivity}}</td>
+                    <td>{{$value->created_at}}</td>
+                    <td >  <a style="padding: 5px;
+    margin: 5px;" class="btn btn-info" href="{{'/Wallet/'}}{{$value->id}}">view</a><a style="padding:5px;margin:5px;"  class="btn btn-secondary" href="{{'Details'}}">edit</a><a style="padding:5px;margin:5px;"class="btn btn-warning" href="{{'Details'}}">suspend</a> <a style="padding:5px;margin:5px;"class="btn btn-warning" href="{{'Details'}}">Un`suspend</a></td>
                   </tr>
+                  @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
                   <th>Customer Name</th>
                     <th>Balance</th>
-                    <th>Creditor</th>
-                    <th>Debit</th>
-                    <th>Wallet ID </th>
-                    <th> Date </th>
+                    <th>Wallet ID </th>      
+                    <th>last Activity</th>
+                    <th>created_at</th>
                     <th>Details</th>
                   </tr>
                   </tfoot>
