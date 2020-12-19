@@ -27,7 +27,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
-
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
 
