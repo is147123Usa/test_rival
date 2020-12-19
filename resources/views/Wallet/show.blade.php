@@ -39,7 +39,7 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-            
+                
                   <tr>
                     <th style="width: 20%;">Wallet ID</th>
                     <td  style="width: 30%;">{{$WalletsList->wallet_no}}</td>

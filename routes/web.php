@@ -39,8 +39,8 @@ Route::get('/MoneyTransferWD',[WalletController::class,'MoneyTransferWD']);
 Route::get('/login',[UsersController::class,'login']);
 Route::get('/Register',[UsersController::class,'Register']);
 //Route::post('/Register',[UsersController::class,'Register']);
-Route::get('/Users',[UsersController::class,'Users']);
-Route::get('/UsersDetails',[UsersController::class,'UsersDetails']);
+Route::get('/Users',[UsersController::class,'index']);
+Route::get('/users/{user_id}',[UsersController::class,'show']);
 Route::get('/UserWallet',[UsersController::class,'UserWallet']);
 Route::get('/UserDeals',[UsersController::class,'UserDeals']);
 //end user section

@@ -1,11 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Wallet;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    public function index(){
+        $users = Wallet::all();
+        return view('Users.index',compact('users'));
+    }
+    public function show($user_id){
+        $user = User::find($user_id);
+         
+        return view('Users.show',compact('user'));
+    }
+
     public function login(){
         return view('/uath.login');
     }
