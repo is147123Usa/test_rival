@@ -34,7 +34,7 @@
           </style>
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">  Wallet Details <span style="color: rgb(0, 255, 64);background: #6c757d;">Mohamed</span></h3>
+                <h3 class="card-title">  Wallet Details</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -55,9 +55,9 @@
                  <tr>
                     <th style="width:20%">User Type</th>
                      
-                    <td  >@if($WalletsList->user->group_id == 1){{'client'}}@endif</td>
+                    <td  >@if($WalletsList->user->group_id == 1) {{'client'}} @elseif($WalletsList->user->group_id == 2){{'trader'}}@endif</td>
                     <th  > Wallet situation</th>
-                    <td  > <button href="" class="btn btn-success" disabled>Active</button> <button href="" class="btn btn-warning" disabled>Suspended</button></td>
+                    <td  >@if($WalletsList->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @elseif($WalletsList->isSuspend == 1)<button href="" class="btn btn-warning" disabled>Suspended</button>@endif</td>
                  </tr> 
                  
                  
@@ -69,11 +69,13 @@
                 <th style="width:80%;"></th>
                 </tr>
                 <tr>
-                <td style="width:20%;"></td>
-                <td style="width:80%;"><button href="" class="btn btn-success">Active</button> <button href="" class="btn btn-warning">Suspend</button>
+                <td  >@if($WalletsList->isSuspend == 1) <button href="" class="btn btn-success" >Active</button> @else<button href="" class="btn btn-warning" >Suspended</button>@endif 
                 
                 <a class="btn btn-info" href="{{'Processes'}}">Invoices</a> <a class="btn btn-success" href="{{'Processes'}}">  Wallet statement</a>
                 </td>
+                <td style="width:20%;"></td>
+                <td style="width:80%;">
+               
                 </tr>
                 </table>
               </div>
