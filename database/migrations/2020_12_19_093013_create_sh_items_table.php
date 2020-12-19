@@ -18,9 +18,9 @@ class CreateShItemsTable extends Migration
             $table->string('name');
             $table->longText('item_desc')->nullable();
             $table->unsignedBigInteger('cat_id')->nullable();
-            $table->foreign('cat_id')->references('id')->on('users');
+            $table->foreign('cat_id')->references('id')->on('categories');
             $table->unsignedBigInteger('trader_id')->nullable();
-            $table->foreign('trader_id')->references('id')->on('users');
+            $table->foreign('trader_id')->references('id')->on('traders');
             $table->timestamps();
         });
     }

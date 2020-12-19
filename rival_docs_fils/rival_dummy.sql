@@ -33,7 +33,7 @@ INSERT INTO `users` (`id`, `name`, `group_id`, `phone`, `localization`, `email`,
 (null, 'client', 1, '0509875995', 'lag,lat', 'test@gmail.com', NULL, '123456', NULL, NULL, NULL, NULL, 1),
 (null, 'trader', 2, '05098765595', 'lan,long', 'trader@gmail.com', NULL, '123456', NULL, NULL, NULL, NULL, 1),
 (null, 'Rival ', 3, '123456', 'lan', 'adming@gmail.com', NULL, '', NULL, NULL, NULL, NULL, 1),
-(null, 'driver_account', 4, '11223344', 'lan', 'driver@test.com', NULL, '123456', NULL, NULL, '2020-12-14 21:00:00', NULL, NULL);
+(null, 'driver_account', 4, '11223344', 'lan', 'driver@test.com', NULL, '123456', NULL, NULL, '2020-12-14 21:00:00', NULL, 1);
 
 --
 -- Dumping data for table `categories`
@@ -48,7 +48,7 @@ INSERT INTO `categories` (  `name`, `name_en`, `img`, `created_at`, `updated_at`
 --
 
 INSERT INTO `traders` ( `activityName`, `CRN`, `account_status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
-( 'AL-MENSAH', '210029911', 'verified', 1, 2, NULL, NULL);
+( 'AL-MENSAH', '210029911', 'verified', 1, 1, NULL, NULL);
 
 
 --
