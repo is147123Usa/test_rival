@@ -36,13 +36,16 @@
                 <thead>
                   <tr>
                    
-                    <th>Opreation Desc</th>
-                    <th>Opreation Type </th>      
+                  <th>Opreation Desc</th>
+                    <th>Opreation Type </th>    
+                    <th>depit</th>
+                    <th>crdit</th>  
                     <th>Before transaction</th>
                     <th>After transaction</th>
                     <th>Notes</th>
                     <th>Status</th>
-                    <th>Actions</th>
+                    <th>Wallet ID</th>
+                    <th>Issued at</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -50,25 +53,30 @@
                   <tr>
                     <td>{{$value->OprationDesc}}</td>
                     <td>{{$value->oprationType->name_en}}</td>
-                     
+                    <td>{{$value->depit}}</td>
+                    <td>{{$value->crdit}}</td>
                     <td>{{$value->balance_before}}</td>
                     <td>{{$value->balance_after}}</td>
                     <td> @if($value->notes ==null) empty @else {{$value->notes}} @endif</td>
                     <td>{{$value->status}}</td>
-                    <td > <a style="padding: 5px;
-    margin: 5px;" class="btn btn-info" href="{{'/Wallet/'}}{{$value->id}}">view</a> @if($value->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @else<button href="" class="btn btn-warning" disabled>Suspended</button>@endif</td>
+                    <td><button type="button" class="btn btn-info" disabled>{{$value->wallet->wallet_no}}</button>
+</td>
+                    <td > {{$value->created_at->format('m/d/Y')}}</td>
                   </tr>
                   @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>Opreation Desc</th>
-                    <th>Opreation Type </th>      
+                    <th>Opreation Type </th>  
+                    <th>depit</th>
+                    <th>crdit</th>      
                     <th>Before transaction</th>
                     <th>After transaction</th>
                     <th>Notes</th>
                     <th>Status</th>
-                    <th>Actions</th>
+                    <th>Wallet ID</th>
+                    <th>Issued at</th>
                   </tr>
                   </tfoot>
                 </table>
