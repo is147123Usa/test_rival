@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 //Routes
 Route::get('wallet_invoices/{user_id}',[invoiceController::class,'wallet_invoices']);
 Route::get('Invoice/{order_id}',[invoiceController::class,'invoice']);
+Route::get('miniStatment/{wallet_id}',[invoiceController::class,'miniStatment']);
 
 //End Of routes
 Route::get('test',[HomeController::class,'test']);

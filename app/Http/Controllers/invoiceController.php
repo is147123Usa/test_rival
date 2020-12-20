@@ -16,6 +16,7 @@ class invoiceController extends Controller
 
     public function miniStatment($wallet_id){
         $statmentRecoreds = Operation_record::where('wallet_id', $wallet_id)->get();        
+       // dd($statmentRecoreds);
         return view('invoices.statment',compact('statmentRecoreds'));
     }
     public function wallet_invoices($user_id){
