@@ -11,7 +11,6 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{'Processes'}}">Home</a></li>
               <li class="breadcrumb-item active">Wallet</li>
             </ol>
           </div><!-- /.col -->
@@ -39,8 +38,9 @@
                     <th>Balance</th>
                     <th>Wallet ID </th>      
                     <th>last Activity</th>
-                    <th>created_at</th>
-                    <th>Details</th>
+                    <th>Status</th>
+                    <th>Issues at </th>
+                    <th>Actions</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -51,9 +51,10 @@
                      
                     <td>{{$value->wallet_no}}</td>
                     <td>{{$value->lastActivity}}</td>
-                    <td>{{$value->created_at}}</td>
+                    <th>@if($value->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @else<button href="" class="btn btn-warning" disabled>Suspended</button>@endif</th>
+                    <td>{{$value->created_at->format('m/d/Y')}} </td>
                     <td >  <a style="padding: 5px;
-    margin: 5px;" class="btn btn-info" href="{{'/Wallet/'}}{{$value->id}}">view</a> @if($value->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @else<button href="" class="btn btn-warning" disabled>Suspended</button>@endif</td>
+    margin: 5px;" class="btn btn-info" href="{{'/Wallet/'}}{{$value->id}}">view</a> </td>
                   </tr>
                   @endforeach
                   </tbody>
@@ -63,7 +64,8 @@
                     <th>Balance</th>
                     <th>Wallet ID </th>      
                     <th>last Activity</th>
-                    <th>created_at</th>
+                    <th>Status</th>
+                    <th>Issued at</th>
                     <th>Details</th>
                   </tr>
                   </tfoot>

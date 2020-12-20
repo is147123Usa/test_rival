@@ -52,7 +52,7 @@
                     <td>{{$value->user->email}}</td>
                     <td>{{$value->wallet_no}}</td>
                     <td>{{$value->balance}}</td>
-                    
+                    <td>{{$value->balance}}</td>
                      
                     <td  > <a href="{{url('users/')}}{{'/'.$value->user->id}}" class="btn btn-info" >View</a> <button href="" class="btn btn-danger" >delete</button> <button href="" class="btn btn-info" >block</button></td>
                   </tr>
@@ -65,7 +65,7 @@
                     <th>Emaile</th>
                     <th>Wallet ID</th>
                     <th>Balance</th>
-                     
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

@@ -216,55 +216,55 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{'Wallet'}}" class="nav-link">
+                <a href="{{url('Wallet')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Wallet </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Users'}}" class="nav-link">
+                <a href="{{url('Users')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Users</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Sellers'}}" class="nav-link">
+                <a href="{{url('Sellers')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sellers</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'MoneyTransfer'}}" class="nav-link">
+                <a href="{{url('MoneyTransfer')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Money transfer</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Showroom'}}" class="nav-link">
+                <a href="{{url('Showroom')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>  Showroom</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Quotaton'}}" class="nav-link">
+                <a href="{{url('Quotaton')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Quotation</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Delivery'}}" class="nav-link">
+                <a href="{{url('Delivery')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>  Delivery</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Disputes'}}" class="nav-link">
+                <a href="{{url('Disputes')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Disputes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Notifications'}}" class="nav-link">
+                <a href="{{url('Notifications')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Notifications </p>
                 </a>

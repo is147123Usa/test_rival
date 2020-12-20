@@ -11,10 +11,9 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{'Processes'}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{'Wallet'}}">Wallet</a></li>
-              <li class="breadcrumb-item active"> Details</li>
-            </ol>
+              <li class="breadcrumb-item"><a href="{{url('Wallet')}}">Wallets</a></li>
+              <li class="breadcrumb-item">Details</li>
+             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
