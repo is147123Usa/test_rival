@@ -7,13 +7,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"> Wallet </h1>
+            <h1 class="m-0"> Wallet Invoices List </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active">Wallet</li>
-              <li class="breadcrumb-item active">Wallet</li>
-              <li class="breadcrumb-item active">Wallet</li>
+            <li class="breadcrumb-item"><a href="{{url('Processes')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{url('Wallet')}}">Wallet</a></li>
+              <li class="breadcrumb-item active"><a href="{{url('Details')}}">Details</a></li>
+              <li class="breadcrumb-item active">Invoices List</li>
 
             </ol>
           </div><!-- /.col -->
