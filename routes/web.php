@@ -24,8 +24,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('miniStatment/{wallet_id}',[invoiceController::class,'miniStatment']);
+//Routes
+Route::get('wallet_invoices/{user_id}',[invoiceController::class,'wallet_invoices']);
+Route::get('Invoice/{order_id}',[invoiceController::class,'invoice']);
 
+//End Of routes
 Route::get('test',[HomeController::class,'test']);
 Route::get('',[HomeController::class,'Processes']);
 Route::get('/index2',[layoutsController::class,'index2']);
@@ -47,6 +50,7 @@ Route::get('/UserWallet',[UsersController::class,'UserWallet']);
 Route::get('/UserDeals',[UsersController::class,'UserDeals']);
 //end user section
 // invoice section
+
 Route::get('/UserInvoices',[UsersController::class,'UserInvoices']);
 Route::get('/invoicePrint',[UsersController::class,'invoicePrint']);
 //end invoice section

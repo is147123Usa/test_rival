@@ -71,7 +71,7 @@
                 <tr>
                 <td  >@if($WalletsList->isSuspend == 1) <button href="" class="btn btn-success" >Active</button> @else<button href="" class="btn btn-warning" >Suspended</button>@endif 
                 
-                <a class="btn btn-info" href="{{'miniStatment/'.$WalletsList->wallet_no}}">Invoices</a> <a class="btn btn-success" href="{{'Processes'}}">  Wallet statement</a>
+                <a class="btn btn-info" href="{{url('/wallet_invoices/'.$WalletsList->user_id)}}">Invoices</a> <a class="btn btn-success" href="{{'Processes'}}">  Wallet statement</a>
                 </td>
                 <td style="width:20%;"></td>
                 <td style="width:80%;">
