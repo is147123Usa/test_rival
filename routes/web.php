@@ -11,6 +11,7 @@ use App\http\Controllers\DeliveryController;
 use App\http\Controllers\DisputesController;
 use App\http\Controllers\ContactController;
 use App\http\Controllers\NotificationsController;
+use App\http\Controllers\invoiceController;
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -23,8 +24,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
- Route::get('test',[HomeController::class,'test']);
+Route::get('miniStatment/{wallet_id}',[invoiceController::class,'miniStatment']);
 
+Route::get('test',[HomeController::class,'test']);
 Route::get('',[HomeController::class,'Processes']);
 Route::get('/index2',[layoutsController::class,'index2']);
 //Route::get('/index3',[layoutsController::class,'index3']);

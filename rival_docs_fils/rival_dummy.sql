@@ -198,3 +198,22 @@ INSERT INTO `contentions` (`id`, `title`, `status`, `sup_commendation`, `sup_inv
 
 INSERT INTO `delivery_offers` (`id`, `fees`, `status`, `max_rate`, `min_rate`, `driver_id`, `order_id`, `created_at`, `updated_at`) VALUES
 (null, '100', 'pending', '18', '12', 1, 1, '2020-12-15 21:00:00', '2020-12-15 21:00:00');
+
+
+
+
+--
+-- Dumping data for table `wallets`
+--
+
+INSERT INTO `wallets` (`id`, `balance`, `balance_string`, `password`, `wallet_no`, `isSuspend`, `user_id`, `lastActivity`, `created_at`, `updated_at`) VALUES
+(null, 75.00, '', '1234', 'E8876', '0', 1, '20-12-2020', '2020-12-18 21:00:00', NULL);
+
+
+--
+-- Dumping data for table `qutations`
+--
+
+INSERT INTO `qutations` (`id`, `status`, `total`, `delivery_fee`, `includeDelivery`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+(null, 'panding', 10.00, 0.00, 0, 2, 2, '2020-12-08 08:23:14', NULL),
+(null, 'panding', 100.00, 0.00, 0, 1, 2, '2020-12-08 08:23:18', NULL);

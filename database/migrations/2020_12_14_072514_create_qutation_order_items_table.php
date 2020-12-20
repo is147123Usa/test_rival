@@ -16,6 +16,7 @@ class CreateQutationOrderItemsTable extends Migration
         Schema::create('qutation_order_items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('qty');
             $table->string('item_desc');
             $table->unsignedBigInteger('qutation_order_id');
             $table->foreign('qutation_order_id')->references('id')->on('qutation_orders');

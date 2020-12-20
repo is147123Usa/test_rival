@@ -16,6 +16,7 @@ class CreateQutationItemsTable extends Migration
         Schema::create('qutation_items', function (Blueprint $table) {
             $table->id();
             $table->string('price');
+            $table->string('qty');
             $table->string('img');
             $table->string('item_desc');
             $table->longText('note')->nullable();

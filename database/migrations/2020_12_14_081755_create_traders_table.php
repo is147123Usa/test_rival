@@ -17,6 +17,11 @@ class CreateTradersTable extends Migration
             $table->id();
             $table->string('activityName');
             $table->string('CRN');
+            $table->string('tax_no');
+            $table->string('address')->nullable();
+            $table->string('address_2')->nullable();
+            $table->string('mailBox')->nullable();
+
             $table->string('account_status');
             $table->unsignedBigInteger('spicalizition_id')->nullable();
             $table->foreign('spicalizition_id')->references('id')->on('categories');
