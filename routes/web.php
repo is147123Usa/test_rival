@@ -57,7 +57,7 @@ Route::get('/invoicePrint',[UsersController::class,'invoicePrint']);
 //end invoice section
 
 //sellers section
-Route::get('/Sellers',[SellersController::class,'Sellers']);
+Route::get('/Sellers/{Sellers_id}',[SellersController::class,'Sellers']);
 Route::get('/SellerDetails',[SellersController::class,'SellerDetails']);
 Route::get('/SellerWallet',[SellersController::class,'SellerWallet']);
 Route::get('/SellerDeals',[SellersController::class,'SellerDeals']);
