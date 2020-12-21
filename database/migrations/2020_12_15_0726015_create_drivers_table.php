@@ -21,6 +21,8 @@ class CreateDriversTable extends Migration
             $table->string('carType');
             $table->string('img')->nullable();
             $table->string('ssl');
+            $table->unsignedBigInteger('trader_id')->nullable();
+            $table->foreign('trader_id')->references('id')->on('traders');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('account_status')->default('reviewing');

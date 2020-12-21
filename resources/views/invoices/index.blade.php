@@ -51,7 +51,6 @@
                   <tr>
                     <td>{{$value->OprationDesc}}</td>
                     <td>{{$value->oprationType->name}}</td>
-                     
                     <td>{{$value->oprationType->balance_before}}</td>
                     <td>{{$value->oprationType->balance_after}}</td>
                     <td>{{$value->notes}}</td>

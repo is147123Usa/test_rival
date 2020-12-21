@@ -68,7 +68,7 @@
                 <th style="width:80%;"></th>
                 </tr>
                 <tr>
-                <td  >@if($WalletsList->isSuspend == 1) <button href="" class="btn btn-success" >Active</button> @else<button href="" class="btn btn-warning" >Suspended</button>@endif 
+                <td  >@if($WalletsList->isSuspend == 1) <a href="{{url('suspendedWallet/'.$WalletsList->id).'/0'}}" class="btn btn-success" >Active</a> @else<a href="{{url('suspendedWallet/'.$WalletsList->id).'/1'}}" class="btn btn-warning" >Suspend</a>@endif 
                 
                 <a class="btn btn-info" href="{{url('/wallet_invoices/'.$WalletsList->user_id)}}">Invoices</a> <a class="btn btn-success" href="{{url('/miniStatment/'.$WalletsList->id)}}">  Wallet statement</a>
                 </td>
