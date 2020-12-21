@@ -7,13 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">    Quotation informations</h1>
+            <h1 class="m-0"> Quotation Report </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{'Processes'}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{'Quotaton'}}">Quotation</a></li>
-              <li class="breadcrumb-item active">  Quotation informations</li>
+              <li class="breadcrumb-item active">  Quotation</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -30,44 +29,58 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">  Quotation informations</h3>
+                <h3 class="card-title">Quotations List</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-                 
+                <thead>
                   <tr>
-                    <th>Customer Name</th>
+                    <th>spicaliztion </th>
+                    <th>client's name</th>
                     <th>Seller's name</th>
-                    <th>Driver's Name(s)</th>
+                    
+                    <th>include delivery </th>
+                    <th>payment method </th>
+                    <th>Issued at</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                   </tr>
-                 
-                 
+                  </thead>
+                  <tbody>
+                  @foreach($qutation as $value)
                   <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>                  
+                    <td>{{$value->qutation_order->cat->name_en}}</td>
+                    <td>{{$value->qutation_order->client->name}}</td>
+                    <td>{{$value->trader->activityName}}</td>
+                    <td>@if($value->includeDelivery == '0') {{'No'}} @else {{'Yes'}} @endif</td>
+                    <td>{{$value->qutation_order->payMethod}}</td>
+                    <td>10 m</td>
+                    <td><button type="button" class="btn btn-warning">{{$value->status}}</button>
+</td>
+                    
+                    <td>
+                      <a style="margin-left: 25%; " class="btn btn-info" href="{{url('Quotaton/'.$value->id)}}">view</a>
+                    </td>
                   </tr>
+                  @endforeach
+                  </tbody>
+                  <tfoot>
                   <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>                  
-                  </tr>
-               
-               
-                  <tr>
-                  <th>Customer Name</th>
+                    <th>spicaliztion </th>
+                    <th>client's name</th>
                     <th>Seller's name</th>
-                    <th>Driver's Name(s)</th>                 
+                     
+                    <th>include delivery </th>
+                    <th>payment method </th>
+                    <th>Operation condition</th>
+                    <th>Actions</th>
                   </tr>
-               
+                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
-               <p> Time delay : <span style="color:red;"> 14:58</span></p>
-               <p> Operation condition : <span style="color:red;"> Rejected by the customer</span></p>
-
             <!-- /.card -->
           </div>
           <!-- /.col -->
