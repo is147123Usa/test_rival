@@ -20,4 +20,13 @@ class WalletController extends Controller
     public function MoneyTransferWD(){
         return view('Wallet.MoneyTransferWD');
     }
+    public function suspendedWallet($wallet_id,$rule){
+        $wallet = Wallet::find($wallet_id);
+        $wallet->isSuspend = $rule;
+        if($wallet->save()){
+            return redirect('Wallet/'.$wallet_id);
+        }else{
+            return false;
+        }
+    }
 }
