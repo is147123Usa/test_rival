@@ -36,31 +36,24 @@
                   <tr>
                     <th>Seller's name</th>
                     <th>commercial activities</th>
-                    <th>Number of products</th>
-                    <th>Driver's Name(s)</th>
-                    <th>Number of deals</th>
                     <th>  Date </th>
                     <th>Details</th>
                   </tr>
                   </thead>
                   <tbody>
+                  @foreach($data as $value)
                   <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td>{{$value->user->name}}</td>
+                    <td>{{$value->activityName}}</td>            
+                    <td>{{$value->created_at}}        
                     <td style=" BACKGROUND: #007bff;"> <a style="margin-left: 30%;color: WHITE;" href="{{'SellerDetails'}}">Action</a></td>
                   </tr>
+                  @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
                   <th>Seller's name</th>
-                    <th>commercial activities</th>
-                    <th>Number of products</th>
-                    <th>Driver's Name(s)</th>
-                    <th>Number of deals</th>
+                  <th>commercial activities</th>
                     <th>  Date </th>
                     <th>Details</th>
                   </tr>
