@@ -41,7 +41,7 @@
                     <th>Wallet ID</th>
                     <th>Balance</th>
                     <th>Status</th>
-                   
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -52,7 +52,7 @@
                     <td>{{$value->user->email}}</td>
                     <td>{{$value->wallet_no}}</td>
                     <td>{{$value->balance}}</td>
-                    <th>@if($value->user->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @else<button href="" class="btn btn-warning" disabled>block</button>@endif</th>
+                    <td>@if($value->user->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @else<button href="" class="btn btn-warning" disabled>block</button>@endif</td>
                      
                     <td  > <a href="{{'/Wallet/'}}{{$value->id}}" class="btn btn-info" >View</a> <button href="" class="btn btn-danger" >delete</button> <button href="" class="btn btn-info" >block</button></td>
                   </tr>
