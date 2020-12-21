@@ -24,9 +24,10 @@ class WalletController extends Controller
         $wallet = Wallet::find($wallet_id);
         $wallet->isSuspend = $rule;
         if($wallet->save()){
-            return redirect('Wallet/'.$wallet_id);
+            return redirect()->back() ->with('alert', 'Updated successfuly!');
+            //return redirect('Wallet/'.$wallet_id);
         }else{
-            return false;
+            return redirect()->back() ->with('alert', 'Updated Faild!');
         }
     }
 }
