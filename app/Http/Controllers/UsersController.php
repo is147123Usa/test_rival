@@ -10,11 +10,12 @@ class UsersController extends Controller
 {
     public function index(){
         $users = Wallet::all();
+      
         return view('Users.index',compact('users'));
     }
     public function show($user_id){
         $user = User::find($user_id);
-         
+         //  dd( $users);
         return view('Users.show',compact('user'));
     }
 
