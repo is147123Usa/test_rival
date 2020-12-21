@@ -182,8 +182,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p style="color:rgb(0, 255, 64);">
                 Dashboard
@@ -205,6 +205,92 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-search"></i>
+              <p>
+              Orders
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/search/simple.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Orders</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/search/enhanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Orders Items</p>
+                </a>
+                <li class="nav-item">
+                <a href="pages/search/enhanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Items complains</p>
+                </a>
+                
+            </ul>
+          </li> 
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-search"></i>
+              <p>
+              Qutaion orders
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/search/simple.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Qutaion orders</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/search/enhanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Qutaion orders items</p>
+                </a>
+                <li class="nav-item">
+                <a href="pages/search/enhanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Q-orders items report</p>
+                </a>
+                
+            </ul>
+          </li> 
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-search"></i>
+              <p>
+              Qutations
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('Qutations')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Qutations </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                 
+                <li class="nav-item">
+                <a href="{{url('Qutations_reports')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Qutations report</p>
+                </a>
+                 
+            </ul>
+          </li> 
+
+
+
           <li class="nav-header"style="color:rgb(0, 255, 64);"> Operations</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -275,6 +361,39 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-search"></i>
               <p>
+              Settings
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/search/simple.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Countries</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/search/enhanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cites</p>
+                </a>
+                <li class="nav-item">
+                <a href="pages/search/enhanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Catogeries</p>
+                </a>
+                <li class="nav-item">
+                <a href="pages/search/enhanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Prove types</p>
+                </a>
+              </li>
+            </ul>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-search"></i>
+              <p>
                 Search
                 <i class="fas fa-angle-left right"></i>
               </p>
@@ -294,6 +413,7 @@
               </li>
             </ul>
           </li> 
+
         </ul>
         
 <br>

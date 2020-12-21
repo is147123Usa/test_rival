@@ -29,6 +29,10 @@ Route::get('wallet_invoices/{user_id}',[invoiceController::class,'wallet_invoice
 Route::get('Invoice/{order_id}',[invoiceController::class,'invoice']);
 Route::get('miniStatment/{wallet_id}',[invoiceController::class,'miniStatment']);
 Route::get('suspendedWallet/{wallet_id}/{rule}',[WalletController::class,'suspendedWallet']);
+Route::get('Quotaton',[QuotationController::class,'Quotaton']);
+Route::get('Quotaton/{q_id}',[QuotationController::class,'QuotatonDetais']);
+Route::get('Qutations',[QuotationController::class,'Quotaton']);
+
 //End Of routes
 Route::get('test',[HomeController::class,'test']);
 Route::get('',[HomeController::class,'Processes']);
@@ -67,8 +71,7 @@ Route::get('/SellerInvoicePrint',[SellersController::class,'SellerInvoicePrint']
 Route::get('/MoneyTransfer',[MoneyTransferController::class,'MoneyTransfer']);
 Route::get('/Showroom',[ShowroomController::class,'Showroom']);
 //Quotato section
-Route::get('/Quotaton',[QuotationController::class,'Quotaton']);
-Route::get('/QuotatonDetais',[QuotationController::class,'QuotatonDetais']);
+
 //end Quotato section
 // Delivery section
 Route::get('/Delivery',[DeliveryController::class,'Delivery']);
