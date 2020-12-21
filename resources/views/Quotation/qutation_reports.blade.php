@@ -29,52 +29,46 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Quotations List</h3>
+                <h3 class="card-title">Quotations report List</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>spicaliztion </th>
-                    <th>client's name</th>
-                    <th>Seller's name</th>
-                    
-                    <th>include delivery </th>
-                    <th>payment method </th>
+                    <th>id </th>
+                    <th>Qutation Sender</th>
+                    <th>Complain sender</th>
                     <th>Issued at</th>
                     <th>Status</th>
-                    <th>Actions</th>
+                    <th>Actions </th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($qutation as $value)
+                 
                   <tr>
-                    <td>{{$value->qutation_order->cat->name_en}}</td>
-                    <td>{{$value->qutation_order->client->name}}</td>
-                    <td>{{$value->trader->activityName}}</td>
-                    <td>@if($value->includeDelivery == '0') {{'No'}} @else {{'Yes'}} @endif</td>
-                    <td>{{$value->qutation_order->payMethod}}</td>
+                    <td> </td>
+                    <td> </td>
+                    
+                    <td></td>
                     <td>10 m</td>
-                    <td><button type="button" class="btn btn-warning">{{$value->status}}</button>
+                    <td><button type="button" class="btn btn-warning"></button>
 </td>
                     
                     <td>
-                      <a style="margin-left: 25%; " class="btn btn-info" href="{{url('Quotaton/'.$value->id)}}">view</a>
+                      <a style="margin-left: 25%; " class="btn btn-info" href="{{url('Quotaton/')}}">view</a>
                     </td>
                   </tr>
-                  @endforeach
+            
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>spicaliztion </th>
-                    <th>client's name</th>
-                    <th>Seller's name</th>
-                     
-                    <th>include delivery </th>
-                    <th>payment method </th>
-                    <th>Operation condition</th>
-                    <th>Actions</th>
+                    <th>id </th>
+                    <th>Qutation Sender</th>
+                    <th>Complain sender</th>
+                    <th>Issued at</th>
+                    <th>Status</th>
+                    <th>Actions </th>
                   </tr>
                   </tfoot>
                 </table>

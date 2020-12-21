@@ -17,15 +17,17 @@ class QuotationController extends Controller
     }
     public function QuotatonDetais($q_id){
         $qutation = Qutation::find($q_id);
-        $qutation_item = Qutation_item::find($q_id);
-       // dd($qutation);
-        $driver_qty = Driver::where('trader_id',$qutation->trader_id)->get();
-        $dealsQty = Order::where('trader_id',$qutation->trader_id)->get();
+        $qutation_item = Qutation_item::where('qutition_id',$q_id)->get();
+       // $sub_total = $qutation->total - ($qutation->total * 0.15) ; 
+        //you just puds here 
 
-        $payload =array('drivers'=>$driver_qty,'driver_qty'=>count($driver_qty) ,'dealsQty'=>count($dealsQty));
- 
 
-        return view('Quotation.show',compact('qutation','qutation_item','payload'));
+        //
+
+        return view('Quotation.show',compact('qutation','qutation_item'));
+    }
+    public function Qutations_reports(){
+        return view('Quotation.qutation_reports');
     }
 
 }

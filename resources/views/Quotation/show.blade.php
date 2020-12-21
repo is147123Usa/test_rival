@@ -34,6 +34,13 @@
                 height: 100px;
                 border-radius: 50%;
               }
+              .Bordernone{
+                border:none;
+              }
+              button{
+                padding:5px;
+                margin:5px;
+              }
             </style>
             <div class="card">
               <div class="card-header">
@@ -42,33 +49,59 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-                 
+                 <tr>
+                 <center>
+                 <a href="{{url('ordersQutitions'.$qutation->id)}}" class="btn btn-success">All Qutation for this order </a>
+
+                 <a href="{{url(''.$qutation->id)}}"  class="btn btn-info">Trader Qutations </a>
+                 <a href="{{url('Client_Qutition'.$qutation->id)}}"  class="btn btn-light">All  Client Qutations order</a>
+
+<a href="{{url('Trader_Qutions'.$qutation->id)}}" class="btn btn-info">All Trader Qutations </a></center>
+</tr>
                   <tr>
-                    <th>Customer Name</th>
-                    <td>Ashraf</td>
-                    <th>Trader Name(s)</th>
-                    <td>AL-MNSAH</td>
+                    <th>Trader Name(s) :</th>
+                    <td>{{$qutation->trader->activityName}}</td>
+
+                    <th>Customer Name :</th>
+                    <td>{{$qutation->qutation_order->client->name}}</td>
+                    <th>delivery Fees:</th>
+                    <td>{{$qutation->delivery_fee}}</td>
                   </tr>
 
                   <tr>
-                    <th>Catogery</th>
-                    <td>Offices and furnture</td>
-                    <th>ORDER ID </th>
-                    <td><a href="#" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">{{$qutation->id}}</a>
-</td>
+                    <th>Catogery :</th>
+                    <td>{{$qutation->qutation_order->cat->name_en}}</td>
+                    <th>Include Delivery :</th>
+                    <td> @if($qutation->includeDelivery==1 ) {{'Yes'}} @else {{'No'}} @endif </td>
+                    <th>TAX : </th>
+                    <td>{{$qutation->id}}</td>
                   </tr>
 
 
                   <tr>
-                    <th>Total </th>
-                    <td>200 <span>SAR</span></td>
-                    <th>status</th>
+                  <th>status :</th>
                     <td>
-                    <button type="button" class="btn btn-warning">panding</button>
+                    <button type="button" class="btn btn-warning" disabled>{{$qutation->status}}</button>
+                    </td>
+
+                    <th>trader phone :</th>
+                    <td> {{$qutation->trader->user->phone}}
+                    </td>
+                    <th>Sub-total :</th>
+                    <td>{{$qutation->id}}</td>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <td>
+                    </td>
+                    <th>clients number :</th>
+                    <td>
+                    {{$qutation->qutation_order->client->phone}}
 
                     </td>
+                    <th>Total :</th>
+                    <td>{{$qutation->total}} <span>SAR</span></td>
                   </tr>
-               
                
                   
                
@@ -98,19 +131,21 @@
                   </thead>
 
                   <tbody>
+                  @foreach($qutation_item as $value) 
                     <tr style="text-align: center;">
-                      <td>1.</td>
+                      <td>{{$value->id}}</td>
                       <td>
-                        <img src="{{asset('imgs/char.jpg')}}" alt="Avatar" class="avatar">
+                        <img src="{{asset('imgs/'.$value->img)}}" alt="Item_img" class="avatar">
                       </td>
-                      <td> Offace Chair </td>
+                      <td> {{$value->item_desc}}  </td>
                        
-                      <td> 230 <span>SAR</span> </td>
+                      <td> {{$value->price}} <span>SAR</span> </td>
                        
-                      <td><span class="badge bg-danger">1</span></td>
-                      <td>No Notes</td>
+                      <td><span class="badge bg-danger">{{$value->qty}} </span></td>
+                      <td>{{$value->note}} </td>
                       <td>Actions</td>
                     </tr>
+                  @endforeach
                   </tbody>
                 </table>
               </div>
