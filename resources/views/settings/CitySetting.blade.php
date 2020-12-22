@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">    Settings </h1>
+            <h1 class="m-0">  City  Settings </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{'Processes'}}">Home</a></li>
-              <li class="breadcrumb-item active">  Settings</li>
+              <li class="breadcrumb-item active"> City Settings</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,30 +28,24 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable Settings</h3>
+                <h3 class="card-title">DataTable City Settings</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th> Country<input type="text"><button href="" class="btn btn-success" >OK</button></th>
-                    <th> Catogeries<input type="text"><button href="" class="btn btn-success" >OK</button></th>
-                    <th>Prove types<input type="text"><button href="" class="btn btn-success" >OK</button></th>
+                    <th> City<input type="text"></th>        
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td>-</td> 
                   </tr>
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Country </th>
-                    <th> Catogeries</th>
-                    <th>Prove types</th>
+                    <th> City</th>            
                   </tr>
                   </tfoot>
                 </table>
