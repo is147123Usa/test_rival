@@ -93,7 +93,7 @@
                     <td> {{$qutation->trader->user->phone}}
                     </td>
                     <th>Sub-total :</th>
-                    <td>{{$invoice['sub_total']}}  <span style="color:red"><br> %{{$invoice['fixed_tax']}} </span> VAT Included</td>
+                    <td>{{$invoice['sub_total']}}  <span style="color:red"> </td>
                   </tr>
                   <tr>
                     <th></th>
@@ -153,7 +153,7 @@
                   @endforeach
                   </tbody>
                   <thead>                  
-                    <tr>
+                    <tr style="text-align: center;">
                       <th style="width: 10px">#</th>
                       <th></th>
                       <th></th>

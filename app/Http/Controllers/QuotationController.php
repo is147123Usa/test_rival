@@ -28,44 +28,34 @@ class QuotationController extends Controller
         foreach($rival as $value){
             if($value->name == 'rival_tax'){
                 $rival = $value->valuee;
-            }elseif ($value->name == 'tax') {
-                $fixed_tax = $value->valuee;
             }
         }
-         
+    
         $sub_total = array();
         $items = array();
         $qty = array();
         foreach($qutation_item as $value){
-            if($value->includeVat == 0){
+             
                 $res = $value->qty * $value->price;
+
                 array_push($items,$res);
-                array_push($qty,$$value->qty);
-                $fixed_tax = $res * $fixed_tax;
-                $res = $res + $fixed_tax ;
-                array_push($sub_total,$res);
-                
-            }else{
-                $res = $value->qty * $value->price;
                 array_push($qty,$value->qty);
                 array_push($sub_total,$res);
-                array_push($items,$res);
-            }
         }
         $sub_total = array_sum($sub_total);
         $items_total = array_sum($items);
         $qty = array_sum($qty);
-
-        $rival_fees = $sub_total * $rival;
+        $rival = $sub_total* $rival;
+        //= $sub_total * $rival;
         if($qutation->includeDelivery == 0){
-            $total = $rival_fees + $sub_total + $qutation->delivery_fee ;
+            $total = $sub_total + $qutation->delivery_fee + $rival;
         }else{
-            $total = $rival_fees + $sub_total  ;
+            $total = $sub_total + $rival ;
         }
        
         // dd($total);
         // you just puds here 
-        $invoice = array('sub_total'=>$sub_total,'rival_fees'=>$rival_fees,'total'=>$total,'fixed_tax'=>$fixed_tax,'items_total'=>$items_total,'qty'=>$qty);
+        $invoice = array('sub_total'=>$sub_total,'rival_fees'=>$rival,'total'=>$total,'items_total'=>$items_total,'qty'=>$qty);
         //
         //dd($qutation_item);
         //

@@ -17,7 +17,6 @@ class CreateQutationItemsTable extends Migration
             $table->id();
             $table->integer('price');
             $table->integer('qty');
-            $table->integer('includeVat')->nullable();
             $table->string('img');
             $table->string('item_desc');
             $table->longText('note')->nullable();
