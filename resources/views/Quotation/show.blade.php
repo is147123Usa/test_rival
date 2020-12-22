@@ -74,7 +74,7 @@
                     <th>Include Delivery :</th>
                     <td> @if($qutation->includeDelivery==1 ) {{'Yes'}} @else {{'No'}} @endif </td>
                     <th>TAX : </th>
-                    <td>{{$qutation->id}}</td>
+                    <td>{{$invoice['tax']}}</td>
                   </tr>
 
 
@@ -88,7 +88,7 @@
                     <td> {{$qutation->trader->user->phone}}
                     </td>
                     <th>Sub-total :</th>
-                    <td>{{$qutation->id}}</td>
+                    <td>{{$invoice['sub_total']}}</td>
                   </tr>
                   <tr>
                     <th></th>
@@ -100,7 +100,7 @@
 
                     </td>
                     <th>Total :</th>
-                    <td>{{$qutation->total}} <span>SAR</span></td>
+                    <td>{{$invoice['total']}} <span>SAR</span></td>
                   </tr>
                
                   
@@ -147,6 +147,7 @@
                     </tr>
                   @endforeach
                   </tbody>
+
                 </table>
               </div>
               <!-- /.card-body -->

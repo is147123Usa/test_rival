@@ -17,14 +17,18 @@ class QuotationController extends Controller
     }
     public function QuotatonDetais($q_id){
         $qutation = Qutation::find($q_id);
+        // dd($qutation);
         $qutation_item = Qutation_item::where('qutition_id',$q_id)->get();
-       // $sub_total = $qutation->total - ($qutation->total * 0.15) ; 
-        //you just puds here 
-
-
+        $sub_total = $qutation->sub_total; 
+        $tax = $qutation->sub_total * 0.15; 
+        $total =  $qutation->sub_total + $tax + $qutation->delivery_fee;
+        // dd($total);
+        // you just puds here 
+        $invoice = array('sub_total'=>$sub_total,'tax'=>$tax,'total'=>$total,'delivery_fee'=>$qutation->delivery_fee);
         //
-
-        return view('Quotation.show',compact('qutation','qutation_item'));
+        //dd($qutation_item);
+        //
+        return view('Quotation.show',compact('qutation','qutation_item','invoice'));
     }
     public function Qutations_reports(){
         return view('Quotation.qutation_reports');
