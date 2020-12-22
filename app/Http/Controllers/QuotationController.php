@@ -8,6 +8,8 @@ use App\Models\Driver;
 use App\Models\Order;
 use App\Models\Qutation_item;
 use App\Models\Qutation_report;
+use App\Models\Setting;
+
 
 
 class QuotationController extends Controller
@@ -18,35 +20,52 @@ class QuotationController extends Controller
         return view('Quotation.index',compact('qutation'));
     }
     public function QuotatonDetais($q_id){
+        
         $qutation = Qutation::find($q_id);
-        if($qutation->includeTax == 1){
-            if($qutation->includeDelivery == 1){
-                $sub_total = $qutation->sub_total; 
-                $tax = $qutation->sub_total * 0.15; 
-                $total =  $qutation->sub_total  ;
-            }else{
-                $sub_total = $qutation->sub_total; 
-                $tax = $qutation->sub_total * 0.15; 
-                $total =  $qutation->sub_total + $qutation->delivery_fee ;
-            }
-           
-        }else{
-            if($qutation->includeDelivery == 1){
-                $sub_total = $qutation->sub_total;
-                $tax = $qutation->sub_total * 0.15; 
-                $total =  $qutation->sub_total + $tax;
-            }else{
-                $sub_total = $qutation->sub_total;
-                $tax = $qutation->sub_total * 0.15; 
-                $total =  $qutation->sub_total + $qutation->delivery_fee  + $tax;
+        $qutation_item = Qutation_item::where('qutition_id',$q_id)->get();
+        $rival = Setting::all();
+        $rival_fee ;
+        foreach($rival as $value){
+            if($value->name == 'rival_tax'){
+                $rival = $value->valuee;
+            }elseif ($value->name == 'tax') {
+                $fixed_tax = $value->valuee;
             }
         }
-        // dd($qutation);
-        $qutation_item = Qutation_item::where('qutition_id',$q_id)->get();
+         
+        $sub_total = array();
+        $items = array();
+        $qty = array();
+        foreach($qutation_item as $value){
+            if($value->includeVat == 0){
+                $res = $value->qty * $value->price;
+                array_push($items,$res);
+                array_push($qty,$$value->qty);
+                $fixed_tax = $res * $fixed_tax;
+                $res = $res + $fixed_tax ;
+                array_push($sub_total,$res);
+                
+            }else{
+                $res = $value->qty * $value->price;
+                array_push($qty,$value->qty);
+                array_push($sub_total,$res);
+                array_push($items,$res);
+            }
+        }
+        $sub_total = array_sum($sub_total);
+        $items_total = array_sum($items);
+        $qty = array_sum($qty);
 
+        $rival_fees = $sub_total * $rival;
+        if($qutation->includeDelivery == 0){
+            $total = $rival_fees + $sub_total + $qutation->delivery_fee ;
+        }else{
+            $total = $rival_fees + $sub_total  ;
+        }
+       
         // dd($total);
         // you just puds here 
-        $invoice = array('sub_total'=>$sub_total,'tax'=>$tax,'total'=>$total,'delivery_fee'=>$qutation->delivery_fee);
+        $invoice = array('sub_total'=>$sub_total,'rival_fees'=>$rival_fees,'total'=>$total,'fixed_tax'=>$fixed_tax,'items_total'=>$items_total,'qty'=>$qty);
         //
         //dd($qutation_item);
         //

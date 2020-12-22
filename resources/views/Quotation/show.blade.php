@@ -73,8 +73,8 @@
                     <td>{{$qutation->qutation_order->cat->name_en}}</td>
                     <th>Include Delivery :</th>
                     <td> @if($qutation->includeDelivery==1 ) {{'Yes'}} @else {{'No'}} @endif </td>
-                    <th>TAX : </th>
-                    <td>{{$invoice['tax']}}</td>
+                    <th>Rival Fees : </th>
+                    <td>{{$invoice['rival_fees']}}</td>
                   </tr>
 
 
@@ -93,7 +93,7 @@
                     <td> {{$qutation->trader->user->phone}}
                     </td>
                     <th>Sub-total :</th>
-                    <td>{{$invoice['sub_total']}}</td>
+                    <td>{{$invoice['sub_total']}}  <span style="color:red"><br> %{{$invoice['fixed_tax']}} </span> VAT Included</td>
                   </tr>
                   <tr>
                     <th></th>
@@ -152,7 +152,17 @@
                     </tr>
                   @endforeach
                   </tbody>
-
+                  <thead>                  
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th></th>
+                      <th></th>
+                      <th> {{$invoice['items_total']}}</th>
+                      <th > {{$invoice['qty']}}</th>
+                      <th > Total Items </th>
+                      <th> {{$invoice['items_total']}} </th>
+                    </tr>
+                  </thead>
                 </table>
               </div>
               <!-- /.card-body -->

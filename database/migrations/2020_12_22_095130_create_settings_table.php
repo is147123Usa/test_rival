@@ -15,7 +15,8 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('rival_fee')->default('0.1');
+            $table->string('name');
+            $table->string('valuee');
             $table->timestamps();
         });
     }

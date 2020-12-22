@@ -223,6 +223,3 @@ INSERT INTO `qutations` (`id`, `status`, `sub_total`, `delivery_fee`, `includeDe
 --
 -- Dumping data for table `settings`
 --
-
-INSERT INTO `settings` (`id`, `rival_fee`, `created_at`, `updated_at`) VALUES
-(1, '0.1', '2020-12-21 21:00:00', NULL);
