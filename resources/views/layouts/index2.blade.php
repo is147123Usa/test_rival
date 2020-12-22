@@ -194,19 +194,19 @@
               <li class="nav-item">
                 <a href="{{'/Processes'}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> Processes</p>
+                  <p style="color:rgb(245, 96, 66);" > Processes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{'/statistics'}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> statistics</p>
+                  <p style="color:rgb(245, 96, 66);" >  statistics</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
               <i class="nav-icon fas fa-search"></i>
               <p>
               Orders
@@ -217,7 +217,7 @@
               <li class="nav-item">
                 <a href="pages/search/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Orders</p>
+                  <p style="color:rgb(245, 96, 66);" >Orders</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -235,7 +235,7 @@
           </li> 
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
               <i class="nav-icon fas fa-search"></i>
               <p>
               Qutaion orders
@@ -264,7 +264,7 @@
           </li> 
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
               <i class="nav-icon fas fa-search"></i>
               <p>
               Qutations
@@ -288,25 +288,41 @@
                  
             </ul>
           </li> 
-
-
-
-          <li class="nav-header"style="color:rgb(0, 255, 64);"> Operations</li>
+         
+          <li class="nav-item">   
+               <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>
+                  Wallet
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>  
+          
+                   <ul class="nav nav-treeview"> 
+                     <li class="nav-item">
+                        <a href="{{url('Wallet')}}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Wallet </p>
+                        </a>
+                    </li>
+                      <li class="nav-item">
+                        <a href="{{url('MoneyTransfer')}}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Money transfer</p>
+                        </a>
+                      </li>
+                   </ul>
+           </li>    
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Pages
+                Users
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('Wallet')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Wallet </p>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a href="{{url('Users')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -319,18 +335,7 @@
                   <p>Sellers</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{url('MoneyTransfer')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Money transfer</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('Showroom')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>  Showroom</p>
-                </a>
-              </li>
+
               <li class="nav-item">
                 <a href="{{url('Quotaton')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -341,6 +346,24 @@
                 <a href="{{url('Delivery')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>  Delivery</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+              <i class="nav-icon fas fa-search"></i>
+              <p>
+              Settings
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="{{url('Showroom')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>  Showroom</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -355,37 +378,10 @@
                   <p>Notifications </p>
                 </a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-search"></i>
-              <p>
-              Settings
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/search/simple.html" class="nav-link">
+                <a href="{{url('Settings')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Countries</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/search/enhanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Cites</p>
-                </a>
-                <li class="nav-item">
-                <a href="pages/search/enhanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Catogeries</p>
-                </a>
-                <li class="nav-item">
-                <a href="pages/search/enhanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Prove types</p>
+                  <p>Setting</p>
                 </a>
               </li>
             </ul>

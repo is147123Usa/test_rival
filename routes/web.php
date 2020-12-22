@@ -12,6 +12,7 @@ use App\http\Controllers\DisputesController;
 use App\http\Controllers\ContactController;
 use App\http\Controllers\NotificationsController;
 use App\http\Controllers\invoiceController;
+use App\http\Controllers\SettingsController;
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -90,6 +91,7 @@ Route::get('/ContactDetails',[ContactController::class,'ContactDetails']);
 Route::get('/Notifications',[NotificationsController::class,'Notifications']);
 Route::get('/SendNotifications',[NotificationsController::class,'SendNotifications']);
  //end notification section
+ Route::get('/Settings',[SettingsController::class,'Settings']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
