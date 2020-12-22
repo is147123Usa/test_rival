@@ -15,7 +15,7 @@ class CreateContactFormsTable extends Migration
     {
         Schema::create('contact_forms', function (Blueprint $table) {
             $table->id();
-            $table->string('status')->default('panding');;
+            $table->string('status')->default('panding');
             $table->longText('body')->nullable();
             $table->longText('reply')->nullable();
             $table->unsignedBigInteger('sender_id')->nullable();

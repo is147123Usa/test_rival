@@ -81,7 +81,12 @@
                   <tr>
                   <th>status :</th>
                     <td>
+                    @if($qutation->status=='panding')
                     <button type="button" class="btn btn-warning" disabled>{{$qutation->status}}</button>
+                    @else
+                    <button type="button" class="btn btn-success" disabled>{{$qutation->status}}</button>
+                    @endif
+                    
                     </td>
 
                     <th>trader phone :</th>
@@ -135,7 +140,7 @@
                     <tr style="text-align: center;">
                       <td>{{$value->id}}</td>
                       <td>
-                        <img src="{{asset('imgs/'.$value->img)}}" alt="Item_img" class="avatar">
+                        <a href="{{asset('imgs/'.$value->img)}}" target="_blank"> <img src="{{asset('imgs/'.$value->img)}}" alt="Item_img" class="avatar"> </a>
                       </td>
                       <td> {{$value->item_desc}}  </td>
                        
