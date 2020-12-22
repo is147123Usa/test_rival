@@ -14,6 +14,7 @@ use App\http\Controllers\NotificationsController;
 use App\http\Controllers\invoiceController;
 use App\http\Controllers\SettingsController;
 use App\http\Controllers\CitySettingsController;
+use App\http\Controllers\qutactionOrderController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,8 @@ Route::get('Quotaton/{q_id}',[QuotationController::class,'QuotatonDetais']);
 Route::get('Qutations',[QuotationController::class,'Quotaton']);
 Route::get('Qutations/reports',[QuotationController::class,'Qutations_reports']);
 Route::get('Qutations/Items',[QuotationController::class,'Items']);
+Route::get('Qutations-orders',[qutactionOrderController::class,'index']);
+Route::get('Qutations-orders/items',[qutactionOrderController::class,'index']);
 
 //End Of routes
 Route::get('test',[HomeController::class,'test']);

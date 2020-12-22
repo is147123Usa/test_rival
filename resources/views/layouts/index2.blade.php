@@ -244,21 +244,18 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/search/simple.html" class="nav-link">
+                <a href="{{url('Qutations-orders')}}" class="nav-link">
                   <i class="fas fa-clipboard-list"></i>
                   <p style="color:rgb(0, 247, 255);">Qutaion orders</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/search/enhanced.html" class="nav-link">
+                <a href="{{url('Qutations-orders/items')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p style="color:rgb(0, 247, 255);"> Qutaion orders items</p>
                 </a>
                 <li class="nav-item">
-                <a href="pages/search/enhanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(0, 247, 255);">Q-orders items report</p>
-                </a>
+                 
                 
             </ul>
           </li> 

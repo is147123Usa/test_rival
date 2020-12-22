@@ -9,7 +9,7 @@ class Qutation_order extends Model
 {
     use HasFactory;
     protected $table = "qutation_orders";
-    protected $fillable = ['qutastion_status','cat_id','payMethod','client_id'];
+    protected $fillable = ['qutastion_status','cat_id','payMethod','client_id','Status'];
    
     public function client()
     {
