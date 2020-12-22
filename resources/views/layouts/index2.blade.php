@@ -281,6 +281,12 @@
               <li class="nav-item">
                  
                 <li class="nav-item">
+                <a href="{{url('Qutations/Items')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">Qutations Items</p>
+                </a>
+
+                <li class="nav-item">
                 <a href="{{url('Qutations/reports')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p style="color:rgb(0, 247, 255);">Qutations report</p>

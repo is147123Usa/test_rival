@@ -52,7 +52,6 @@ class QuotationController extends Controller
         }else{
             $total = $sub_total + $rival ;
         }
-       
         // dd($total);
         // you just puds here 
         $invoice = array('sub_total'=>$sub_total,'rival_fees'=>$rival,'total'=>$total,'items_total'=>$items_total,'qty'=>$qty);
@@ -60,6 +59,11 @@ class QuotationController extends Controller
         //dd($qutation_item);
         //
         return view('Quotation.show',compact('qutation','qutation_item','invoice'));
+    }
+    public function Items(){
+        $qutation_item = Qutation_item::all();
+
+        return view('Quotation.itemList',compact('qutation_item'));
     }
     public function Qutations_reports(){
         $report_list = Qutation_report::all();

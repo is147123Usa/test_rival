@@ -34,6 +34,7 @@ Route::get('Quotaton',[QuotationController::class,'Quotaton']);
 Route::get('Quotaton/{q_id}',[QuotationController::class,'QuotatonDetais']);
 Route::get('Qutations',[QuotationController::class,'Quotaton']);
 Route::get('Qutations/reports',[QuotationController::class,'Qutations_reports']);
+Route::get('Qutations/Items',[QuotationController::class,'Items']);
 
 //End Of routes
 Route::get('test',[HomeController::class,'test']);
