@@ -79,7 +79,7 @@ INSERT INTO `qutation_order_items` (`id`, `name`, `item_desc`, `qutation_order_i
 -- Dumping data for table `qutations`
 --
 
-INSERT INTO `qutations` (`id`, `status`, `total`, `delivery_fee`, `includeDelivery`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `qutations` (`id`, `status`, `sub_total`, `delivery_fee`, `includeDelivery`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
 (null, 'panding', 0.00, 0.00, 0, 1, 2, NULL, NULL);
 
 
@@ -95,7 +95,7 @@ INSERT INTO `qutation_items` (`price`, `img`, `item_desc`, `note`, `qutition_id`
 ('10', 'img/pic.ong', 'desc item', 'notes', 1, 2, '2020-12-14 21:00:00', NULL);
 
 
-INSERT INTO `orders` (`id`, `operation_code`, `payment_method`, `delivery_location`, `deosInclude_delivery`, `delivery_fees`, `tax`, `sub-total`, `total`, `qutation_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `orders` (`id`, `operation_code`, `payment_method`, `delivery_location`, `deosInclude_delivery`, `delivery_fees`, `tax`, `sub_total`, `total`, `qutation_id`, `trader_id`, `created_at`, `updated_at`) VALUES
 (null, 'E121', 'cash', 'lan,lat', '0', '10', '16.5', '100', '116.5', 1, 1, '2020-12-14 21:00:00', NULL);
 
 
@@ -133,7 +133,7 @@ INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `operation_code`, `payment_method`, `delivery_location`, `deosInclude_delivery`, `delivery_fees`, `tax`, `sub-total`, `total`, `qutation_id`, `client_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `orders` (`id`, `operation_code`, `payment_method`, `delivery_location`, `deosInclude_delivery`, `delivery_fees`, `tax`, `sub_total`, `total`, `qutation_id`, `client_id`, `trader_id`, `created_at`, `updated_at`) VALUES
 (NULL, 'E121', 'cash', 'lan,lat', '0', '10', '16.5', '100', '116.5', 1, NULL, 1, '2020-12-14 18:00:00', NULL);
 
 
@@ -150,7 +150,7 @@ INSERT INTO `prove_types` (`id`, `name`, `name_en`, `created_at`, `updated_at`) 
 -- Dumping data for table `qutations`
 --
 
-INSERT INTO `qutations` (`id`, `status`, `total`, `delivery_fee`, `includeDelivery`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `qutations` (`id`, `status`, `sub_total`, `delivery_fee`, `includeDelivery`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
 (NULL, 'panding', 0.00, 0.00, 0, 1, 2, NULL, NULL);
 
 --
@@ -214,6 +214,16 @@ INSERT INTO `wallets` (`id`, `balance`, `balance_string`, `password`, `wallet_no
 -- Dumping data for table `qutations`
 --
 
-INSERT INTO `qutations` (`id`, `status`, `total`, `delivery_fee`, `includeDelivery`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `qutations` (`id`, `status`, `sub_total`, `delivery_fee`, `includeDelivery`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
 (null, 'panding', 10.00, 0.00, 0, 2, 2, '2020-12-08 08:23:14', NULL),
 (null, 'panding', 100.00, 0.00, 0, 1, 2, '2020-12-08 08:23:18', NULL);
+
+
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `rival_fee`, `created_at`, `updated_at`) VALUES
+(1, '0.1', '2020-12-21 21:00:00', NULL);
+

@@ -36,39 +36,37 @@
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>id </th>
+                    <th>complain id </th>
                     <th>Qutation Sender</th>
                     <th>Complain sender</th>
+                    <th>Complain reason </th>
+                    <th>Qutation </th>
                     <th>Issued at</th>
-                    <th>Status</th>
-                    <th>Actions </th>
+                     
                   </tr>
                   </thead>
                   <tbody>
-                 
+                 @foreach($report_list as $value)
                   <tr>
-                    <td> </td>
-                    <td> </td>
+                    <td> {{$value->id}}</td>
+                    <td>{{$value->sender->activityName}} </td>
                     
-                    <td></td>
-                    <td>10 m</td>
-                    <td><button type="button" class="btn btn-warning"></button>
-</td>
-                    
-                    <td>
-                      <a style="margin-left: 25%; " class="btn btn-info" href="{{url('Quotaton/')}}">view</a>
-                    </td>
+                    <td>{{$value->compain_sender->name}}</td>
+                    <td> {{$value->reason}}</td>
+                    <td><a class="btn btn-light"href="{{url('Quotaton/'.$value->qutation_id)}}">view qutation</a></td>
+                    <td>{{$value->created_at->format('m/d/Y')}}</td>
+                     
                   </tr>
-            
+                @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>id </th>
+                  <th>complain id </th>
                     <th>Qutation Sender</th>
                     <th>Complain sender</th>
+                    <th>Complain reason </th>
+                    <th>Qutation </th>
                     <th>Issued at</th>
-                    <th>Status</th>
-                    <th>Actions </th>
                   </tr>
                   </tfoot>
                 </table>
