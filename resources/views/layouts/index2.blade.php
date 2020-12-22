@@ -194,20 +194,20 @@
               <li class="nav-item">
                 <a href="{{'/Processes'}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(245, 96, 66);" > Processes</p>
+                  <p style="color:rgb(0, 247, 255);" > Processes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{'/statistics'}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(245, 96, 66);" >  statistics</p>
+                  <p style="color:rgb(0, 247, 255);" >  statistics</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
-              <i class="nav-icon fas fa-search"></i>
+            <i class="fab fa-accusoft"></i> 
               <p>
               Orders
                 <i class="fas fa-angle-left right"></i>
@@ -217,18 +217,18 @@
               <li class="nav-item">
                 <a href="pages/search/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(245, 96, 66);" >Orders</p>
+                  <p style="color:rgb(0, 247, 255);" >Orders</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/search/enhanced.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Orders Items</p>
+                  <p style="color:rgb(0, 247, 255);">Orders Items</p>
                 </a>
                 <li class="nav-item">
                 <a href="pages/search/enhanced.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Items complains</p>
+                  <p style="color:rgb(0, 247, 255);">Items complains</p>
                 </a>
                 
             </ul>
@@ -236,7 +236,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
-              <i class="nav-icon fas fa-search"></i>
+            <i class="fas fa-clipboard-list"></i>
               <p>
               Qutaion orders
                 <i class="fas fa-angle-left right"></i>
@@ -245,19 +245,19 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="pages/search/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Qutaion orders</p>
+                  <i class="fas fa-clipboard-list"></i>
+                  <p style="color:rgb(0, 247, 255);">Qutaion orders</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/search/enhanced.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Qutaion orders items</p>
+                  <p style="color:rgb(0, 247, 255);"> Qutaion orders items</p>
                 </a>
                 <li class="nav-item">
                 <a href="pages/search/enhanced.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Q-orders items report</p>
+                  <p style="color:rgb(0, 247, 255);">Q-orders items report</p>
                 </a>
                 
             </ul>
@@ -265,7 +265,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
-              <i class="nav-icon fas fa-search"></i>
+            <i class="fas fa-coins"></i>
               <p>
               Qutations
                 <i class="fas fa-angle-left right"></i>
@@ -275,7 +275,7 @@
               <li class="nav-item">
                 <a href="{{url('Qutations')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Qutations </p>
+                  <p style="color:rgb(0, 247, 255);">Qutations </p>
                 </a>
               </li>
               <li class="nav-item">
@@ -283,7 +283,7 @@
                 <li class="nav-item">
                 <a href="{{url('Qutations/reports')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Qutations report</p>
+                  <p style="color:rgb(0, 247, 255);">Qutations report</p>
                 </a>
                  
             </ul>
@@ -291,7 +291,7 @@
          
           <li class="nav-item">   
                <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
-                  <i class="nav-icon fas fa-book"></i>
+               <i class="fas fa-wallet"></i>  
                   <p>
                   Wallet
                     <i class="fas fa-angle-left right"></i>
@@ -302,20 +302,20 @@
                      <li class="nav-item">
                         <a href="{{url('Wallet')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>Wallet </p>
+                          <p style="color:rgb(0, 247, 255);">Wallet </p>
                         </a>
                     </li>
                       <li class="nav-item">
                         <a href="{{url('MoneyTransfer')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>Money transfer</p>
+                          <p style="color:rgb(0, 247, 255);">Money transfer</p>
                         </a>
                       </li>
                    </ul>
            </li>    
           <li class="nav-item">
             <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
-              <i class="nav-icon fas fa-book"></i>
+            <i class="fas fa-users"></i>
               <p>
                 Users
                 <i class="fas fa-angle-left right"></i>
@@ -325,27 +325,20 @@
               
               <li class="nav-item">
                 <a href="{{url('Users')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Users</p>
+               <i class="fas fa-users"></i>
+                  <p style="color:rgb(0, 247, 255);">Users</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('Sellers')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sellers</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{url('Quotaton')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quotation</p>
+                  <p style="color:rgb(0, 247, 255);">Sellers</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('Delivery')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>  Delivery</p>
+                  <p style="color:rgb(0, 247, 255);">  Delivery</p>
                 </a>
               </li>
               
@@ -353,7 +346,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
-              <i class="nav-icon fas fa-search"></i>
+            <i class="fas fa-cogs"></i>
               <p>
               Settings
                 <i class="fas fa-angle-left right"></i>
@@ -363,25 +356,31 @@
             <li class="nav-item">
                 <a href="{{url('Showroom')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>  Showroom</p>
+                  <p style="color:rgb(0, 247, 255);">  Showroom</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('Disputes')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Disputes</p>
+                  <p style="color:rgb(0, 247, 255);">Disputes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('Notifications')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Notifications </p>
+                  <p style="color:rgb(0, 247, 255);">Notifications </p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('Settings')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Setting</p>
+                  <p style="color:rgb(0, 247, 255);">Setting</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('CitySetting')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">CitySetting</p>
                 </a>
               </li>
             </ul>
@@ -389,7 +388,7 @@
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-search"></i>
-              <p>
+              <p style="color:rgb(187, 255, 0);">
                 Search
                 <i class="fas fa-angle-left right"></i>
               </p>
