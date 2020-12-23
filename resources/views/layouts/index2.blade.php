@@ -230,7 +230,6 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p style="color:rgb(0, 247, 255);">Items complains</p>
                 </a>
-                
             </ul>
           </li> 
 
