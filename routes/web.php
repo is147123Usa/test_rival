@@ -19,6 +19,14 @@ use App\http\Controllers\RivalFeeController;
 use App\http\Controllers\orderController;
 
 use Illuminate\Support\Facades\Route;
+// Ashraf Imports
+
+
+
+
+
+
+//
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +37,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Routes
+//Ashraf Routes
 Route::get('wallet_invoices/{user_id}',[invoiceController::class,'wallet_invoices']);
 Route::get('Invoice/{order_id}',[invoiceController::class,'invoice']);
 Route::get('miniStatment/{wallet_id}',[invoiceController::class,'miniStatment']);
