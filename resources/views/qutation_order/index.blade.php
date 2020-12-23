@@ -62,11 +62,12 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                  <th>payMethod </th>
-                    <th>client_id</th>
-                    <th>Pay method</th>
-                    <th>cat_id</th>
+                  <th>ID</th>
+                    <th>Pay Method </th>
+                    <th>client </th>
+                    <th>Catogery</th>
                     <th>Issued at</th>
+                    <th>status</th>
                     <th>Actions</th>
                   </tr>
                   </tfoot>

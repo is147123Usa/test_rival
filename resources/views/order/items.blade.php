@@ -38,6 +38,7 @@
                   <tr>
                     <th>#</th>
                     <th>Item desc</th>
+                    <th >img</th>
                     <th >qty</th>
                     <td style="width:30%">Action</td>
                   </tr>
@@ -48,7 +49,7 @@
                     <td>{{$value->id}}</td>
                     <td>{{$value->item_desc}}</td>
                     <td>{{$value->qty}}</td>
-                    <td><a class="btn btn-success" href="{{url('Quotaton/'.$value->id)}}">View Qutation Order </a></td>
+                    <td><a class="btn btn-success" href="{{url('Quotaton/'.$value->id)}}">View Qutation | Order </a></td>
                   
                   </tr>
                   @endforeach

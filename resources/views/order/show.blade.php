@@ -119,9 +119,11 @@
                     <tr style="text-align: center;">
                       
                       <th>#</th>
+                      <th>image</th>
                       <th>Item desc</th>
+                      <th>price</th>
                       <th >qty</th>
-                     
+                      <th>total</th>
                     </tr>
                   </thead>
 
@@ -129,12 +131,14 @@
                   @foreach($items as $value) 
                     <tr style="text-align: center;">
                       <td>{{$value->id}}</td>
+                      <th><a href="{{asset('imgs/'.$value->img)}}" target="_blank"> <img src="{{asset('imgs/'.$value->img)}}" alt="Item_img" class="avatar"> </a></th>
                       <td>{{$value->item_desc}} </td>
-                        
+                      <td>{{$value->price}}  </td>
                       <td><span class="badge bg-danger">{{$value->qty}} </span></td>
-                     
+                      <td>{{ $value->qty * $value->price}}</td>
                       
                     </tr>
+                    
                   @endforeach
                   </tbody>
                   <thead>                  

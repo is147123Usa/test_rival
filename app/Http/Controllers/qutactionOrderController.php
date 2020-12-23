@@ -24,7 +24,7 @@ class qutactionOrderController extends Controller
     public function AllItems(){
         $qutation_order_items = Qutation_order_item::all();
 
-         //dd($qutation_order_items);
+        //  dd($qutation_order_items[0]);
         return view('qutation_order.show',compact('qutation_order_items'));
     }
 }

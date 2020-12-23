@@ -131,7 +131,7 @@
                       <th>Price</th>
                       <th >qty</th>
                       <th >note</th>
-                      <th>Actions</th>
+                      <th> </th>
                     </tr>
                   </thead>
 
@@ -148,7 +148,7 @@
                        
                       <td><span class="badge bg-danger">{{$value->qty}} </span></td>
                       <td>{{$value->note}} </td>
-                      <td>Actions</td>
+                      <td> </td>
                     </tr>
                   @endforeach
                   </tbody>

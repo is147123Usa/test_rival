@@ -221,10 +221,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('Order/items')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(0, 247, 255);">Orders Items</p>
-                </a>
+ 
                 <li class="nav-item">
                 <a href="pages/search/enhanced.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
