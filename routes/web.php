@@ -15,6 +15,8 @@ use App\http\Controllers\invoiceController;
 use App\http\Controllers\SettingsController;
 use App\http\Controllers\CitySettingsController;
 use App\http\Controllers\qutactionOrderController;
+use App\http\Controllers\RivalFeeController;
+
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +99,7 @@ Route::get('/SendNotifications',[NotificationsController::class,'SendNotificatio
  //end notification section
  Route::get('/Settings',[SettingsController::class,'Settings']);
  Route::get('/CitySetting',[CitySettingsController::class,'CitySetting']);
+ Route::get('/RivalFee',[RivalFeeController::class,'RivalFee']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
