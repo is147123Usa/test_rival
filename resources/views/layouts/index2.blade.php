@@ -386,6 +386,22 @@
                 </a>
               </li>
             </ul>
+            <li class="nav-item">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+            <i class="fas fa-gamepad"></i>
+              <p>
+              Controll
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="{{url('RivalFee')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">  Rival Fee</p>
+                </a>
+              </li>
+              </ul>
           </li> 
           <li class="nav-item">
             <a href="#" class="nav-link">
