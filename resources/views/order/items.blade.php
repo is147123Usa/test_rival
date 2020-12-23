@@ -36,39 +36,30 @@
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Pay Method </th>
-                    <th>client </th>
-                    <th>Catogery</th>
-                    <th>Issued at</th>
-                    <th>status</th>
-                    <th>Actions</th>
+                    <th>#</th>
+                    <th>Item desc</th>
+                    <th >qty</th>
+                    <td style="width:30%">Action</td>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($qutation_orders as $value)
+                  @foreach($items as $value)
                   <tr>
                     <td>{{$value->id}}</td>
-                    <td>{{$value->payMethod}}</td>
-                    <td>{{$value->client->name}}</td>
-                    <td>{{$value->cat->name_en}}</td>
-                    <td>{{$value->created_at->format('m/d/Y')}}</td>  
-                    <td><button href="#" class="btn btn-success" disabled>{{$value->Status}}</button></td>        
-                    <td>
-                      <a style="margin-left: 25%; " class="btn btn-info" href="{{url('Qutations-orders/'.$value->id)}}">view</a>
-                    </td>
+                    <td>{{$value->item_desc}}</td>
+                    <td>{{$value->qty}}</td>
+                    <td><a class="btn btn-success" href="{{url('Quotaton/'.$value->id)}}">View Qutation Order </a></td>
+                  
                   </tr>
                   @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
-                  <th>payMethod </th>
-                    <th>client_id</th>
-                    <th>Pay method</th>
-                    <th>cat_id</th>
-                    <th>Issued at</th>
-                    <th>Actions</th>
-                  </tr>
+                    <th>#</th>
+                    <th>Item desc</th>
+                    <th >qty</th>     
+                    <th>Action</th>
+                </tr>
                   </tfoot>
                 </table>
               </div>

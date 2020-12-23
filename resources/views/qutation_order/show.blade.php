@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">    Quotation Orders </h1>
+            <h1 class="m-0">     </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -29,7 +29,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Quotations orders List</h3>
+                <h3 class="card-title"> </h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -37,37 +37,33 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Pay Method </th>
-                    <th>client </th>
-                    <th>Catogery</th>
-                    <th>Issued at</th>
-                    <th>status</th>
-                    <th>Actions</th>
+                    <th>name</th>
+                   
+                    <th>Descrtption</th>
+                    <th>Quantity </th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($qutation_orders as $value)
+                  @foreach($qutation_order_items as $value)
                   <tr>
                     <td>{{$value->id}}</td>
-                    <td>{{$value->payMethod}}</td>
-                    <td>{{$value->client->name}}</td>
-                    <td>{{$value->cat->name_en}}</td>
-                    <td>{{$value->created_at->format('m/d/Y')}}</td>  
-                    <td><button href="#" class="btn btn-success" disabled>{{$value->Status}}</button></td>        
-                    <td>
-                      <a style="margin-left: 25%; " class="btn btn-info" href="{{url('Qutations-orders/'.$value->id)}}">view</a>
-                    </td>
+                    <td>{{$value->name}}</td>
+                    
+                    <td>{{$value->item_desc}}</td>
+                    <td>{{$value->qty}}</td>
+                         
+                    
                   </tr>
                   @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
-                  <th>payMethod </th>
-                    <th>client_id</th>
-                    <th>Pay method</th>
-                    <th>cat_id</th>
-                    <th>Issued at</th>
-                    <th>Actions</th>
+                    <th>ID</th>
+                    <th>name</th>
+                   
+                    <th>Descrtption</th>
+                    <th>Quantity </th>
+                   
                   </tr>
                   </tfoot>
                 </table>

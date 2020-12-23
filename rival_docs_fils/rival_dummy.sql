@@ -224,10 +224,6 @@ INSERT INTO `qutations` (`id`, `status`, `sub_total`, `delivery_fee`, `includeDe
 -- Dumping data for table `settings`
 --
 
-
-
-
-
 --
 -- Dumping data for table `settings`
 --

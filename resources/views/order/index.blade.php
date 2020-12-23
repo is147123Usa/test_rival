@@ -39,36 +39,48 @@
                     <th>ID</th>
                     <th>Pay Method </th>
                     <th>client </th>
-                    <th>Catogery</th>
+                    <th>Trader</th>
+                    <th>deosInclude_delivery</th>
+                    <th>total</th>
+                    <th>isPaid</th>
                     <th>Issued at</th>
                     <th>status</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($qutation_orders as $value)
+                  @foreach($orders as $value)
                   <tr>
                     <td>{{$value->id}}</td>
-                    <td>{{$value->payMethod}}</td>
+                    <td>{{$value->payment_method}}</td>
                     <td>{{$value->client->name}}</td>
-                    <td>{{$value->cat->name_en}}</td>
+                    <td>{{$value->trader->activityName}}</td>
+                    <td>@if($value->deosInclude_delivery == 0) <h6>No</h6> @else <h6>Yes</h6> @endif   </td>
+                    <td>{{$value->total}}</td>
+                    <td>@if($value->isPaid == 0) <button disabled class="btn btn-info">Not Paid yet</button> @else <button disabled class="btn btn-success">Paid Successfuly</button> @endif</td>
+                     
                     <td>{{$value->created_at->format('m/d/Y')}}</td>  
-                    <td><button href="#" class="btn btn-success" disabled>{{$value->Status}}</button></td>        
+                     
+                    <td><button href="#" class="btn btn-success" disabled>{{$value->status}}</button></td>        
                     <td>
-                      <a style="margin-left: 25%; " class="btn btn-info" href="{{url('Qutations-orders/'.$value->id)}}">view</a>
+                      <a style="margin-left: 25%; " class="btn btn-info" href="{{url('Orders/'.$value->id)}}">view</a>
                     </td>
+                  
                   </tr>
                   @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
-                  <th>payMethod </th>
-                    <th>client_id</th>
-                    <th>Pay method</th>
-                    <th>cat_id</th>
+                    <th>ID</th>
+                    <th>Pay Method </th>
+                    <th>client </th>
+                    <th>Trader</th>
+                    <th>deosInclude_delivery</th>
+                    <th>total</th>
+                    <th>isPaid</th>
                     <th>Issued at</th>
-                    <th>Actions</th>
-                  </tr>
+                    <th>status</th>
+                    <th>Actions</th>                  </tr>
                   </tfoot>
                 </table>
               </div>
