@@ -16,6 +16,7 @@ use App\http\Controllers\SettingsController;
 use App\http\Controllers\CitySettingsController;
 use App\http\Controllers\qutactionOrderController;
 use App\http\Controllers\RivalFeeController;
+use App\http\Controllers\orderController;
 
 use Illuminate\Support\Facades\Route;
 /*
