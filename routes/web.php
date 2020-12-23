@@ -15,6 +15,8 @@ use App\http\Controllers\invoiceController;
 use App\http\Controllers\SettingsController;
 use App\http\Controllers\CitySettingsController;
 use App\http\Controllers\qutactionOrderController;
+use App\http\Controllers\orderController;
+
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +39,12 @@ Route::get('Qutations',[QuotationController::class,'Quotaton']);
 Route::get('Qutations/reports',[QuotationController::class,'Qutations_reports']);
 Route::get('Qutations/Items',[QuotationController::class,'Items']);
 Route::get('Qutations-orders',[qutactionOrderController::class,'index']);
-Route::get('Qutations-orders/items',[qutactionOrderController::class,'index']);
+Route::get('Qutations-orders/{qutation_order_id}',[qutactionOrderController::class,'showItems']);
+Route::get('Qutations-order/items',[qutactionOrderController::class,'AllItems']);
+Route::get('Orders',[orderController::class,'index']);
+Route::get('Orders/{order_id}',[orderController::class,'show']);
+Route::get('Order/items',[orderController::class,'order_itms']);
+
 
 //End Of routes
 Route::get('test',[HomeController::class,'test']);
