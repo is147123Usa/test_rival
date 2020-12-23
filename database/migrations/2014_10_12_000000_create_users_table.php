@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->text('profile_photo_path')->nullable();
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
-
+ 
             $table->timestamps();
         });
     }
