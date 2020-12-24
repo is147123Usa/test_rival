@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\Wallet;
 use App\Models\User;
+use App\Models\Trader;
+use App\Models\Order;
+use App\Models\Driver;
+use App\Models\Qutation;
+
+
 
 use Illuminate\Http\Request;
 
@@ -44,6 +50,30 @@ class UsersController extends Controller
     }
     public function invoicePrint(){
         return view('/Users.invoicePrint');
+    }
+    public function traders(){
+        $traders = Trader::all();
+       // dd($traders);
+        return view('Users.traders.index',compact('traders'));
+    }
+    public function show_t($trader_id){
+        $trader = Trader::find($trader_id);
+        $order_qty = Order::where('trader_id',$trader_id)->get();
+        $drivers_quntity = Driver::where('trader_id',$trader_id)->get();
+        $total_qutations = Qutation::where('trader_id',$trader_id)->get();
+        $statica = array('order_qty'=>count($order_qty),'drivers_quntity'=>count($drivers_quntity),'total_qutations'=>count($total_qutations));
+        //dd($statica);
+        return view('users.traders.show',compact('trader','statica'));
+    }
+    public function account_status($trader_id,$account_status){
+        //dd($trader_id.'/'.$account_status);
+        $trader = Trader::find($trader_id);
+        $trader->account_status = $account_status;
+        if($trader->save()){
+            return redirect()->to('Trader/'.$trader_id)->with('alert', 'Account Status Has been updated successfuly!');
+        }else{
+            return redirect()->back()->with('alert', 'Faild to Close contention !');
+        }
     }
 
 }

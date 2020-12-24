@@ -29,7 +29,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">  Users Details <span style="color: rgb(0, 255, 64);background: #6c757d;">Mohamed</span></h3>
+                <h3 class="card-title"> </h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

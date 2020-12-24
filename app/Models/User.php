@@ -27,7 +27,19 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'group_id',
+        'phone',
+        'localization',
+        'player_id',
+        'isSuspend',
+        'email',
+        'password','city_id'
     ];
+    public function city()
+    {
+      // return $this->belongsTo('App\Models\Country');
+      return $this->belongsTo(City::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

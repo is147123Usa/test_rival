@@ -329,7 +329,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('Sellers')}}" class="nav-link">
+                <a href="{{url('Traders')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p style="color:rgb(0, 247, 255);">Sellers</p>
                 </a>

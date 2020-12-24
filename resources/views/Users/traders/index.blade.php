@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"> Users </h1>
+            <h1 class="m-0"> Traders </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{'Processes'}}">Home</a></li>
-              <li class="breadcrumb-item active">Users</li>
+              <li class="breadcrumb-item active">Traders</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,48 +28,45 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable Users</h3>
+                <h3 class="card-title">DataTable Traders</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                  <button type="button" class="btn btn-success">Admin</button>
+                  <button type="button" class="btn btn-success">Traders</button>
 
                   </tr>
                   <tr>
-                    <th>Users Name</th>
-                    <th>Phone</th>
-                    <th>Emaile</th>
-                    <th>Wallet ID</th>
-                    <th>Balance</th>
-                    <th>Status</th>
+                    <th>Traders name </th>
+                    <th>Activity Name</th>
+                    <th>CRN</th>
+                    <th>Trader Status</th>
+                    <th>spicalizition_id</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($users as $value)
+                  @foreach($traders as $value)
                   <tr>
                     <td>{{$value->user->name}}</td>
-                    <td>{{$value->user->phone}}</td>
-                    <td>{{$value->user->email}}</td>
-                    <td>{{$value->wallet_no}}</td>
-                    <td>{{$value->balance}}</td>
-                    <td>@if($value->user->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @else<button href="" class="btn btn-warning" disabled>block</button>@endif</td>
+                    <td>{{$value->activityName}}</td>
+                    <td>{{$value->CRN}}</td>
+                    <td><button class="btn btn-success" disabled>{{$value->account_status}}</button></td>
+                    <td>{{$value->spicalizition->name_en}}</td>
+                    <td> <a href="{{url('Trader/'.$value->id)}}" class="btn btn-info" disabled>view </a> </td>
                      
-                    <td  > <a href="{{'/Wallet/'}}{{$value->id}}" class="btn btn-info" >View</a> <button href="" class="btn btn-danger" >delete</button> <button href="" class="btn btn-info" >block</button></td>
                   </tr>
                   @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
-                  <th>Users Name</th>
-                    <th>Phone</th>
-                    <th>Emaile</th>
-                    <th>Wallet ID</th>
-                    <th>Balance</th>
-                    <th>Status</th>
+                    <th>Traders name </th>
+                    <th>Activity Name</th>
+                    <th>CRN</th>
+                    <th>Account Status</th>
+                    <th>spicalizition_id</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

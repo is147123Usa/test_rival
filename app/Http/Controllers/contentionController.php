@@ -26,13 +26,12 @@ class contentionController extends Controller
         $contention->sup_investigtion = $req->Investigation;
         $contention->sup_commendation = $req->recommendation;
         $contention->supervisor_id = 1;
+        $contention->status = 'closed';
         
         if($contention->save()){
-            return redirect()->to('Contention/'.$req->con_id)->with('alert', 'Contention Has been closed successfuly!');
+            return redirect()->to('Contentions')->with('alert', 'Contention Has been closed successfuly!');
         }else{
             return redirect()->back()->with('alert', 'Faild to Close contention !');
         }
-        
-
     }
 }

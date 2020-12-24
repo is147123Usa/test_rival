@@ -54,7 +54,9 @@ Route::get('Qutations-order/items',[qutactionOrderController::class,'AllItems'])
 Route::get('Orders',[orderController::class,'index']);
 Route::get('Orders/{order_id}',[orderController::class,'show']);
 Route::get('Order/items',[orderController::class,'order_itms']);
-
+Route::get('/Traders',[UsersController::class,'traders']);
+Route::get('/Trader/{trader_id}',[UsersController::class,'show_t']);
+Route::get('Trader/{trader_id}/{account_status}',[UsersController::class,'account_status']);
 Route::post('Contentions',[contentionController::class,'store']);
 Route::get('Contentions',[contentionController::class,'index']);
 Route::get('Contention/{con_id}',[contentionController::class,'show']);
