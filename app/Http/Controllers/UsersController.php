@@ -75,5 +75,13 @@ class UsersController extends Controller
             return redirect()->back()->with('alert', 'Faild to Close contention !');
         }
     }
+    public function driver(){
+        $drivers = Driver::all();
+         
+        return view('Users.drivers.index',compact('drivers'));
+    }
+    public function driver_show($driver_id){
+        return view('Users.drivers.show');
+    }
 
 }

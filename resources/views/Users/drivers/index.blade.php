@@ -28,47 +28,45 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable Users</h3>
+                <h3 class="card-title">DataTable Drivers</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
+                
                   <tr>
-                  <button type="button" class="btn btn-success">Admin</button>
-
-                  </tr>
-                  <tr>
-                    <th>Users Name</th>
+                    <th>Driver Name</th>
                     <th>Phone</th>
-                    <th>Emaile</th>
-                    <th>Wallet ID</th>
-                    <th>Balance</th>
+                    <th>Email</th>
+                    <th>Car Type</th>
+                    <th>Registered by </th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($users as $value)
+                  @foreach($drivers as $value)
                   <tr>
-                    <td>{{$value->user->name}}</td>
+                    <td>{{$value->cabtin_name}}</td>
                     <td>{{$value->user->phone}}</td>
                     <td>{{$value->user->email}}</td>
-                    <td>{{$value->wallet_no}}</td>
-                    <td>{{$value->balance}}</td>
-                    <td>@if($value->user->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @else<button href="" class="btn btn-warning" disabled>block</button>@endif</td>
+                    <td>{{$value->carType}}</td>
+                    <td>{{$value->trader->user->name}} | {{$value->trader->activityName}} </td>
+                    <td><button class="btn btn-success" disabled>{{$value->account_status}}</button></td>
+                
                      
-                    <td  > <a href="{{'/Wallet/'}}{{$value->id}}" class="btn btn-info" >View</a> <button href="" class="btn btn-danger" >delete</button> <button href="" class="btn btn-info" >block</button></td>
+                    <td  > <a href="{{'/Driver/'}}{{$value->id}}" class="btn btn-info" >View</a> <button href="" class="btn btn-danger" >delete</button> <button href="" class="btn btn-info" >block</button></td>
                   </tr>
                   @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
-                  <th>Users Name</th>
+                    <th>Driver Name</th>
                     <th>Phone</th>
-                    <th>Emaile</th>
-                    <th>Wallet ID</th>
-                    <th>Balance</th>
+                    <th>Email</th>
+                    <th>Car Type</th>
+                    <th>Registered by </th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>

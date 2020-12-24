@@ -60,7 +60,8 @@ Route::get('Trader/{trader_id}/{account_status}',[UsersController::class,'accoun
 Route::post('Contentions',[contentionController::class,'store']);
 Route::get('Contentions',[contentionController::class,'index']);
 Route::get('Contention/{con_id}',[contentionController::class,'show']);
-
+Route::get('Drivers',[UsersController::class,'driver']);
+Route::get('Driver/{driver_id}',[UsersController::class,'driver_show']);
 
 //End Of routes
 Route::get('test',[HomeController::class,'test']);

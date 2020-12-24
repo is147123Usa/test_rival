@@ -335,9 +335,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('Delivery')}}" class="nav-link">
+                <a href="{{url('Drivers')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(0, 247, 255);">  Delivery</p>
+                  <p style="color:rgb(0, 247, 255);">  Drivers</p>
                 </a>
               </li>
               
