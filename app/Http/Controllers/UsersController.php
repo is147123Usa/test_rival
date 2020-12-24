@@ -7,7 +7,7 @@ use App\Models\Trader;
 use App\Models\Order;
 use App\Models\Driver;
 use App\Models\Qutation;
-
+use App\Models\Image;
 
 
 use Illuminate\Http\Request;
@@ -74,6 +74,16 @@ class UsersController extends Controller
         }else{
             return redirect()->back()->with('alert', 'Faild to Close contention !');
         }
+    }
+    public function driver(){
+        $drivers = Driver::all();
+        return view('Users.drivers.index',compact('drivers'));
+    }
+    public function driver_show($driver_id){
+        $driver = Driver::find($driver_id);
+        $imges = Image::where('driver_id',$driver_id)->first();
+         
+        return view('Users.drivers.show',compact('driver','imges'));
     }
 
 }

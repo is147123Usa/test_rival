@@ -1,4 +1,4 @@
-tttt nnn @extends('layouts.index2')
+@extends('layouts.index2')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
