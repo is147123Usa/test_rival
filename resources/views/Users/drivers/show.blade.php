@@ -19,7 +19,21 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-    
+    <style>
+      .avatar {
+        vertical-align: middle;
+        width: 50px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      .Bordernone{
+        border:none;
+      }
+      button{
+        padding:5px;
+        margin:5px;
+      }
+    </style>
     <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -29,53 +43,62 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">  Trader Details <span style="color: rgb(0, 255, 64);background: #6c757d;">{{$trader->user->name}}</span></h3>
+                <h3 class="card-title">  </h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
             
                   <tr>
-                    <th style="width: 30%;">Trader Name</th>
-                    <td>{{$trader->user->name}}</td>
-                    <th>Activity Name</th>
-                    <td>{{$trader->activityName}}</td>
-                 </tr>
-                 <tr>
-                    <th>Spicalizition</th>
-                    <td>{{$trader->spicalizition->name_en}}</td>
-                    <th>CRN</th>
-                    <td>{{$trader->CRN}}</td>
-                 </tr>
-                 <tr>
-                    <th>Address</th>
-                    <td>{{$trader->address}} / {{$trader->address_2}}, {{$trader->mailBox}} </td>
-                    <th>Email</th>
-                    <td>{{$trader->user->email}}</td>
-                 </tr>
-                 <tr>
-                    <th >trader Phone</th>
-                    <td>{{$trader->user->phone}}</td> 
-                    <th>Trader City</th>
-                    <td>{{$trader->user->city->name_en}}</td>
+                    <th style="width: 30%;">Driver name :</th>
+                    <td>{{$driver->cabtin_name}}</td>
+                    <th>Driver phone</th>
+                    <td>{{$driver->user->phone}}</td>
                  </tr>
 
                  <tr>
-                 <th>Trader's drivers quntity</th>
-                 <td>{{$statica['drivers_quntity']}}</td>
-                 <th>Total Qutations </th>
-                 <td>{{$statica['total_qutations']}}</td>
+                    <th>License number : </th>
+                    <td>{{$driver->license_no}}</td>
+                    <th>SSL :</th>
+                    <td>{{$driver->ssl}}</td>
+                 </tr>
+                 <tr>
+                    <th>Registered by :</th>
+                    <td>{{$driver->trader->user->name}} | {{$driver->trader->activityName}} </td>
+                    <th>Trader phone</th>
+                    <td>{{$driver->trader->user->phone}}</td>
                  </tr>
 
-                 <tr>
-                 <th>Total Orders</th>
-                 <td>{{$statica['order_qty']}}</td>
-                 <th>Actions</th>
-                 <td>@if($trader->account_status == 'verified') <a href="{{url('Trader/'.$trader->id.'/Suspend')}}" class="btn btn-info">Suspend</a> @elseif($trader->account_status == 'Suspend') <a href="{{url('Trader/'.$trader->id.'/verified')}}" class="btn btn-info">verifiy </a> @elseif($trader->account_status == 'pending') <a class="btn btn-info" href="{{url('Trader/'.$trader->id.'/verified')}}">Verifiy</a>  @endif </td>
-                 </tr>
+
+                 
 
                  
                  
+                </table>
+                 <br>
+                <table id="example1" class="table table-bordered table-striped">
+                <tr>
+                 <th>Images</th>
+                 </tr>
+                 <tr>
+                    <th>Driver image</th>
+                    <th>licesnse image </th> 
+                    <th>identity prove </th>
+                     <th>Car image </th>
+                     <th>Car registertion img </th>
+                     <th>Plate img </th>
+                 </tr>
+
+                 <tr>
+                  <th><a href="{{asset('imgs/'.$imges->avatar)}}" target="_blank"> <img src="{{asset('imgs/'.$imges->avatar)}}" alt="Item_img" class="avatar"> </a></th>
+                  <td><a href="{{asset('imgs/'.$imges->licesnse_image)}}" target="_blank"> <img src="{{asset('imgs/'.$imges->licesnse_image)}}" alt="Item_img" class="avatar"> </a></td>
+                  <th><a href="{{asset('imgs/'.$imges->identitiyProve_driver)}}" target="_blank"> <img src="{{asset('imgs/'.$imges->identitiyProve_driver)}}" alt="Item_img" class="avatar"> </a></th>
+                  <td><a href="{{asset('imgs/'.$imges->carImage)}}" target="_blank"> <img src="{{asset('imgs/'.$imges->carImage)}}" alt="Item_img" class="avatar"> </a></td>
+                  <td><a href="{{asset('imgs/'.$imges->identitiyProve_car)}}" target="_blank"> <img src="{{asset('imgs/'.$imges->identitiyProve_car)}}" alt="Item_img" class="avatar"> </a></td>
+
+                  <td><a href="{{asset('imgs/'.$imges->plant_no)}}" target="_blank"> <img src="{{asset('imgs/'.$imges->plant_no)}}" alt="Item_img" class="avatar"> </a></td>
+                 </tr>
+                
                 </table>
               </div>
               <!-- /.card-body -->
