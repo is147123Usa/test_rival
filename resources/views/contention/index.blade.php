@@ -53,7 +53,7 @@
                     <td>{{$value->order->delivery_time}}</td>
                     <td>{{$value->status}}</td>
                     <td>{{$value->complain_reason}}</td>
-                      <td><a style="margin-left: 25%; "  class="btn btn-success" href="{{'DisputesDetails'}}">view </a></td>
+                      <td><a style="margin-left: 25%; "  class="btn btn-success" href="{{url('Contention/'.$value->id)}}">view </a></td>
                   </tr>
                   @endforeach
                   </tbody>

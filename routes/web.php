@@ -54,7 +54,10 @@ Route::get('Qutations-order/items',[qutactionOrderController::class,'AllItems'])
 Route::get('Orders',[orderController::class,'index']);
 Route::get('Orders/{order_id}',[orderController::class,'show']);
 Route::get('Order/items',[orderController::class,'order_itms']);
+
+Route::post('Contentions',[contentionController::class,'store']);
 Route::get('Contentions',[contentionController::class,'index']);
+Route::get('Contention/{con_id}',[contentionController::class,'show']);
 
 
 //End Of routes
