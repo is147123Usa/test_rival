@@ -17,6 +17,7 @@ use App\http\Controllers\CitySettingsController;
 use App\http\Controllers\qutactionOrderController;
 use App\http\Controllers\RivalFeeController;
 use App\http\Controllers\orderController;
+use App\http\Controllers\contentionController;
 
 use Illuminate\Support\Facades\Route;
 // Ashraf Imports
@@ -53,6 +54,7 @@ Route::get('Qutations-order/items',[qutactionOrderController::class,'AllItems'])
 Route::get('Orders',[orderController::class,'index']);
 Route::get('Orders/{order_id}',[orderController::class,'show']);
 Route::get('Order/items',[orderController::class,'order_itms']);
+Route::get('Contentions',[contentionController::class,'index']);
 
 
 //End Of routes
@@ -100,7 +102,6 @@ Route::get('/Delivery',[DeliveryController::class,'Delivery']);
 Route::get('/DeliveryDetails',[DeliveryController::class,'DeliveryDetails']);
 //end Delivery section
 // Disputes section
-Route::get('/Disputes',[DisputesController::class,'Disputes']);
 Route::get('/DisputesDetails',[DisputesController::class,'DisputesDetails']);
 //end Disputes section
  // contact section

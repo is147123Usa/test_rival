@@ -223,9 +223,9 @@
               <li class="nav-item">
  
                 <li class="nav-item">
-                <a href="pages/search/enhanced.html" class="nav-link">
+                <a href="{{url('Contentions')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(0, 247, 255);">Items complains</p>
+                  <p style="color:rgb(0, 247, 255);">Contention</p>
                 </a>
             </ul>
           </li> 
@@ -241,7 +241,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url('Qutations-orders')}}" class="nav-link">
-                  <i class="fas fa-clipboard-list"></i>
+                <i class="far fa-circle nav-icon"></i>
                   <p style="color:rgb(0, 247, 255);">Qutaion orders</p>
                 </a>
               </li>

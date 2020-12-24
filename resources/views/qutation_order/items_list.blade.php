@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{'Processes'}}">Home</a></li>
-              <li class="breadcrumb-item active">  Quotation Orders</li>
+              <li class="breadcrumb-item active">  Quotation Orders items list </li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -41,8 +41,7 @@
                    
                     <th>Descrtption</th>
                     <th>Quantity </th>
-                     
-                  </tr>
+                   </tr>
                   </thead>
                   <tbody>
                   @foreach($qutation_order_items as $value)
@@ -63,7 +62,8 @@
                    
                     <th>Descrtption</th>
                     <th>Quantity </th>
-                   </tr>
+                    
+                  </tr>
                   </tfoot>
                 </table>
               </div>

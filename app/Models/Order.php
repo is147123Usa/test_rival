@@ -13,7 +13,7 @@ class Order extends Model
         'operation_code','payment_method',
         'delivery_location','deosInclude_delivery',
         'delivery_fees','tax','sub_total','total',
-        'qutation_id','client_id','trader_id','rival_fees'    
+        'qutation_id','client_id','trader_id','rival_fees','delivery_time'   
     ];
     public function qutation()
     {

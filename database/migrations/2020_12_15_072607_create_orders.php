@@ -22,11 +22,10 @@ class CreateOrders extends Migration
             $table->string('deosInclude_delivery')->nallable();
             $table->float('delivery_fees', 8, 2)->nullable();
             $table->float('rival_fees', 8, 2)->nullable();
-             
-            
+            $table->string('delivery_time')->nullable();
             $table->float('sub_total', 8, 2)->nullable();
             $table->float('total', 8, 2)->nullable();
-
+            
             $table->integer('isPaid')->default(0);
             $table->string('status')->default('pending');;
 
