@@ -41,6 +41,8 @@
                     <th>Customer Name</th>
                     <th>Notification</th>
                     <th>Notification En</th> 
+                    <th>Body</th>
+                    <th>Body En</th>
                     <th> Image </th>
                     <th>  Date </th>
                  
@@ -52,6 +54,8 @@
                     <td>{{$value->user->name}}</td>
                     <td>{{$value->name}}</td>
                     <td>{{$value->name_en}}</td>
+                    <td>{{$value->body}}</td>
+                    <td>{{$value->body_en}}</td>
                     <td>
                         <center>
                             <a href="{{asset('imgs/'.$value->img)}}" target="_blank"> <img src="{{asset('imgs/'.$value->img)}}" alt="Item_img" class="avatar"> </a>
@@ -67,6 +71,8 @@
                   <th>Customer Name</th>
                     <th>Notification</th>
                     <th>Notification En</th> 
+                    <th>Body</th>
+                    <th>Body En</th>
                     <th> Image </th>
                     <th>  Date </th>
                     

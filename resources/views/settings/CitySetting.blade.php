@@ -35,7 +35,8 @@
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th> City<input type="text"></th>        
+                    <th> City</th>  
+                    <td><input class="custom-file" type="text"></td>      
                   </tr>
                   </thead>
                   <tbody>

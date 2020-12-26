@@ -64,6 +64,11 @@ Route::get('Drivers',[UsersController::class,'driver']);
 Route::get('Driver/{driver_id}',[UsersController::class,'driver_show']);
 Route::get('/Showroom',[ShowroomController::class,'Showroom']);
 Route::get('/Showroom/{status_id}/{item_id}',[ShowroomController::class,'actions']);
+Route::get('/Settings/{option}',[SettingsController::class,'Settings']);
+Route::get('/Settings',function(){
+    return redirect('/Settings/'.'Country');
+});
+
 
 //End Of routes
 Route::get('test',[HomeController::class,'test']);
@@ -121,7 +126,6 @@ Route::get('/Notification/send',[NotificationsController::class,'SendNotificatio
 Route::post('/Notifications/push',[NotificationsController::class,'push']);
 
  //end notification section
- Route::get('/Settings',[SettingsController::class,'Settings']);
  Route::get('/CitySetting',[CitySettingsController::class,'CitySetting']);
  Route::get('/RivalFee',[RivalFeeController::class,'RivalFee']);
 
