@@ -103,7 +103,7 @@
                 <input type="text"  name="name_en" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
               </div>
               
-              <div style="display:none" class="form-group countiner">
+              <div style="display:none" class="form-group" id="countiner">
                 <label for="exampleFormControlSelect1"> Country </label>
                 <select name="selectv" onchange="checkAvailable()" class="form-control" id="selectv">
                   <option >Select Country</option>
