@@ -16,6 +16,8 @@ class CreateShItemsTable extends Migration
         Schema::create('sh_items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('status')->default('published');
+            $table->string('img')->nullable();
             $table->longText('item_desc')->nullable();
             $table->unsignedBigInteger('cat_id')->nullable();
             $table->foreign('cat_id')->references('id')->on('categories');

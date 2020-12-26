@@ -17,6 +17,10 @@ class CreateNotifiationsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('name_en');
+            $table->longText('body');
+            $table->longText('body_en');
+            $table->string('img')->nullable();
+
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             

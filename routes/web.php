@@ -62,6 +62,8 @@ Route::get('Contentions',[contentionController::class,'index']);
 Route::get('Contention/{con_id}',[contentionController::class,'show']);
 Route::get('Drivers',[UsersController::class,'driver']);
 Route::get('Driver/{driver_id}',[UsersController::class,'driver_show']);
+Route::get('/Showroom',[ShowroomController::class,'Showroom']);
+Route::get('/Showroom/{status_id}/{item_id}',[ShowroomController::class,'actions']);
 
 //End Of routes
 Route::get('test',[HomeController::class,'test']);
@@ -99,7 +101,6 @@ Route::get('/SellerInvoices',[SellersController::class,'SellerInvoices']);
 Route::get('/SellerInvoicePrint',[SellersController::class,'SellerInvoicePrint']);
 //end sellers section
 Route::get('/MoneyTransfer',[MoneyTransferController::class,'MoneyTransfer']);
-Route::get('/Showroom',[ShowroomController::class,'Showroom']);
 //Quotato section
 
 //end Quotato section
@@ -115,8 +116,10 @@ Route::get('/Contact',[ContactController::class,'Contact']);
 Route::get('/ContactDetails',[ContactController::class,'ContactDetails']);
  //end contact section
  //notification section
-Route::get('/Notifications',[NotificationsController::class,'Notifications']);
-Route::get('/SendNotifications',[NotificationsController::class,'SendNotifications']);
+Route::get('/Notifications',[NotificationsController::class,'index']);
+Route::get('/Notification/send',[NotificationsController::class,'SendNotifications']);
+Route::post('/Notifications/push',[NotificationsController::class,'push']);
+
  //end notification section
  Route::get('/Settings',[SettingsController::class,'Settings']);
  Route::get('/CitySetting',[CitySettingsController::class,'CitySetting']);

@@ -9,7 +9,7 @@ class Notification extends Model
 {
     use HasFactory;
     protected $table = "notifiations";
-    protected $fillable = ['name','name_en','user_id'];
+    protected $fillable = ['name','name_en','user_id','img','body','body_en'];
     public function user()
     {
     // return $this->belongsTo('App\Models\Country');

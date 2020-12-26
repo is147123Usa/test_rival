@@ -359,12 +359,7 @@
                   <p style="color:rgb(0, 247, 255);">  Showroom</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{url('Disputes')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(0, 247, 255);">Disputes</p>
-                </a>
-              </li>
+               
               <li class="nav-item">
                 <a href="{{url('Notifications')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
