@@ -35,18 +35,30 @@
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>  Rival fee<input type="number"><button href="" style="bading-lefte:5px" class="btn btn-success btn-sm" >OK</button></th> 
+                    <th>  
+                    
+                    <form action="{{url('rival_fees/update/'.$data['id'])}}" method="post">
+                    @csrf
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Rival fee</span>
+                    </div>
+                    <input type="number" value="{{$data['rival_tax']}}" name="rival_fees" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <div class="input-group-append">
+                    <input value="Ok" type="submit"  style="bading-lefte:5px" class="btn btn-success btn-sm" />
+                    </div>
+                  </div>
+                     
+                    
+                    </form>
+                    </th> 
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>-</td>
-                  </tr>
+                   
                   </tbody>
                   <tfoot>
-                  <tr>
-                    <th>Rival fee </th>
-                  </tr>
+                  
                   </tfoot>
                 </table>
               </div>

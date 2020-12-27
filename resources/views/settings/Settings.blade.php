@@ -83,7 +83,8 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <form>
+            <form action="{{url('settings/store')}}" method="post">
+            @csrf
               <div class="form-group">
                 <label for="exampleFormControlSelect1"> select table </label>
                 <select name="selectv" onchange="checkAvailable()" class="form-control" id="selectv">
@@ -93,24 +94,29 @@
                   <option value="prove">Prove Type Table</option>
                 </select>
               </div>
+              
               <div class="form-group">
                 <label for="exampleFormControlInput1">Name</label>
-                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" >
               </div>
 
               <div class="form-group">
                 <label for="exampleFormControlInput1">Name en</label>
-                <input type="text"  name="name_en" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="text"  name="name_en" class="form-control" id="exampleFormControlInput1">
               </div>
               
               <div style="display:none" class="form-group" id="countiner">
                 <label for="exampleFormControlSelect1"> Country </label>
-                <select name="selectv" onchange="checkAvailable()" class="form-control" id="selectv">
+                <select name="country_id" onchange="checkAvailable()" class="form-control" id="countiner">
                   <option >Select Country</option>
-                  <option>City Table</option>
+                  @foreach($countries as $value) 
+                  <option value="{{$value->id}}">{{$value->name}}</option>
+                  @endforeach
                 </select>
               </div>
-            
+            <div class="form-group">
+                <input type="submit" value="اضافة" class="btn btn-info">
+            </div>
             </form>
           </div>
         </div>

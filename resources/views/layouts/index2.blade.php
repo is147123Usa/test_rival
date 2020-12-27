@@ -372,12 +372,7 @@
                   <p style="color:rgb(0, 247, 255);">Setting</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{url('CitySetting')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p style="color:rgb(0, 247, 255);">CitySetting</p>
-                </a>
-              </li>
+              
             </ul>
             <li class="nav-item">
             <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
