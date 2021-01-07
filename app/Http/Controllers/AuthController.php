@@ -105,6 +105,7 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
+
     public function logout() {
         auth()->logout();
 
