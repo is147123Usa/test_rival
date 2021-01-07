@@ -58,7 +58,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "trader3",
+									"value": "aaa",
 									"type": "text"
 								},
 								{
@@ -73,17 +73,17 @@
 								},
 								{
 									"key": "email",
-									"value": "asaaas@test.com",
+									"value": "client@test.com",
 									"type": "text"
 								},
 								{
 									"key": "group_id",
-									"value": "3",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "1122334455",
+									"value": "0509875995",
 									"type": "text"
 								},
 								{
@@ -137,7 +137,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "trader3111",
+									"value": "trader2",
 									"type": "text"
 								},
 								{
@@ -152,7 +152,7 @@
 								},
 								{
 									"key": "email",
-									"value": "asasasA66aaa1as@test.com",
+									"value": "trader2@test.com",
 									"type": "text"
 								},
 								{
@@ -207,8 +207,9 @@
 								},
 								{
 									"key": "user_id",
-									"value": "6",
-									"type": "text"
+									"value": "3",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "account_status",
@@ -239,10 +240,74 @@
 				{
 					"name": "register_driver",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cabtin_name",
+									"value": "Ahmed ali",
+									"type": "text"
+								},
+								{
+									"key": "carNumber",
+									"value": "0019299",
+									"type": "text"
+								},
+								{
+									"key": "license_no",
+									"value": "2114334567",
+									"type": "text"
+								},
+								{
+									"key": "carType",
+									"value": "toyota",
+									"type": "text"
+								},
+								{
+									"key": "ssl",
+									"value": "211022",
+									"type": "text"
+								},
+								{
+									"key": "trader_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "account_status",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "proveType_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://127.0.0.1:8000/api/auth/register/driver",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register",
+								"driver"
+							]
 						}
 					},
 					"response": []
@@ -286,7 +351,43 @@
 		},
 		{
 			"name": "user",
-			"item": []
+			"item": [
+				{
+					"name": "getInbox",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/user/inbox",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"user",
+								"inbox"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Driver",
@@ -294,11 +395,103 @@
 		},
 		{
 			"name": "trader",
-			"item": []
+			"item": [
+				{
+					"name": "get trader inbox",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "auth",
-			"item": []
+			"name": "general",
+			"item": [
+				{
+					"name": "getCatogery",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/getCatogery",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"getCatogery"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Qutation_order",
+			"item": [
+				{
+					"name": "add Qutstion order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "payMethod",
+									"value": "visa",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "cat_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "items",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/addQutstionorder",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"addQutstionorder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
