@@ -70,4 +70,16 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function getJWTIdentifier() {
+        return $this->getKey();
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims() {
+        return [];
+    }    
 }

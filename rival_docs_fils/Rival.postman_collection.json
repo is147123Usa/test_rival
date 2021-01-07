@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "e7fc5692-881d-4ee3-a7bc-0f02f8de971c",
+		"name": "Rival ",
+		"description": "Rival RESTApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "0509875995",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "trader3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1122334455",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "1122334455",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "asaaas@test.com",
+									"type": "text"
+								},
+								{
+									"key": "group_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1122334455",
+									"type": "text"
+								},
+								{
+									"key": "localization",
+									"value": "lang,lat",
+									"type": "text"
+								},
+								{
+									"key": "player_id",
+									"value": "KXH45ESSDA34553!#@@!J",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "isSuspend",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register trader",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "trader3111",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1122334455",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "1122334455",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "asasasA66aaa1as@test.com",
+									"type": "text"
+								},
+								{
+									"key": "group_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1122334455",
+									"type": "text"
+								},
+								{
+									"key": "localization",
+									"value": "lang,lat",
+									"type": "text"
+								},
+								{
+									"key": "player_id",
+									"value": "KXH45ESSDA34553!#@@!J",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "isSuspend",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "activityName",
+									"value": "TopLine1",
+									"type": "text"
+								},
+								{
+									"key": "CRN",
+									"value": "112212111",
+									"type": "text"
+								},
+								{
+									"key": "tax_no",
+									"value": "10000011222",
+									"type": "text"
+								},
+								{
+									"key": "spicalizition_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "account_status",
+									"value": "111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register_driver",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "login,signup,forget Password ,logout"
+		},
+		{
+			"name": "user",
+			"item": []
+		},
+		{
+			"name": "Driver",
+			"item": []
+		},
+		{
+			"name": "trader",
+			"item": []
+		},
+		{
+			"name": "auth",
+			"item": []
+		}
+	]
+}

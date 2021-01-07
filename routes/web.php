@@ -68,9 +68,9 @@ Route::get('/Settings/{option}',[SettingsController::class,'Settings']);
 Route::get('/Settings',function(){
     return redirect('/Settings/'.'Country');
 });
+
 Route::post('settings/store',[SettingsController::class,'store']);
 Route::post('rival_fees/update/{fees_id}',[RivalFeeController::class,'update']);
-
 
 //End Of routes
 Route::get('test',[HomeController::class,'test']);
