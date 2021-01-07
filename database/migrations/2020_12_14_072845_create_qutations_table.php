@@ -24,8 +24,7 @@ class CreateQutationsTable extends Migration
             $table->foreign('qutation_order_id')->references('id')->on('qutation_orders');
             
             $table->unsignedBigInteger('trader_id')->nullable();
-            $table->foreign('trader_id')->references('id')->on('users');
-            
+            $table->foreign('trader_id')->references('id')->on('traders');
             $table->timestamps();
         });
     }

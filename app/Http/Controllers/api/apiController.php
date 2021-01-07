@@ -6,7 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Driver;
 use App\Models\Category;
+use App\Models\User;
+use App\Models\Trader;
+use App\Models\Qutation;
+
+
 use App\Models\Qutation_order;
+
 
 class apiController extends Controller
 {
@@ -41,5 +47,36 @@ class apiController extends Controller
 
         $qutation_ord->save();
 
+    }
+    public function inbox(Request $request){
+        
+        $group_id = User::find($request->user_id);
+      
+        if($group_id){
+            if($group_id->group_id == 2){
+                $res = qutation_order::where('client_id',$request->user_id)->get();
+            }
+            if($group_id->group_id == 3){
+              
+                $trader_id = Trader::where('user_id',$request->user_id)->get();
+               
+                if(count($trader_id)> 0){
+                    
+                    $trader_id = $trader_id[0]->id;
+                    
+                    $traderQutations = Qutation::where('trader_id','=',$trader_id)->get();
+                    dd($trader_id);
+                
+                }
+                $res = qutation_order::where('client_id',$request->user_id)->get();
+                
+
+             
+            }
+            //return response()->json($res,200);
+        }else{
+            return response()->json(['msg'=>'Didnt find user credntiolas'],200);
+        }
+        //return response()->json($res,200);
     }
 }

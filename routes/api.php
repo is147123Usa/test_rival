@@ -30,7 +30,7 @@ Route::group([
     Route::get('/getCatogery', [apiController::class, 'getCatogery']);
 
     Route::post('/addQutstionorder', [apiController::class, 'addQutstionorder']);
-
+    Route::post('/user/inbox', [apiController::class, 'inbox']);
   
 });
  
