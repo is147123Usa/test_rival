@@ -25,6 +25,12 @@ Route::group([
     Route::post('/register/driver', [apiController::class, 'register_driver']);
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
-    Route::get('/user-profile', [AuthController::class, 'userProfile']);    
+    Route::get('/user-profile', [AuthController::class, 'userProfile']);  
+    //
+    Route::get('/getCatogery', [apiController::class, 'getCatogery']);
+
+    Route::post('/addQutstionorder', [apiController::class, 'addQutstionorder']);
+
+  
 });
  

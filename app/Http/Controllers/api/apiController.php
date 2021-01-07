@@ -5,6 +5,8 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Driver;
+use App\Models\Category;
+use App\Models\Qutation_order;
 
 class apiController extends Controller
 {
@@ -23,5 +25,20 @@ class apiController extends Controller
         $driver->save();
         
         return response()->json(['status'=>true,'payload' => $driver],200);
+    }
+    public function getCatogery(){
+        $catogeries = Category::all();
+        return response()->json(['payload'=>$catogeries],200);
+    }
+    public function addQutstionorder(Request $request){
+        
+        $qutation_ord = new Qutation_order();
+        $qutation_ord->payMethod = $request->payMethod ;
+        $qutation_ord->client_id = $request->client_id ;
+        $qutation_ord->cat_id = $request->cat_id ;
+        //$arr = array(['name'=>1,'qty'=>1,'item_desc'=>'not yet'],['name'=>1,'qty'=>1,'item_desc'=>'not yet']);
+
+        $qutation_ord->save();
+
     }
 }
