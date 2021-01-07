@@ -31,7 +31,8 @@ class apiController extends Controller
         return response()->json(['payload'=>$catogeries],200);
     }
     public function addQutstionorder(Request $request){
-        
+        return response()->json(count($request->items),200);
+
         $qutation_ord = new Qutation_order();
         $qutation_ord->payMethod = $request->payMethod ;
         $qutation_ord->client_id = $request->client_id ;
