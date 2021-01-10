@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\User;
 use App\Models\Trader;
 use App\Models\Qutation;
+use App\Models\Qutation_order_item;
 
 
 use App\Models\Qutation_order;
@@ -34,18 +35,27 @@ class apiController extends Controller
     }
     public function getCatogery(){
         $catogeries = Category::all();
-        return response()->json(['payload'=>$catogeries],200);
+        return response()->json($catogeries,200);
     }
     public function addQutstionorder(Request $request){
-        return response()->json(count($request->items),200);
 
         $qutation_ord = new Qutation_order();
         $qutation_ord->payMethod = $request->payMethod ;
         $qutation_ord->client_id = $request->client_id ;
         $qutation_ord->cat_id = $request->cat_id ;
         //$arr = array(['name'=>1,'qty'=>1,'item_desc'=>'not yet'],['name'=>1,'qty'=>1,'item_desc'=>'not yet']);
-
         $qutation_ord->save();
+
+        foreach($request->items as $value){
+            $item = new Qutation_order_item();
+            $item->item_desc = $value['item_desc'];
+            $item->name = $value['name'];
+            $item->qty = $value['qty'];
+            $item->qutation_order_id = $qutation_ord->id;
+            $item->save();
+        }
+           
+        return response()->json(['status'=>true],200);
 
     }
     public function inbox(Request $request){
