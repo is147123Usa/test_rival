@@ -10,7 +10,9 @@ use App\Models\User;
 use App\Models\Trader;
 use App\Models\Qutation;
 use App\Models\Qutation_order_item;
+use App\Models\Qutation_item;
 
+use DB;
 
 use App\Models\Qutation_order;
 
@@ -53,10 +55,8 @@ class apiController extends Controller
             $item->qty = $value['qty'];
             $item->qutation_order_id = $qutation_ord->id;
             $item->save();
-        }
-           
+        } 
         return response()->json(['status'=>true],200);
-
     }
     public function inbox(Request $request){
         
@@ -64,29 +64,27 @@ class apiController extends Controller
       
         if($group_id){
             if($group_id->group_id == 2){
-                $res = qutation_order::where('client_id',$request->user_id)->get();
+                $res = qutation_order::where('client_id',$request->user_id)->with('cat')->get();
+                return response()->json($res,200);
             }
             if($group_id->group_id == 3){
-              
                 $trader_id = Trader::where('user_id',$request->user_id)->get();
-               
-                if(count($trader_id)> 0){
-                    
-                    $trader_id = $trader_id[0]->id;
-                    
-                    $traderQutations = Qutation::where('trader_id','=',$trader_id)->get();
-                    dd($trader_id);
-                
-                }
-                $res = qutation_order::where('client_id',$request->user_id)->get();
-                
-
-             
+                //$trader_id = $trader_id[0]->id;
+                $traderQutations = "SELECT qutation_orders.* ,categories.name,name_en,users.name as client_name FROM qutation_orders JOIN categories ON categories.id = qutation_orders.cat_id JOIN users ON users.id = qutation_orders.client_id WHERE qutation_orders.cat_id =".$trader_id[0]->spicalizition_id."";//Qutation::where('trader_id','=',$trader_id)->get();
+                //dd($traderQutations);
+                $traderQutations = DB::select($traderQutations);
+                //$res = qutation_order::where('client_id',)->get();
+                $sql = "SELECT qutation_orders.* ,categories.name,name_en FROM qutation_orders JOIN categories ON categories.id = qutation_orders.cat_id WHERE qutation_orders.client_id =".$request->user_id."";
+                $res = DB::select($sql);
+                $payload = array('res'=>$res,'traderQutation'=>$traderQutations);
+                return response()->json($payload,200);             
             }
-            //return response()->json($res,200);
         }else{
             return response()->json(['msg'=>'Didnt find user credntiolas'],200);
         }
-        //return response()->json($res,200);
+    }
+    public function getItems(Request $request){
+        $payload = qutation_order_item::where('qutation_order_id',$request->qutation_id)->get();
+        return response()->json($payload,200);
     }
 }

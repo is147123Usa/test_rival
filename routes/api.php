@@ -26,11 +26,12 @@ Route::group([
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);  
-    //
     Route::get('/getCatogery', [apiController::class, 'getCatogery']);
-
     Route::post('/addQutstionorder', [apiController::class, 'addQutstionorder']);
     Route::post('/user/inbox', [apiController::class, 'inbox']);
-  
+    Route::post('/inbox', [apiController::class, 'inbox']);
+
+    Route::post('/user/getItems', [apiController::class, 'getItems']);
+
 });
  
