@@ -32,30 +32,57 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                 <tr>
-                    <th>Massage</th>
-                    <td><input type="text" placeholder="Titel"></input></td>
-                 </tr>
-                 <tr>
-                    <th>answer</th>
-                    <td><textarea rows="2" cols="100" name="comment" form="usrform" placeholder="Enter text here..."></textarea></td>
-                 </tr>
-                 <tr>
-                 <th> Upluad</th>
-                    <td> 
-                      <label for="img">Select image:</label>
-                      <input type="file" id="img" name="img" accept="image/*"> 
-                    </td>
-                 </tr>
-                 <tr>
-                    <th>Action          </th>
-                        <td>
-                           <span style="width: 20%;float: right; background: greenyellow;"><a style="margin-left: 35%;color: currentcolor;" href="{{'Processes'}}">Send</a></span>
-                        </td>
-                 </tr>
-                 
-                </table>
+                <form action="{{url('Notifications/push')}}" method="post" enctype="multipart/form-data">
+                  @csrf
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">To</label>
+                    </div>
+                      <select name="target_users" class="custom-select" id="inputGroupSelect01">
+                        <option value="allUsers" selected>All Users</option>
+                        @foreach(App\Models\User::all() as $value)
+                        <option value="{{$value->id}}">{{$value->name}}</option>
+                        @endforeach
+                      </select>
+                  </div>
+
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Massage's title</span>
+                  </div>
+                  <input type="text" name="title"class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Massage's title En</span>
+                  </div>
+                  <input type="text" name="title_en" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Body </span>
+                  </div>
+                  <textarea name="body" class="form-control" aria-label="With textarea"></textarea>
+                </div>
+                <br>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Body En</span>
+                  </div>
+                  <textarea name="body_en" class="form-control" aria-label="With textarea"></textarea>
+                </div>
+                  <br>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input name="image" type="file" class="custom-file-input" id="inputGroupFile04">
+                    <label class="custom-file-label" for="inputGroupFile04">Images</label>
+                  </div>
+                </div>
+                <input style="padding:5px;margin:10px;float:right;"class="btn btn-success" type="submit" value="إرسال الاشعار">
+                </form>
+                </div>
               </div>
               <!-- /.card-body -->
             </div>

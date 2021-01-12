@@ -13,14 +13,19 @@ class Driver extends Model
         'cabtin_name','carNumber',
         'license_no','carType',
         'img','ssl','user_id',
-        'account_status','prove_type_id'
+        'account_status','proveType_id','trader_id'
 ];
 public function user()
 {
   // return $this->belongsTo('App\Models\Country');
   return $this->belongsTo(User::class);
 }
-public function prove_type()
+public function trader()
+{
+  // return $this->belongsTo('App\Models\Country');
+  return $this->belongsTo(Trader::class);
+}
+public function proveType()
 {
   // return $this->belongsTo('App\Models\Country');
   return $this->belongsTo(Prove_type::class);

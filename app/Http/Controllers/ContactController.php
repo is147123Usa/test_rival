@@ -14,3 +14,4 @@ class ContactController extends Controller
         return view('Contact.ContactDetails');
     }
 }
+    

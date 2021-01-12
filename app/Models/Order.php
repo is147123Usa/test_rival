@@ -12,8 +12,8 @@ class Order extends Model
     protected $fillable = [
         'operation_code','payment_method',
         'delivery_location','deosInclude_delivery',
-        'delivery_fees','tax','sub-total','total',
-        'qutation_id','client_id','trader_id'    
+        'delivery_fees','tax','sub_total','total',
+        'qutation_id','client_id','trader_id','rival_fees','delivery_time'   
     ];
     public function qutation()
     {

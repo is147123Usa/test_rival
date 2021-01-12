@@ -16,7 +16,7 @@ class CreateContentionsTable extends Migration
         Schema::create('contentions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('status')->default('panding');;
+            $table->string('status')->default('Open');;
             $table->longText('sup_commendation')->nullable();
             $table->longText('sup_investigtion')->nullable();
             $table->longText('complain_reason');

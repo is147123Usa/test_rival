@@ -17,7 +17,7 @@ class CreateQutationOrdersTable extends Migration
             $table->id();
             $table->string('qutastion_status')->nullable();
             $table->string('payMethod')->nullable();
-
+            $table->string('Status')->default('pending');
             $table->unsignedBigInteger('client_id')->nullable();
             $table->unsignedBigInteger('cat_id')->nullable();
 

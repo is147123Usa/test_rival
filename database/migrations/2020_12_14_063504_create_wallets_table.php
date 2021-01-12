@@ -19,8 +19,10 @@ class CreateWalletsTable extends Migration
             $table->string('balance_string', 8, 2);
             $table->string('password');
             $table->string('wallet_no');
+            $table->string('isSuspend')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('lastActivity')->nullable();
             $table->timestamps();
         });
     }

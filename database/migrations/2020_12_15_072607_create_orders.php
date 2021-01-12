@@ -19,11 +19,14 @@ class CreateOrders extends Migration
             $table->string('operation_code');
             $table->string('payment_method')->nallable();
             $table->string('delivery_location')->nallable();
-            $table->string('deosInclude_delivery');
-            $table->string('delivery_fees')->nallable();
-            $table->string('tax');
-            $table->string('sub-total');
-            $table->string('total');
+            $table->string('deosInclude_delivery')->nallable();
+            $table->float('delivery_fees', 8, 2)->nullable();
+            $table->float('rival_fees', 8, 2)->nullable();
+            $table->string('delivery_time')->nullable();
+            $table->float('sub_total', 8, 2)->nullable();
+            $table->float('total', 8, 2)->nullable();
+            
+            $table->integer('isPaid')->default(0);
             $table->string('status')->default('pending');;
 
             $table->unsignedBigInteger('qutation_id')->nullable();
