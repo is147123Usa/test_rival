@@ -36,33 +36,29 @@
                   <tr>
                     <th>Seller's name</th>
                     <th>commercial activities</th>
-                    <th>Number of products</th>
-                    <th>Driver's Name(s)</th>
-                    <th>Number of deals</th>
                     <th>  Date </th>
-                    <th>Details</th>
+                    <th>Status</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
+                  @foreach($data as $value)
                   <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td style=" BACKGROUND: #007bff;"> <a style="margin-left: 30%;color: WHITE;" href="{{'SellerDetails'}}">Action</a></td>
+                    <td>{{$value->user->name}}</td>
+                    <td>{{$value->activityName}}</td>            
+                    <td>{{$value->created_at}}   </td>     
+                    <td>@if($value->user->isSuspend == 0) <button href="" class="btn btn-success" disabled>Active</button> @else<button href="" class="btn btn-warning" disabled>block</button>@endif</td>
+                    <td  > <a href="{{'SellerDetails/'}}{{$value->id}}" class="btn btn-info" >View</a> <button href="" class="btn btn-danger" >delete</button> <button href="" class="btn btn-info" >block</button></td>
                   </tr>
+                  @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
                   <th>Seller's name</th>
-                    <th>commercial activities</th>
-                    <th>Number of products</th>
-                    <th>Driver's Name(s)</th>
-                    <th>Number of deals</th>
+                  <th>commercial activities</th>
                     <th>  Date </th>
-                    <th>Details</th>
+                    <th>Status</th>
+                    <th>Action</th>
                   </tr>
                   </tfoot>
                 </table>

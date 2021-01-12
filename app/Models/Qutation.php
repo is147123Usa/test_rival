@@ -10,8 +10,8 @@ class Qutation extends Model
     use HasFactory;
     protected $table = "qutations";
     protected $fillable = [
-        'status','total',
-        'delivery_fee','includeDelivery',
+        'rival_fee','total',
+        'delivery_fee','rival_fees',
         'qutation_order_id','trader_id'
     ];
     public function trader(){

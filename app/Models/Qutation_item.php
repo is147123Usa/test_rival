@@ -9,7 +9,7 @@ class Qutation_item extends Model
 {
     use HasFactory;
     protected $table = "qutation_items";
-    protected $fillable = ['price','img','item_desc','note','qutition_id','qutation_order_item_id'];
+    protected $fillable = ['price','img','item_desc','note','qutition_id','qutation_order_item_id','qty'];
     public function qutition()
     { 
     return $this->belongsTo(Qutation::class);

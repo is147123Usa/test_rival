@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rival </title>
-
-  <!-- Google Font: Source Sans Pro -->
+  <!--<link rel="stylesheet" href="{{asset('sweetalert2.min.css')}}">
+   Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+ 
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -182,8 +183,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p style="color:rgb(0, 255, 64);">
                 Dashboard
@@ -194,87 +195,206 @@
               <li class="nav-item">
                 <a href="{{'/Processes'}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> Processes</p>
+                  <p style="color:rgb(0, 247, 255);" > Processes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{'/statistics'}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> statistics</p>
+                  <p style="color:rgb(0, 247, 255);" >  statistics</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-header"style="color:rgb(0, 255, 64);"> Operations</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+            <i class="fab fa-accusoft"></i> 
               <p>
-                Pages
+              Orders
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{'Wallet'}}" class="nav-link">
+                <a href="{{url('Orders')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Wallet </p>
+                  <p style="color:rgb(0, 247, 255);" >Orders</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Users'}}" class="nav-link">
+ 
+                <li class="nav-item">
+                <a href="{{url('Contentions')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Users</p>
+                  <p style="color:rgb(0, 247, 255);">Contention</p>
+                </a>
+            </ul>
+          </li> 
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+            <i class="fas fa-clipboard-list"></i>
+              <p>
+              Qutaion orders
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('Qutations-orders')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">Qutaion orders</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Sellers'}}" class="nav-link">
+                <a href="{{url('Qutations-order/items')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sellers</p>
+                  <p style="color:rgb(0, 247, 255);"> Qutaion orders items</p>
+                </a>
+                <li class="nav-item">
+                 
+                
+            </ul>
+          </li> 
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+            <i class="fas fa-coins"></i>
+              <p>
+              Qutations
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('Qutations')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">Qutations </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'MoneyTransfer'}}" class="nav-link">
+                 
+                <li class="nav-item">
+                <a href="{{url('Qutations/Items')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Money transfer</p>
+                  <p style="color:rgb(0, 247, 255);">Qutations Items</p>
+                </a>
+
+                <li class="nav-item">
+                <a href="{{url('Qutations/reports')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">Qutations report</p>
+                </a>
+                 
+            </ul>
+          </li> 
+         
+          <li class="nav-item">   
+               <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+               <i class="fas fa-wallet"></i>  
+                  <p>
+                  Wallet
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>  
+          
+                   <ul class="nav nav-treeview"> 
+                     <li class="nav-item">
+                        <a href="{{url('Wallet')}}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p style="color:rgb(0, 247, 255);">Wallet </p>
+                        </a>
+                    </li>
+                      <li class="nav-item">
+                        <a href="{{url('MoneyTransfer')}}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p style="color:rgb(0, 247, 255);">Money transfer</p>
+                        </a>
+                      </li>
+                   </ul>
+           </li>    
+          <li class="nav-item">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+            <i class="fas fa-users"></i>
+              <p>
+                Users
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="{{url('Users')}}" class="nav-link">
+               <i class="fas fa-users"></i>
+                  <p style="color:rgb(0, 247, 255);">Users</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Showroom'}}" class="nav-link">
+                <a href="{{url('Traders')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>  Showroom</p>
+                  <p style="color:rgb(0, 247, 255);">Sellers</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'Quotaton'}}" class="nav-link">
+                <a href="{{url('Drivers')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Quotation</p>
+                  <p style="color:rgb(0, 247, 255);">  Drivers</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{'Delivery'}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>  Delivery</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{'Disputes'}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Disputes</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{'Notifications'}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Notifications </p>
-                </a>
-              </li>
+              
             </ul>
           </li>
           <li class="nav-item">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+            <i class="fas fa-cogs"></i>
+              <p>
+              Settings
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="{{url('Showroom')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">  Showroom</p>
+                </a>
+              </li>
+               
+              <li class="nav-item">
+                <a href="{{url('Notifications')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">Notifications </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('Settings')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">Setting</p>
+                </a>
+              </li>
+              
+            </ul>
+            <li class="nav-item">
+            <a href="#" class="nav-link" style="color:rgb(0, 255, 64);">
+            <i class="fas fa-gamepad"></i>
+              <p>
+              Controll
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="{{url('RivalFee')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="color:rgb(0, 247, 255);">  Rival Fee</p>
+                </a>
+              </li>
+              </ul>
+          </li> 
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-search"></i>
-              <p>
+              <p style="color:rgb(187, 255, 0);">
                 Search
                 <i class="fas fa-angle-left right"></i>
               </p>
@@ -294,6 +414,7 @@
               </li>
             </ul>
           </li> 
+
         </ul>
         
 <br>
@@ -323,44 +444,50 @@
   </footer>
 </div>
 <!-- ./wrapper -->
-
+</body>
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="{{asset('dist/js/adminlte.js')}}"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
-<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<script src="{{asset('plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
+<script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
+<script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
+<script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
-<script src="dist/js/pages/dashboard3.js"></script>
+<script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
+<!-- jQuery -->
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- DataTables  & Plugins -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../../plugins/jszip/jszip.min.js"></script>
-<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{asset('plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{asset('plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('dist/js/adminlte.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{asset('dist/js/demo.js')}}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{asset('dist/js/pages/dashboard3.js')}}"></script>
+ 
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -378,5 +505,20 @@
     });
   });
 </script>
-</body>
+ <script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: msg,
+      showConfirmButton: false,
+      timer: 1500
+      
+    })
+    }
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 </html>
