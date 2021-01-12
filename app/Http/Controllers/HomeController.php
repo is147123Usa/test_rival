@@ -11,6 +11,7 @@ use App\Models\Qutation_item;
 use App\Models\Trader;
 use App\Models\Wallet;
 use App\Models\Driver;
+use App\Models\Item;
 use App\Models\Delivery_offer;
 
 use App\Models\Prove_type;
@@ -35,7 +36,7 @@ class HomeController extends Controller
         
 
         //dd(data);
-        $data = Driver::all();
+        $data = Item::all();
         return view('test.index',compact('data'));
     }
 }

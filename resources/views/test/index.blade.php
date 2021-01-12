@@ -1,5 +1,5 @@
 @foreach($data as $value)
  
-    {{$value->prove_type}}
+    {{$value->trader}}
 
-@endforeach
+@endforeach 
