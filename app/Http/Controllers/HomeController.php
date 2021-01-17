@@ -11,6 +11,9 @@ use App\Models\Qutation_item;
 use App\Models\trader;
 use App\Models\Wallet;
 use App\Models\Driver;
+use App\Models\Item;
+use App\Models\Delivery_offer;
+
 use App\Models\Prove_type;
 use App\Models\Notification;
 use App\Models\Operation_record;
