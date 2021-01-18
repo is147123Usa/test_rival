@@ -8,6 +8,7 @@ use App\Models\Driver;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Trader;
+use App\Models\Country;
 use App\Models\Qutation;
 use App\Models\Qutation_order_item;
 use App\Models\Qutation_item;
@@ -86,5 +87,11 @@ class apiController extends Controller
     public function getItems(Request $request){
         $payload = qutation_order_item::where('qutation_order_id',$request->qutation_id)->get();
         return response()->json($payload,200);
+    }
+    public function getCities(){
+        $City = City::all();
+        $Country = Country::all();
+        $payload  = array('city' => $City,'country'=>$Country );
+        return response()->json(['status'=>true,'payload'=>$payload],200);
     }
 }
