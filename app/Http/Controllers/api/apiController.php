@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\User;
 use App\Models\Trader;
 use App\Models\Country;
+use App\Models\City;
 use App\Models\Qutation;
 use App\Models\Qutation_order_item;
 use App\Models\Qutation_item;
