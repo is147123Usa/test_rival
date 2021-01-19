@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Driver;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Setting;
+
 use App\Models\Trader;
 use App\Models\Country;
 use App\Models\City;
@@ -61,22 +63,21 @@ class apiController extends Controller
         return response()->json(['status'=>true],200);
     }
     public function inbox(Request $request){
-        
+       
         $group_id = User::find($request->user_id);
-      
+        
         if($group_id){
             if($group_id->group_id == 2){
                 $res = qutation_order::where('client_id',$request->user_id)->with('cat')->get();
                 return response()->json($res,200);
             }
             if($group_id->group_id == 3){
+              
                 $trader_id = Trader::where('user_id',$request->user_id)->get();
-                //$trader_id = $trader_id[0]->id;
-                $traderQutations = "SELECT qutation_orders.* ,categories.name,name_en,users.name as client_name FROM qutation_orders JOIN categories ON categories.id = qutation_orders.cat_id JOIN users ON users.id = qutation_orders.client_id WHERE qutation_orders.cat_id =".$trader_id[0]->spicalizition_id."";//Qutation::where('trader_id','=',$trader_id)->get();
-                //dd($traderQutations);
-                $traderQutations = DB::select($traderQutations);
-                //$res = qutation_order::where('client_id',)->get();
-                $sql = "SELECT qutation_orders.* ,categories.name,name_en FROM qutation_orders JOIN categories ON categories.id = qutation_orders.cat_id WHERE qutation_orders.client_id =".$request->user_id."";
+                             
+                 $traderQutations = "SELECT qutation_orders.* ,categories.name,name_en,users.name as client_name FROM qutation_orders JOIN categories ON categories.id = qutation_orders.cat_id JOIN users ON users.id = qutation_orders.client_id WHERE qutation_orders.cat_id =".$trader_id[0]->spicalizition_id."";//Qutation::where('trader_id','=',$trader_id)->get();
+                 $traderQutations = DB::select($traderQutations);
+                 $sql = "SELECT qutation_orders.* ,categories.name,name_en FROM qutation_orders JOIN categories ON categories.id = qutation_orders.cat_id WHERE qutation_orders.client_id =".$request->user_id."";
                 $res = DB::select($sql);
                 $payload = array('res'=>$res,'traderQutation'=>$traderQutations);
                 return response()->json($payload,200);             
@@ -94,5 +95,57 @@ class apiController extends Controller
         $Country = Country::all();
         $payload  = array('city' => $City,'country'=>$Country );
         return response()->json(['status'=>true,'payload'=>$payload],200);
+    }
+    public function addQutation(Request $req){
+        $qutation = new Qutation();
+         if($req->includeDelivery == 0){
+            $qutation->delivery_fee = 18.00;
+         }
+        $qutation->sub_total = $req->sub_total;
+        
+        $qutation->includeDelivery = $req->includeDelivery;
+        $rival_fee = Setting::where('name','rival')->get();
+        if($req->has('items')){
+            $items = $req->items;
+            $item = $items[0] ;
+            $qutation->qutation_order_id = $item['qutation_order_item_id'];
+        }else{
+
+        }
+        $trader_id= Trader::where('user_id',$req->trader_id)->get();
+        $trader_id = $trader_id[0];
+        $trader_id = $trader_id->id;
+        
+        $qutation->trader_id = $trader_id;
+        $qutation->rival_fees = ($req->sub_total* $rival_fee['0']->valuee);
+        if($qutation->save()){
+             //return response()->json($qutation->id,200);
+            $count = count($items);
+            for ($i=0; $i < $count; $i++) { 
+                $temp = $items[$i];
+               
+               $stroeItem = new Qutation_item();
+
+               $stroeItem->price = $temp['price'];
+               $stroeItem->qty = $temp['qty'];
+               $stroeItem->img = 'kk';//$temp['img'];
+               $stroeItem->note = $temp['note'];
+               $stroeItem->item_desc = $temp['note'];
+
+               $stroeItem->qutition_id = $qutation->id;
+               //$stroeItem->qutation_order_item_id = '30';
+                $stroeItem->save();
+            }
+           
+        }else{
+
+        }
+        
+    }
+    public function getQutation_offers(Request $request){
+
+        $sql = "SELECT *,traders.activityName FROM `qutations` JOIN traders ON traders.id = qutations.trader_id WHERE qutations.qutation_order_id=".$request->q_id."";
+        $payload = DB::select($sql);//Qutation::where('qutation_order_id',$request->q_id)->get();
+        return response()->json($payload,200);
     }
 }
