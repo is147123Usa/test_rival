@@ -81,7 +81,7 @@ class AuthController extends Controller
                 $trader->address = $request->address;
                 $trader->address_2 = $request->address_2;
                 $trader->mailBox = $request->mailBox;
-                $trader->account_status = $request->account_status;
+                $trader->status = $request->status;
                 $trader->spicalizition_id = $request->spicalizition_id;
                 $trader->user_id = $request->user_id;
                 $trader->save();

@@ -71,7 +71,7 @@
                  <th>Total Orders</th>
                  <td>{{$statica['order_qty']}}</td>
                  <th>Actions</th>
-                 <td>@if($trader->account_status == 'verified') <a href="{{url('Trader/'.$trader->id.'/Suspend')}}" class="btn btn-info">Suspend</a> @elseif($trader->account_status == 'Suspend') <a href="{{url('Trader/'.$trader->id.'/verified')}}" class="btn btn-info">verifiy </a> @elseif($trader->account_status == 'pending') <a class="btn btn-info" href="{{url('Trader/'.$trader->id.'/verified')}}">Verifiy</a>  @endif </td>
+                 <td>@if($trader->status == 'verified') <a href="{{url('Trader/'.$trader->id.'/Suspend')}}" class="btn btn-info">Suspend</a> @elseif($trader->status == 'Suspend') <a href="{{url('Trader/'.$trader->id.'/verified')}}" class="btn btn-info">verifiy </a> @elseif($trader->status == 'pending') <a class="btn btn-info" href="{{url('Trader/'.$trader->id.'/verified')}}">Verifiy</a>  @endif </td>
                  </tr>
 
                  

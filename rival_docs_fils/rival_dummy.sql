@@ -47,7 +47,7 @@ INSERT INTO `categories` (  `name`, `name_en`, `img`, `created_at`, `updated_at`
 -- Dumping data for table `traders`
 --
 
-INSERT INTO `traders` ( `activityName`, `CRN`, `account_status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `traders` ( `activityName`, `CRN`, `status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
 ( 'AL-MENSAH', '210029911', 'verified', 1, 1, NULL, NULL);
 
 
@@ -125,7 +125,7 @@ INSERT INTO `contact_forms` (`id`, `status`, `body`, `reply`, `sender_id`, `crea
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `user_id`, `account_status`, `proveType_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `user_id`, `status`, `proveType_id`, `created_at`, `updated_at`) VALUES
 (NULL, NULL, '12121212', '12121', 'toyota', 'img/ss.png', '213443567', 4, 'reviewing', 1, '2020-12-14 18:00:00', NULL);
 
 
@@ -180,7 +180,7 @@ INSERT INTO `qutation_order_items` (`id`, `name`, `item_desc`, `qutation_order_i
 -- Dumping data for table `traders`
 --
 
-INSERT INTO `traders` (`id`, `activityName`, `CRN`, `account_status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `traders` (`id`, `activityName`, `CRN`, `status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (NULL, 'AL-MENSAH', '210029911', 'verified', 1, 2, NULL, NULL);
 
 

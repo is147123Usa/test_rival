@@ -31,7 +31,7 @@ class apiController extends Controller
         $driver->ssl = $request->ssl;
         $driver->trader_id = $request->trader_id;
         $driver->user_id = $request->user_id;
-        $driver->account_status = $request->account_status;
+        $driver->status = $request->status;
         $driver->proveType_id = $request->proveType_id;
         $driver->save();
         

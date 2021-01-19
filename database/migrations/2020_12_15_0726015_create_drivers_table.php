@@ -25,7 +25,7 @@ class CreateDriversTable extends Migration
             $table->foreign('trader_id')->references('id')->on('traders');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('account_status')->default('reviewing');
+            $table->string('status')->default('reviewing');
             $table->unsignedBigInteger('proveType_id')->nullable();
             $table->foreign('proveType_id')->references('id')->on('prove_types');
 

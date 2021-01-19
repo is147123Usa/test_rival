@@ -194,7 +194,7 @@ CREATE TABLE `drivers` (
   `ssl` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `trader_id` bigint(20) UNSIGNED DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `account_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'reviewing',
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'reviewing',
   `proveType_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -204,7 +204,7 @@ CREATE TABLE `drivers` (
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `trader_id`, `user_id`, `account_status`, `proveType_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `trader_id`, `user_id`, `status`, `proveType_id`, `created_at`, `updated_at`) VALUES
 (1, 'ahmed', '12121212', '12121', 'toyota', 'img/ss.png', '213443567', 2, 4, 'reviewing', 1, '2020-12-14 18:00:00', NULL),
 (2, 'Ali', '12121212', '12121', 'toyota', 'img/ss.png', '213443567', 1, 4, 'reviewing', 1, '2020-12-14 15:00:00', NULL);
 
@@ -678,7 +678,7 @@ CREATE TABLE `traders` (
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mailBox` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `account_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `spicalizition_id` bigint(20) UNSIGNED DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -689,7 +689,7 @@ CREATE TABLE `traders` (
 -- Dumping data for table `traders`
 --
 
-INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `account_status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'AL-MENSAH', '210029911', '', NULL, NULL, NULL, 'verified', 1, 1, NULL, NULL),
 (2, 'AL-Jazira', '210029911', '', NULL, NULL, NULL, 'verified', 1, 2, NULL, NULL);
 
