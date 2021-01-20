@@ -113,10 +113,7 @@
     'command.queue.flush' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'command.queue.forget' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'command.queue.listen' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
-<<<<<<< HEAD
-=======
     'command.queue.prune-batches' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
->>>>>>> 96f815c7764dd10622a0aa3c901e302563757de0
     'command.queue.restart' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'command.queue.retry' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'command.queue.retry-batch' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',

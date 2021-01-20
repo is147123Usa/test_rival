@@ -83,7 +83,7 @@ class AuthController extends Controller
                 $trader->mailBox = $request->mailBox;
                 $trader->status = $request->status;
                 $trader->spicalizition_id = $request->spicalizition_id;
-                $trader->user_id = $request->user_id;
+                $trader->user_id = $user->id;
                 $trader->save();
                 //dd($trader);
                 //$payload = array('Trader'=>$trader,'user_info'=>$user);

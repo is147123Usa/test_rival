@@ -65,7 +65,7 @@ class apiController extends Controller
     public function inbox(Request $request){
        
         $group_id = User::find($request->user_id);
-        
+       
         if($group_id){
             if($group_id->group_id == 2){
                 $res = qutation_order::where('client_id',$request->user_id)->with('cat')->get();
@@ -74,7 +74,7 @@ class apiController extends Controller
             if($group_id->group_id == 3){
               
                 $trader_id = Trader::where('user_id',$request->user_id)->get();
-                             
+               // return response()->json($trader_id,200);            
                  $traderQutations = "SELECT qutation_orders.* ,categories.name,name_en,users.name as client_name FROM qutation_orders JOIN categories ON categories.id = qutation_orders.cat_id JOIN users ON users.id = qutation_orders.client_id WHERE qutation_orders.cat_id =".$trader_id[0]->spicalizition_id."";//Qutation::where('trader_id','=',$trader_id)->get();
                  $traderQutations = DB::select($traderQutations);
                  $sql = "SELECT qutation_orders.* ,categories.name,name_en FROM qutation_orders JOIN categories ON categories.id = qutation_orders.cat_id WHERE qutation_orders.client_id =".$request->user_id."";
