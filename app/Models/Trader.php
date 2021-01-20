@@ -9,7 +9,7 @@ class Trader extends Model
 {
     use HasFactory;
     protected $table = "traders";
-    protected $fillable = ['user_id','activityName','CRN','account_status','spicalizition_id'];
+    protected $fillable = ['user_id','activityName','CRN','status','spicalizition_id'];
     public function user()
     { 
       // return $this->belongsTo('App\Models\Country');

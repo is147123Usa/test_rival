@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jan 12, 2021 at 09:55 AM
+-- Generation Time: Jan 19, 2021 at 09:58 AM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -72,7 +72,8 @@ CREATE TABLE `cities` (
 INSERT INTO `cities` (`id`, `name`, `name_en`, `country_id`, `created_at`, `updated_at`) VALUES
 (1, 'الرياض', 'Riyadh', 1, '2021-01-06 21:00:00', NULL),
 (2, 'جدة', 'jeddah', 1, '2021-01-06 21:00:00', NULL),
-(3, 'الدمام', 'Dammam', 1, '2021-01-06 21:00:00', NULL);
+(3, 'الدمام', 'Dammam', 1, '2021-01-06 21:00:00', NULL),
+(4, 'الخرطوم', 'Khartoum', 2, '2021-01-17 21:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,8 @@ CREATE TABLE `countries` (
 --
 
 INSERT INTO `countries` (`id`, `name`, `name_en`, `created_at`, `updated_at`) VALUES
-(1, 'السعودية', 'Saudi', '2021-01-06 21:00:00', NULL);
+(1, 'السعودية', 'Saudi', '2021-01-06 21:00:00', NULL),
+(2, 'السودان', 'Sudan', '2021-01-17 21:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -334,6 +336,13 @@ CREATE TABLE `orders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `operation_code`, `payment_method`, `delivery_location`, `deosInclude_delivery`, `delivery_fees`, `rival_fees`, `delivery_time`, `sub_total`, `total`, `isPaid`, `status`, `qutation_id`, `client_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+(1, '332332aa221', 'visa', 'lat,lang', '0', 15.00, 10.00, 'morning', 15.00, 25.00, 0, 'pending', 1, 2, 2, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -477,8 +486,8 @@ CREATE TABLE `qutation_order_items` (
 --
 
 INSERT INTO `qutation_order_items` (`id`, `name`, `qty`, `item_desc`, `qutation_order_id`, `created_at`, `updated_at`) VALUES
-(11, 'a', '1', 'aaa', 30, '2021-01-11 04:35:34', '2021-01-11 04:35:34'),
-(12, 'bb', '1', 'aaa', 30, '2021-01-11 04:35:34', '2021-01-11 04:35:34');
+(11, 'a', '1', 'aah', 30, '2021-01-11 04:35:34', '2021-01-11 04:35:34'),
+(12, 'bb', '1', 'aa', 30, '2021-01-11 04:35:34', '2021-01-11 04:35:34');
 
 -- --------------------------------------------------------
 
@@ -516,6 +525,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('fhPo7GX2KyLFInyTVuBjmXzLIUi3ZbaC4WfEJcru', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR3V1dG1RQmVXeE5VdEs5SGtvYVJDRUlPZldmajMwNjB4VFpDVzVWZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1611043740),
 ('MeFutW20ewfzNAioj4JrjK4tcT7OnnFTD758zY7F', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiMWpuQ2FXaFhsU3FPUklDZzFyaWo0T3FjTnpKMFpVaGtocXlheVlJRCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1610350412);
 
 -- --------------------------------------------------------
@@ -560,11 +570,11 @@ CREATE TABLE `traders` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `activityName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CRN` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tax_no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tax_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mailBox` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `account_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'pending',
   `spicalizition_id` bigint(20) UNSIGNED DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -575,9 +585,12 @@ CREATE TABLE `traders` (
 -- Dumping data for table `traders`
 --
 
-INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `account_status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (2, 'TopLine1', '112212111', '10000011222', NULL, NULL, NULL, '111', 1, NULL, '2021-01-07 11:10:36', '2021-01-07 11:10:36'),
-(3, 'TopLine1', '112212111', '10000011222', NULL, NULL, NULL, '111', 1, 3, '2021-01-07 11:11:13', '2021-01-07 11:11:13');
+(3, 'TopLine1', '112212111', '10000011222', NULL, NULL, NULL, '111', 1, 3, '2021-01-07 11:11:13', '2021-01-07 11:11:13'),
+(4, 'fsdfd', '564654', '445645', 'dffdgdf', NULL, NULL, NULL, NULL, NULL, '2021-01-19 06:29:57', '2021-01-19 06:29:57'),
+(5, 'sads', '1212', '765765', 'sdsd', NULL, NULL, NULL, 1, NULL, '2021-01-19 06:38:26', '2021-01-19 06:38:26'),
+(6, 'aaaa', '1111', '1111', '1', NULL, NULL, NULL, 1, NULL, '2021-01-19 06:52:17', '2021-01-19 06:52:17');
 
 -- --------------------------------------------------------
 
@@ -615,7 +628,19 @@ INSERT INTO `users` (`id`, `name`, `group_id`, `phone`, `localization`, `player_
 (2, 'client', 2, '0509875995', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'client@test.com', NULL, '$2y$10$cHvaG4.yfpyqbP0610wUCeg9kRxzhAngAxayPu.e4YrrHlKdx.7A.', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:03:39', '2021-01-07 11:03:39'),
 (3, 'trader', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'asasasA66aaa1as@test.com', NULL, '$2y$10$6OIPfqzhRGel0n.RocAjbui6SDhW9gTnofitt0PrwnIEAGdpzIefK', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:05:26', '2021-01-07 11:05:26'),
 (4, 'trader', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'trader@test.com', NULL, '$2y$10$vcEu1qiiVWktS3qUR3Rgv.AjlhJ1OGnwPbz6hSCf9ULEFoPJ.dHC6', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:10:36', '2021-01-07 11:10:36'),
-(5, 'trader2', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'trader2@test.com', NULL, '$2y$10$XlqO.ioJKJ88C5F6Hsbt6eckAfmsNtHGeuANgmxSUXfInpB3X8ykC', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:11:13', '2021-01-07 11:11:13');
+(5, 'trader2', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'trader2@test.com', NULL, '$2y$10$XlqO.ioJKJ88C5F6Hsbt6eckAfmsNtHGeuANgmxSUXfInpB3X8ykC', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:11:13', '2021-01-07 11:11:13'),
+(6, 'gfg', 2, '11', 'lat', 'jh', '0', 'aa@q.cv', NULL, '$2y$10$NtzfkHfnQJTyH8TKmoUAfefwq0edto8oOpS5Fqq5GbX2/KdHQfxf2', NULL, NULL, NULL, NULL, NULL, 4, '2021-01-18 12:03:11', '2021-01-18 12:03:11'),
+(7, 'hhg', 2, '5555454', 'lat', 'jh', '0', 'aaa@www.com', NULL, '$2y$10$pOBClaASTwCrGD9fCh3N1OqWIQe9wK38teZ7SQwYsdXf2JxUavhtC', NULL, NULL, NULL, NULL, NULL, 4, '2021-01-18 12:06:33', '2021-01-18 12:06:33'),
+(8, 'ggg', 2, '111111', 'lat', 'jh', '0', 'aa@ww.cn', NULL, '$2y$10$FduHSRNSSBCTNJAFzcuQuO8brR1jOhK4qsw.VvShZMCCgnkM0YZmO', NULL, NULL, NULL, NULL, NULL, 3, '2021-01-18 12:10:11', '2021-01-18 12:10:11'),
+(9, 'ashraf', 2, '0509875995', 'lat', 'jh', '0', 'aaaa@sss.cn', NULL, '$2y$10$H9Wg5q1bHnOCWfYLRfC3.OYSY5p3P/6nXLoJXRYIwPOrZFx8X3LEe', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 05:13:39', '2021-01-19 05:13:39'),
+(10, 'Ashraf', 2, '0965480887', 'lat', 'jh', '0', 'Adming2010@fmaik.com', NULL, '$2y$10$fFbAyzZ8U6IkQ2dWEZh1hOKWL5/40/ytxKq8bmK8OccAHm.AZNF8i', NULL, NULL, NULL, NULL, NULL, 4, '2021-01-19 05:25:27', '2021-01-19 05:25:27'),
+(11, 'asas', 3, '050987', 'lat', 'jh', '1', 'asas@w.cn', NULL, '$2y$10$9iOGmo4JKYsV/1tMQbB2eOrGJzuCTU47S6clUSvMTasehrAME4Tea', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 06:13:32', '2021-01-19 06:13:32'),
+(12, 'asasasa', 3, '05098711', 'lat', 'jh', '1', 'aas@bv.cn', NULL, '$2y$10$nxiPFPw3ply7JD5KXfERnuaSslnD.i9wtJoudYYsJk79OhVfdZbPW', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 06:17:00', '2021-01-19 06:17:00'),
+(13, 'asasas', 3, '8787', 'lat', 'jh', '1', 'dsss@s.com', NULL, '$2y$10$CqEnx3Br0nR7qglEZwFgnepQvlGrzIGKfBQyowFPAZL.TzoypyyYi', NULL, NULL, NULL, NULL, NULL, 2, '2021-01-19 06:23:39', '2021-01-19 06:23:39'),
+(14, 'asasas', 3, '8787', 'lat', 'jh', '1', 'dsnnnnss@s.com', NULL, '$2y$10$htbonS3i82RXZLgUZTLWvOEcA1S/G7PRrDbph7M/qjgfQNW.BDuYu', NULL, NULL, NULL, NULL, NULL, 2, '2021-01-19 06:28:09', '2021-01-19 06:28:09'),
+(15, 'asasas', 3, '8787', 'lat', 'jh', '1', 'dsnnfffnnnss@s.com', NULL, '$2y$10$FQ2JR9/Dkw2MpJCQxPOY0O/CqLxKRGYSqAaYSbFhrs.F6ICcYZQra', NULL, NULL, NULL, NULL, NULL, 2, '2021-01-19 06:29:57', '2021-01-19 06:29:57'),
+(16, 'dsds', 3, '22232', 'lat', 'jh', '1', 'aaa@ss.cn', NULL, '$2y$10$EXk9Z8LJH8QbbeIrVtZidu.QLh1sFn1IxnO2SLGnnmI6CsIstr9jW', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 06:38:26', '2021-01-19 06:38:26'),
+(17, 'dsdsd', 3, '111', 'lat', 'jh', '1', 'dddd@qq.cn', NULL, '$2y$10$HRpYaD9TpGCexuc4w20LaOZ0YXP5C8bBavYx9M95kRgybfBQ7X0s6', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 06:52:17', '2021-01-19 06:52:17');
 
 -- --------------------------------------------------------
 
@@ -875,7 +900,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `contact_forms`
@@ -893,7 +918,7 @@ ALTER TABLE `contentions`
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `delivery_offers`
@@ -947,7 +972,7 @@ ALTER TABLE `operation_types`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1007,13 +1032,13 @@ ALTER TABLE `sh_items`
 -- AUTO_INCREMENT for table `traders`
 --
 ALTER TABLE `traders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `wallets`

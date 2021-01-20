@@ -28,16 +28,17 @@ class AuthController extends Controller
      */
     public function login(Request $request){
     	$validator = Validator::make($request->all(), [
-            'email' => 'required|email',
+            'phone' => 'required',
             'password' => 'required|string|min:6',
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
+            $res = array('status' =>false ,'error'=> $validator->errors());
+            return response()->json($res, 200);
         }
 
         if (! $token = auth()->attempt($validator->validated())) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['status'=>false,'error' => 'Unauthorized'], 200);
         }
 
         return $this->createNewToken($token);
@@ -59,7 +60,6 @@ class AuthController extends Controller
             'player_id'=>'required',
             'city_id'=>'required',
             'isSuspend'=>'required'
-
         ]);
 
         if($validator->fails()){
@@ -81,7 +81,7 @@ class AuthController extends Controller
                 $trader->address = $request->address;
                 $trader->address_2 = $request->address_2;
                 $trader->mailBox = $request->mailBox;
-                $trader->account_status = $request->account_status;
+                $trader->status = $request->status;
                 $trader->spicalizition_id = $request->spicalizition_id;
                 $trader->user_id = $request->user_id;
                 $trader->save();
@@ -95,7 +95,8 @@ class AuthController extends Controller
         }
         return response()->json([
             'message' => 'User successfully registered',
-            'user' => $user
+            'user' => $user,
+            'status'=>true
         ], 201);
     }
 
@@ -143,7 +144,8 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
-            'user' => auth()->user()
+            'user' => auth()->user(),
+            'status' => true
         ]);
     }
 

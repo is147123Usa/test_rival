@@ -166,7 +166,7 @@ CREATE TABLE `drivers` (
   `ssl` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `trader_id` bigint(20) UNSIGNED DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `account_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'reviewing',
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'reviewing',
   `proveType_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -577,7 +577,7 @@ CREATE TABLE `traders` (
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mailBox` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `account_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `spicalizition_id` bigint(20) UNSIGNED DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -588,7 +588,7 @@ CREATE TABLE `traders` (
 -- Dumping data for table `traders`
 --
 
-INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `account_status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (2, 'TopLine1', '112212111', '10000011222', NULL, NULL, NULL, '111', 1, NULL, '2021-01-07 11:10:36', '2021-01-07 11:10:36'),
 (3, 'TopLine1', '112212111', '10000011222', NULL, NULL, NULL, '111', 1, NULL, '2021-01-07 11:11:13', '2021-01-07 11:11:13');
 

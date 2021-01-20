@@ -53,7 +53,7 @@
                     <td>{{$value->user->name}}</td>
                     <td>{{$value->activityName}}</td>
                     <td>{{$value->CRN}}</td>
-                    <td><button class="btn btn-success" disabled>{{$value->account_status}}</button></td>
+                    <td><button class="btn btn-success" disabled>{{$value->status}}</button></td>
                     <td>{{$value->spicalizition->name_en}}</td>
                     <td> <a href="{{url('Trader/'.$value->id)}}" class="btn btn-info" disabled>view </a> </td>
                      

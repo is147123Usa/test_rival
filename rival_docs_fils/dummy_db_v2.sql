@@ -58,7 +58,7 @@ INSERT INTO `categories` (`id`, `name`, `name_en`, `img`, `created_at`, `updated
 -- Dumping data for table `traders`
 --
 
-INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `account_status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (null, 'AL-MENSAH', '210029911', '', NULL, NULL, NULL, 'verified', 1, 1, NULL, NULL),
 (null, 'AL-Jazira', '210029911', '', NULL, NULL, NULL, 'verified', 1, 2, NULL, NULL);
 
@@ -86,7 +86,7 @@ INSERT INTO `contact_forms` (`id`, `status`, `body`, `reply`, `sender_id`, `crea
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `trader_id`, `user_id`, `account_status`, `proveType_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `drivers` (`id`, `cabtin_name`, `carNumber`, `license_no`, `carType`, `img`, `ssl`, `trader_id`, `user_id`, `status`, `proveType_id`, `created_at`, `updated_at`) VALUES
 (null, NULL, '12121212', '12121', 'toyota', 'img/ss.png', '213443567', NULL, 4, 'reviewing', 1, '2020-12-14 18:00:00', NULL),
 (null, NULL, '12121212', '12121', 'toyota', 'img/ss.png', '213443567', NULL, 4, 'reviewing', 1, '2020-12-14 15:00:00', NULL);
 

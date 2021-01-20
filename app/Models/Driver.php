@@ -13,7 +13,7 @@ class Driver extends Model
         'cabtin_name','carNumber',
         'license_no','carType',
         'img','ssl','user_id',
-        'account_status','proveType_id','trader_id'
+        'status','proveType_id','trader_id'
 ];
 public function user()
 {

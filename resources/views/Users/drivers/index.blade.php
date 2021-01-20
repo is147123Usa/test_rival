@@ -53,7 +53,7 @@
                     <td>{{$value->user->email}}</td>
                     <td>{{$value->carType}}</td>
                     <td>{{$value->trader->user->name}} | {{$value->trader->activityName}} </td>
-                    <td><button class="btn btn-success" disabled>{{$value->account_status}}</button></td>
+                    <td><button class="btn btn-success" disabled>{{$value->status}}</button></td>
                 
                      
                     <td  > <a href="{{'/Driver/'}}{{$value->id}}" class="btn btn-info" >View</a> <button href="" class="btn btn-danger" >delete</button> <button href="" class="btn btn-info" >block</button></td>

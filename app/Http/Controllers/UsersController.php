@@ -65,10 +65,10 @@ class UsersController extends Controller
         //dd($statica);
         return view('users.traders.show',compact('trader','statica'));
     }
-    public function account_status($trader_id,$account_status){
-        //dd($trader_id.'/'.$account_status);
+    public function status($trader_id,$status){
+        //dd($trader_id.'/'.$status);
         $trader = Trader::find($trader_id);
-        $trader->account_status = $account_status;
+        $trader->status = $status;
         if($trader->save()){
             return redirect()->to('Trader/'.$trader_id)->with('alert', 'Account Status Has been updated successfuly!');
         }else{

@@ -31,7 +31,9 @@ Route::group([
     Route::post('/addQutstionorder', [apiController::class, 'addQutstionorder']);
     Route::post('/user/inbox', [apiController::class, 'inbox']);
     Route::post('/inbox', [apiController::class, 'inbox']);
-
+    Route::get('/getCities', [apiController::class, 'getCities']);
+    Route::post('/addQutation', [apiController::class, 'addQutation']);
+    Route::post('/getQutation_offers', [apiController::class, 'getQutation_offers']);
     Route::post('/user/getItems', [apiController::class, 'getItems']);
 
 });

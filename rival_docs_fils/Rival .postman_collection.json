@@ -212,7 +212,7 @@
 									"disabled": true
 								},
 								{
-									"key": "account_status",
+									"key": "status",
 									"value": "111",
 									"type": "text"
 								}
@@ -281,7 +281,7 @@
 									"type": "text"
 								},
 								{
-									"key": "account_status",
+									"key": "status",
 									"value": "0",
 									"type": "text"
 								},
