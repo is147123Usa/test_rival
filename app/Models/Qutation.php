@@ -11,7 +11,7 @@ class Qutation extends Model
     protected $table = "qutations";
     protected $fillable = [
         'rival_fee','total',
-        'delivery_fee','rival_fees',
+        'delivery_fee','rival_fees','paymentMethod',
         'qutation_order_id','trader_id'
     ];
     public function trader(){

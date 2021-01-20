@@ -55,7 +55,7 @@ class AuthController extends Controller
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
             'group_id'=>'required',
-            'phone'=>'required',
+            'phone'=>'required|unique:users',
             'localization'=>'required',
             'player_id'=>'required',
             'city_id'=>'required',

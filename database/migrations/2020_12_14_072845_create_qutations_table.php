@@ -20,6 +20,7 @@ class CreateQutationsTable extends Migration
             $table->float('delivery_fee', 8, 2)->nullable();
             $table->boolean('includeDelivery')->nullable();
             $table->string('rival_fees')->nullable();
+            $table->string('paymentMethod')->nullable();
             $table->unsignedBigInteger('qutation_order_id')->nullable();
             $table->foreign('qutation_order_id')->references('id')->on('qutation_orders');
             

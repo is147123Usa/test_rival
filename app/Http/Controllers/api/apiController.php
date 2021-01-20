@@ -99,6 +99,7 @@ class apiController extends Controller
         return response()->json(['status'=>true,'payload'=>$payload],200);
     }
     public function addQutation(Request $req){
+        $payment;
         $qutation = new Qutation();
          if($req->includeDelivery == 0){
             $qutation->delivery_fee = 18.00;
@@ -106,18 +107,27 @@ class apiController extends Controller
         $qutation->sub_total = $req->sub_total;
         
         $qutation->includeDelivery = $req->includeDelivery;
+
         $rival_fee = Setting::where('name','rival')->get();
         if($req->has('items')){
             $items = $req->items;
             $item = $items[0] ;
             $qutation->qutation_order_id = $item['qutation_order_item_id'];
+            $payment = $item['qutation_order_item_id'];
         }else{
 
         }
         $trader_id= Trader::where('user_id',$req->trader_id)->get();
         $trader_id = $trader_id[0];
         $trader_id = $trader_id->id;
-        
+        if($payment !=null || $payment != ''){
+            $payment = Qutation_order::find($payment);
+            $payment = $payment->payMethod;
+        }else{
+            
+        }
+        $qutation->paymentMethod = $payment;
+
         $qutation->trader_id = $trader_id;
         $qutation->rival_fees = ($req->sub_total* $rival_fee['0']->valuee);
         if($qutation->save()){
@@ -133,10 +143,11 @@ class apiController extends Controller
                $stroeItem->img = 'kk';//$temp['img'];
                $stroeItem->note = $temp['note'];
                $stroeItem->item_desc = $temp['note'];
-
                $stroeItem->qutition_id = $qutation->id;
                //$stroeItem->qutation_order_item_id = '30';
                 $stroeItem->save();
+
+                return response()->json(['ststus'=>true],200);
             }
            
         }else{
@@ -146,8 +157,15 @@ class apiController extends Controller
     }
     public function getQutation_offers(Request $request){
 
-        $sql = "SELECT *,traders.activityName FROM `qutations` JOIN traders ON traders.id = qutations.trader_id WHERE qutations.qutation_order_id=".$request->q_id."";
+        $sql = "SELECT qutations.*,traders.activityName FROM `qutations` JOIN traders ON traders.id = qutations.trader_id WHERE qutations.qutation_order_id=".$request->q_id."";
+         
         $payload = DB::select($sql);//Qutation::where('qutation_order_id',$request->q_id)->get();
+
         return response()->json($payload,200);
+    }
+    public function ItemQutations(Request $req){
+        $payload = Qutation_item::where('qutition_id',$req->qutition_id)->get();
+        
+        return response()->json(['status'=>true,'payload'=>$payload],200);
     }
 }
