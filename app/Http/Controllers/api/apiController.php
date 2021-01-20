@@ -69,7 +69,7 @@ class apiController extends Controller
         if($group_id){
             if($group_id->group_id == 2){
                 $res = qutation_order::where('client_id',$request->user_id)->with('cat')->get();
-                $payload = array('res'=>$res,'traderQutation'=>$traderQutations);
+                $payload = array('res'=>$res);
 
                 return response()->json($payload,200);
             }
