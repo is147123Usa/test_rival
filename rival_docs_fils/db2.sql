@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jan 11, 2021 at 07:04 AM
+-- Generation Time: Jan 20, 2021 at 02:38 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -70,9 +70,10 @@ CREATE TABLE `cities` (
 --
 
 INSERT INTO `cities` (`id`, `name`, `name_en`, `country_id`, `created_at`, `updated_at`) VALUES
-(1, 'الرياض', 'Riyadh', 1, '2021-01-06 21:00:00', NULL),
-(2, 'جدة', 'jeddah', 1, '2021-01-06 21:00:00', NULL),
-(3, 'الدمام', 'Dammam', 1, '2021-01-06 21:00:00', NULL);
+(1, 'الرياض', 'Riyadh', 1, '2021-01-06 18:00:00', NULL),
+(2, 'جدة', 'jeddah', 1, '2021-01-06 18:00:00', NULL),
+(3, 'الدمام', 'Dammam', 1, '2021-01-06 18:00:00', NULL),
+(4, 'الخرطوم', 'Khartoum', 2, '2021-01-17 18:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,8 @@ CREATE TABLE `countries` (
 --
 
 INSERT INTO `countries` (`id`, `name`, `name_en`, `created_at`, `updated_at`) VALUES
-(1, 'السعودية', 'Saudi', '2021-01-06 21:00:00', NULL);
+(1, 'السعودية', 'Saudi', '2021-01-06 18:00:00', NULL),
+(2, 'السودان', 'Sudan', '2021-01-17 18:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -224,35 +226,36 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2010_1_14_060720_create_countries', 1),
-(2, '2010_2_14_061939_create_cities', 1),
-(3, '2014_10_12_000000_create_users_table', 1),
-(4, '2014_10_12_100000_create_password_resets_table', 1),
-(5, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
-(6, '2019_08_19_000000_create_failed_jobs_table', 1),
-(7, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(8, '2020_12_14_063504_create_wallets_table', 1),
-(9, '2020_12_14_064120_create_categories_table', 1),
-(10, '2020_12_14_071647_create_qutation_orders_table', 1),
-(11, '2020_12_14_072514_create_qutation_order_items_table', 1),
-(12, '2020_12_14_072844_create_traders_table', 1),
-(13, '2020_12_14_072845_create_qutations_table', 1),
-(14, '2020_12_14_082212_create_prove_types_table', 1),
-(15, '2020_12_14_084231_create_operation_types_table', 1),
-(16, '2020_12_14_084232_create_operation_records_table', 1),
-(17, '2020_12_15_0726015_create_drivers_table', 1),
-(18, '2020_12_15_072607_create_orders', 1),
-(19, '2020_12_15_072613_create_delivery_offers_table', 1),
-(20, '2020_12_15_072614_create_qutation_items_table', 1),
-(21, '2020_12_16_082013_create_notifiations_table', 1),
-(22, '2020_12_16_090108_create_admins_table', 1),
-(23, '2020_12_16_090109_create_contentions_table', 1),
-(24, '2020_12_16_092529_create_contact_forms_table', 1),
-(25, '2020_12_19_093013_create_sh_items_table', 1),
-(26, '2020_12_19_110355_create_sessions_table', 1),
-(27, '2020_12_22_083143_create_qutation_reports_table', 1),
-(28, '2020_12_22_095130_create_settings_table', 1),
-(29, '2020_12_24_124425_create_images_table', 1);
+(61, '2010_1_14_060720_create_countries', 1),
+(62, '2010_2_14_061939_create_cities', 1),
+(63, '2014_10_12_000000_create_users_table', 1),
+(64, '2014_10_12_100000_create_password_resets_table', 1),
+(65, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
+(66, '2019_08_19_000000_create_failed_jobs_table', 1),
+(67, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(68, '2020_12_14_063504_create_wallets_table', 1),
+(69, '2020_12_14_064120_create_categories_table', 1),
+(70, '2020_12_14_071647_create_qutation_orders_table', 1),
+(71, '2020_12_14_072514_create_qutation_order_items_table', 1),
+(72, '2020_12_14_072844_create_traders_table', 1),
+(73, '2020_12_14_072845_create_qutations_table', 1),
+(74, '2020_12_14_082212_create_prove_types_table', 1),
+(75, '2020_12_14_084231_create_operation_types_table', 1),
+(76, '2020_12_14_084232_create_operation_records_table', 1),
+(77, '2020_12_15_0726015_create_drivers_table', 1),
+(78, '2020_12_15_072607_create_orders', 1),
+(79, '2020_12_15_072613_create_delivery_offers_table', 1),
+(80, '2020_12_15_072614_create_qutation_items_table', 1),
+(81, '2020_12_16_082013_create_notifiations_table', 1),
+(82, '2020_12_16_090108_create_admins_table', 1),
+(83, '2020_12_16_090109_create_contentions_table', 1),
+(84, '2020_12_16_092529_create_contact_forms_table', 1),
+(85, '2020_12_17_112708_create_sr_items_table', 1),
+(86, '2020_12_17_122424_create_sessions_table', 1),
+(87, '2020_12_19_093013_create_sh_items_table', 1),
+(88, '2020_12_22_083143_create_qutation_reports_table', 1),
+(89, '2020_12_22_095130_create_settings_table', 1),
+(90, '2020_12_24_124425_create_images_table', 1);
 
 -- --------------------------------------------------------
 
@@ -394,16 +397,29 @@ INSERT INTO `prove_types` (`id`, `name`, `name_en`, `created_at`, `updated_at`) 
 
 CREATE TABLE `qutations` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sub_total` double(8,2) DEFAULT NULL,
   `delivery_fee` double(8,2) DEFAULT NULL,
   `includeDelivery` tinyint(1) DEFAULT NULL,
   `rival_fees` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `paymentMethod` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `qutation_order_id` bigint(20) UNSIGNED DEFAULT NULL,
   `trader_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `qutations`
+--
+
+INSERT INTO `qutations` (`id`, `status`, `sub_total`, `delivery_fee`, `includeDelivery`, `rival_fees`, `paymentMethod`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+(27, 'pending', 1332.00, NULL, 1, '13.32', NULL, 40, 7, '2021-01-20 04:44:28', '2021-01-20 04:44:28'),
+(28, 'pending', 1332.00, NULL, 1, '13.32', NULL, 40, 7, '2021-01-20 04:47:44', '2021-01-20 04:47:44'),
+(29, 'pending', 1332.00, 18.00, 0, '13.32', NULL, 40, 7, '2021-01-20 06:23:26', '2021-01-20 06:23:26'),
+(30, 'pending', 1332.00, 18.00, 0, '13.32', NULL, 40, 7, '2021-01-20 06:24:05', '2021-01-20 06:24:05'),
+(31, 'pending', 1332.00, 18.00, 0, '13.32', 'OnDelivery', 40, 7, '2021-01-20 06:24:46', '2021-01-20 06:24:46'),
+(32, NULL, 12.00, NULL, 1, '0.12', 'visa', 42, 10, '2021-01-20 11:35:10', '2021-01-20 11:35:10');
 
 -- --------------------------------------------------------
 
@@ -423,6 +439,16 @@ CREATE TABLE `qutation_items` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `qutation_items`
+--
+
+INSERT INTO `qutation_items` (`id`, `price`, `qty`, `img`, `item_desc`, `note`, `qutition_id`, `qutation_order_item_id`, `created_at`, `updated_at`) VALUES
+(15, 12, 111, 'kk', 'asas', 'asas', 27, NULL, '2021-01-20 04:44:28', '2021-01-20 04:44:28'),
+(16, 12, 111, 'kk', 'asas', 'asas', 28, NULL, '2021-01-20 04:47:44', '2021-01-20 04:47:44'),
+(17, 12, 111, 'kk', 'rr', 'rr', 31, NULL, '2021-01-20 06:24:46', '2021-01-20 06:24:46'),
+(18, 12, 1, 'kk', 'asas', 'asas', 32, NULL, '2021-01-20 11:35:10', '2021-01-20 11:35:10');
 
 -- --------------------------------------------------------
 
@@ -446,34 +472,7 @@ CREATE TABLE `qutation_orders` (
 --
 
 INSERT INTO `qutation_orders` (`id`, `qutastion_status`, `payMethod`, `Status`, `client_id`, `cat_id`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'visa', 'pending', 2, 2, NULL, NULL),
-(2, NULL, 'onDeliver', 'pending', 2, 1, '2021-01-06 21:00:00', NULL),
-(3, NULL, 'visa', 'pending', 2, 1, '2021-01-10 08:31:32', '2021-01-10 08:31:32'),
-(4, NULL, 'visa', 'pending', 2, 1, '2021-01-10 08:36:37', '2021-01-10 08:36:37'),
-(5, NULL, 'visa', 'pending', 2, 1, '2021-01-10 08:36:45', '2021-01-10 08:36:45'),
-(6, NULL, 'visa', 'pending', 2, 1, '2021-01-10 08:37:59', '2021-01-10 08:37:59'),
-(7, NULL, 'visa', 'pending', 2, 1, '2021-01-10 08:38:13', '2021-01-10 08:38:13'),
-(8, NULL, 'visa', 'pending', 2, 1, '2021-01-10 08:38:30', '2021-01-10 08:38:30'),
-(9, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 08:38:58', '2021-01-10 08:38:58'),
-(10, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 08:39:15', '2021-01-10 08:39:15'),
-(11, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 08:39:35', '2021-01-10 08:39:35'),
-(12, NULL, 'deliver', 'pending', 2, 2, '2021-01-10 08:44:55', '2021-01-10 08:44:55'),
-(13, NULL, NULL, 'pending', 2, 1, '2021-01-10 08:52:14', '2021-01-10 08:52:14'),
-(14, NULL, NULL, 'pending', 2, 1, '2021-01-10 08:53:44', '2021-01-10 08:53:44'),
-(15, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:01:52', '2021-01-10 09:01:52'),
-(16, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:02:12', '2021-01-10 09:02:12'),
-(17, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:03:05', '2021-01-10 09:03:05'),
-(18, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:03:22', '2021-01-10 09:03:22'),
-(19, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:04:10', '2021-01-10 09:04:10'),
-(20, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:04:22', '2021-01-10 09:04:22'),
-(21, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:05:24', '2021-01-10 09:05:24'),
-(22, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:05:35', '2021-01-10 09:05:35'),
-(23, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:05:42', '2021-01-10 09:05:42'),
-(24, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:06:45', '2021-01-10 09:06:45'),
-(25, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 09:08:45', '2021-01-10 09:08:45'),
-(26, NULL, 'visa', 'pending', 2, 1, '2021-01-10 09:09:33', '2021-01-10 09:09:33'),
-(27, NULL, 'deliver', 'pending', 2, 1, '2021-01-10 12:36:39', '2021-01-10 12:36:39'),
-(28, NULL, 'visa', 'pending', 2, 1, '2021-01-10 12:49:09', '2021-01-10 12:49:09');
+(42, NULL, 'visa', 'pending', 24, 1, '2021-01-20 11:27:11', '2021-01-20 11:27:11');
 
 -- --------------------------------------------------------
 
@@ -496,9 +495,7 @@ CREATE TABLE `qutation_order_items` (
 --
 
 INSERT INTO `qutation_order_items` (`id`, `name`, `qty`, `item_desc`, `qutation_order_id`, `created_at`, `updated_at`) VALUES
-(7, 'aa', '1', 'aas', 26, '2021-01-10 09:09:33', '2021-01-10 09:09:33'),
-(8, 'j', '1', 'ddd', 27, '2021-01-10 12:36:39', '2021-01-10 12:36:39'),
-(9, 'aa', '1', 'a', 28, '2021-01-10 12:49:09', '2021-01-10 12:49:09');
+(23, 'item1', '1', 'itemDesc1', 42, '2021-01-20 11:27:11', '2021-01-20 11:27:11');
 
 -- --------------------------------------------------------
 
@@ -545,6 +542,13 @@ CREATE TABLE `settings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `name`, `valuee`, `created_at`, `updated_at`) VALUES
+(1, 'rival', '0.01', '2021-01-18 18:00:00', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -566,6 +570,22 @@ CREATE TABLE `sh_items` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sr_items`
+--
+
+CREATE TABLE `sr_items` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `item_desc` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trader_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `traders`
 --
 
@@ -573,11 +593,11 @@ CREATE TABLE `traders` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `activityName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CRN` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tax_no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tax_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mailBox` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'pending',
   `spicalizition_id` bigint(20) UNSIGNED DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -589,8 +609,7 @@ CREATE TABLE `traders` (
 --
 
 INSERT INTO `traders` (`id`, `activityName`, `CRN`, `tax_no`, `address`, `address_2`, `mailBox`, `status`, `spicalizition_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(2, 'TopLine1', '112212111', '10000011222', NULL, NULL, NULL, '111', 1, NULL, '2021-01-07 11:10:36', '2021-01-07 11:10:36'),
-(3, 'TopLine1', '112212111', '10000011222', NULL, NULL, NULL, '111', 1, NULL, '2021-01-07 11:11:13', '2021-01-07 11:11:13');
+(10, 'title', '1112121', '2121212', 'hhhhh', NULL, NULL, NULL, 1, 26, '2021-01-20 11:31:24', '2021-01-20 11:31:24');
 
 -- --------------------------------------------------------
 
@@ -624,11 +643,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `group_id`, `phone`, `localization`, `player_id`, `isSuspend`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `city_id`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 1, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'admin@test.com', NULL, '$2y$10$io6l6R9U2Uw/Ax3tIC0tWuMgwbSGLGlHmIvzBinWMrgJXb28D1ym6', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:03:19', '2021-01-07 11:03:19'),
-(2, 'client', 1, '0509875995', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'client@test.com', NULL, '$2y$10$cHvaG4.yfpyqbP0610wUCeg9kRxzhAngAxayPu.e4YrrHlKdx.7A.', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:03:39', '2021-01-07 11:03:39'),
-(3, 'trader', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'asasasA66aaa1as@test.com', NULL, '$2y$10$6OIPfqzhRGel0n.RocAjbui6SDhW9gTnofitt0PrwnIEAGdpzIefK', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:05:26', '2021-01-07 11:05:26'),
-(4, 'trader', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'trader@test.com', NULL, '$2y$10$vcEu1qiiVWktS3qUR3Rgv.AjlhJ1OGnwPbz6hSCf9ULEFoPJ.dHC6', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:10:36', '2021-01-07 11:10:36'),
-(5, 'trader2', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'trader2@test.com', NULL, '$2y$10$XlqO.ioJKJ88C5F6Hsbt6eckAfmsNtHGeuANgmxSUXfInpB3X8ykC', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:11:13', '2021-01-07 11:11:13');
+(24, 'Ash', 2, '0509875995', 'lat', 'jh', '0', 'as@as.cn', NULL, '$2y$10$/SIRscjwN1uK7GrlnEL1WOXQ2FELSmKzHJJHClMehmNaFzkxvhTZq', NULL, NULL, NULL, NULL, NULL, 2, '2021-01-20 11:25:00', '2021-01-20 11:25:00'),
+(25, 'MOha', 3, '05098759951', 'lat', 'jh', '1', 'admin@wd.cn', NULL, '$2y$10$gq1mVJbfywQ0.W3qX8TPHOc.Uyp3U4IVbIuszsc0pYincAwuctcVO', NULL, NULL, NULL, NULL, NULL, 4, '2021-01-20 11:29:34', '2021-01-20 11:29:34'),
+(26, 'ash', 3, '0999989', 'lat', 'jh', '1', 'aass@gm.cn', NULL, '$2y$10$/SIRscjwN1uK7GrlnEL1WOXQ2FELSmKzHJJHClMehmNaFzkxvhTZq', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-20 11:31:24', '2021-01-20 11:31:24');
 
 -- --------------------------------------------------------
 
@@ -846,6 +863,13 @@ ALTER TABLE `sh_items`
   ADD KEY `sh_items_trader_id_foreign` (`trader_id`);
 
 --
+-- Indexes for table `sr_items`
+--
+ALTER TABLE `sr_items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sr_items_trader_id_foreign` (`trader_id`);
+
+--
 -- Indexes for table `traders`
 --
 ALTER TABLE `traders`
@@ -888,7 +912,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `contact_forms`
@@ -906,7 +930,7 @@ ALTER TABLE `contentions`
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `delivery_offers`
@@ -936,7 +960,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `notifiations`
@@ -978,25 +1002,25 @@ ALTER TABLE `prove_types`
 -- AUTO_INCREMENT for table `qutations`
 --
 ALTER TABLE `qutations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `qutation_items`
 --
 ALTER TABLE `qutation_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `qutation_orders`
 --
 ALTER TABLE `qutation_orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `qutation_order_items`
 --
 ALTER TABLE `qutation_order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `qutation_reports`
@@ -1008,7 +1032,7 @@ ALTER TABLE `qutation_reports`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sh_items`
@@ -1017,16 +1041,22 @@ ALTER TABLE `sh_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `sr_items`
+--
+ALTER TABLE `sr_items`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `traders`
 --
 ALTER TABLE `traders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `wallets`
@@ -1148,6 +1178,12 @@ ALTER TABLE `qutation_reports`
 ALTER TABLE `sh_items`
   ADD CONSTRAINT `sh_items_cat_id_foreign` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`),
   ADD CONSTRAINT `sh_items_trader_id_foreign` FOREIGN KEY (`trader_id`) REFERENCES `traders` (`id`);
+
+--
+-- Constraints for table `sr_items`
+--
+ALTER TABLE `sr_items`
+  ADD CONSTRAINT `sr_items_trader_id_foreign` FOREIGN KEY (`trader_id`) REFERENCES `traders` (`id`);
 
 --
 -- Constraints for table `traders`

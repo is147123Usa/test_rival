@@ -21,7 +21,7 @@ class CreateTradersTable extends Migration
             $table->string('address')->nullable();
             $table->string('address_2')->nullable();
             $table->string('mailBox')->nullable();
-            $table->string('status')->default('pending');;
+            $table->string('status')->default('pending');
             $table->unsignedBigInteger('spicalizition_id')->nullable();
             $table->foreign('spicalizition_id')->references('id')->on('categories');
             $table->unsignedBigInteger('user_id')->nullable();
