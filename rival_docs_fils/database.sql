@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jan 20, 2021 at 08:52 AM
+-- Generation Time: Jan 20, 2021 at 01:09 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -406,6 +406,7 @@ CREATE TABLE `qutations` (
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
   `sub_total` double(8,2) DEFAULT NULL,
   `delivery_fee` double(8,2) DEFAULT NULL,
+  `paymentMethod` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `includeDelivery` tinyint(1) DEFAULT NULL,
   `rival_fees` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `qutation_order_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -418,28 +419,12 @@ CREATE TABLE `qutations` (
 -- Dumping data for table `qutations`
 --
 
-INSERT INTO `qutations` (`id`, `status`, `sub_total`, `delivery_fee`, `includeDelivery`, `rival_fees`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
-(1, 'pending', 200.00, 0.00, 0, '20', 29, 3, '2021-01-10 21:00:00', NULL),
-(3, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:19:22', '2021-01-19 09:19:22'),
-(4, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:20:49', '2021-01-19 09:20:49'),
-(5, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:21:02', '2021-01-19 09:21:02'),
-(6, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:27:31', '2021-01-19 09:27:31'),
-(7, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:27:51', '2021-01-19 09:27:51'),
-(8, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:28:08', '2021-01-19 09:28:08'),
-(9, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:31:06', '2021-01-19 09:31:06'),
-(10, 'pending', 23.00, NULL, 1, '0.23', 29, 3, '2021-01-19 09:31:32', '2021-01-19 09:31:32'),
-(11, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:31:58', '2021-01-19 09:31:58'),
-(12, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:33:10', '2021-01-19 09:33:10'),
-(13, 'pending', 23.00, NULL, 1, '0.23', 33, 3, '2021-01-19 09:38:05', '2021-01-19 09:38:05'),
-(14, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:38:46', '2021-01-19 09:38:46'),
-(15, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:39:07', '2021-01-19 09:39:07'),
-(16, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:41:19', '2021-01-19 09:41:19'),
-(17, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:41:51', '2021-01-19 09:41:51'),
-(18, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:42:20', '2021-01-19 09:42:20'),
-(19, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 09:49:38', '2021-01-19 09:49:38'),
-(20, 'pending', 23.00, NULL, 1, '0.23', 33, 3, '2021-01-19 10:09:51', '2021-01-19 10:09:51'),
-(21, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 10:10:57', '2021-01-19 10:10:57'),
-(22, 'pending', 23.00, NULL, 1, '0.23', 30, 3, '2021-01-19 10:11:25', '2021-01-19 10:11:25');
+INSERT INTO `qutations` (`id`, `status`, `sub_total`, `delivery_fee`, `paymentMethod`, `includeDelivery`, `rival_fees`, `qutation_order_id`, `trader_id`, `created_at`, `updated_at`) VALUES
+(27, 'pending', 1332.00, NULL, NULL, 1, '13.32', 40, 7, '2021-01-20 07:44:28', '2021-01-20 07:44:28'),
+(28, 'pending', 1332.00, NULL, NULL, 1, '13.32', 40, 7, '2021-01-20 07:47:44', '2021-01-20 07:47:44'),
+(29, 'pending', 1332.00, 18.00, NULL, 0, '13.32', 40, 7, '2021-01-20 09:23:26', '2021-01-20 09:23:26'),
+(30, 'pending', 1332.00, 18.00, NULL, 0, '13.32', 40, 7, '2021-01-20 09:24:05', '2021-01-20 09:24:05'),
+(31, 'pending', 1332.00, 18.00, 'OnDelivery', 0, '13.32', 40, 7, '2021-01-20 09:24:46', '2021-01-20 09:24:46');
 
 -- --------------------------------------------------------
 
@@ -465,8 +450,9 @@ CREATE TABLE `qutation_items` (
 --
 
 INSERT INTO `qutation_items` (`id`, `price`, `qty`, `img`, `item_desc`, `note`, `qutition_id`, `qutation_order_item_id`, `created_at`, `updated_at`) VALUES
-(9, 11, 1, 'kk', 'gg', 'gg', 22, NULL, '2021-01-19 10:11:25', '2021-01-19 10:11:25'),
-(10, 12, 1, 'kk', 'asas', 'asas', 22, NULL, '2021-01-19 10:11:25', '2021-01-19 10:11:25');
+(15, 12, 111, 'kk', 'asas', 'asas', 27, NULL, '2021-01-20 07:44:28', '2021-01-20 07:44:28'),
+(16, 12, 111, 'kk', 'asas', 'asas', 28, NULL, '2021-01-20 07:47:44', '2021-01-20 07:47:44'),
+(17, 12, 111, 'kk', 'rr', 'rr', 31, NULL, '2021-01-20 09:24:46', '2021-01-20 09:24:46');
 
 -- --------------------------------------------------------
 
@@ -490,15 +476,7 @@ CREATE TABLE `qutation_orders` (
 --
 
 INSERT INTO `qutation_orders` (`id`, `qutastion_status`, `payMethod`, `Status`, `client_id`, `cat_id`, `created_at`, `updated_at`) VALUES
-(29, NULL, 'deliver', 'pending', 5, 1, '2021-01-11 04:34:42', '2021-01-11 04:34:42'),
-(30, NULL, 'deliver', 'pending', 5, 1, '2021-01-11 04:35:34', '2021-01-11 04:35:34'),
-(32, NULL, 'OnDelivery', 'pending', 5, 1, '2021-01-19 10:15:50', '2021-01-19 10:15:50'),
-(33, NULL, 'OnDelivery', 'pending', 3, 1, '2021-01-19 10:51:29', '2021-01-19 10:51:29'),
-(34, NULL, 'visa', 'pending', 2, 1, '2021-01-20 05:19:43', '2021-01-20 05:19:43'),
-(35, NULL, 'visa', 'pending', 2, 2, '2021-01-20 05:21:04', '2021-01-20 05:21:04'),
-(36, NULL, 'OnDelivery', 'pending', 2, 1, '2021-01-20 05:27:13', '2021-01-20 05:27:13'),
-(37, NULL, 'OnDelivery', 'pending', 18, 1, '2021-01-20 05:29:16', '2021-01-20 05:29:16'),
-(38, NULL, 'OnDelivery', 'pending', 18, 1, '2021-01-20 05:49:11', '2021-01-20 05:49:11');
+(40, NULL, 'OnDelivery', 'pending', 18, 1, '2021-01-20 07:43:34', '2021-01-20 07:43:34');
 
 -- --------------------------------------------------------
 
@@ -521,15 +499,7 @@ CREATE TABLE `qutation_order_items` (
 --
 
 INSERT INTO `qutation_order_items` (`id`, `name`, `qty`, `item_desc`, `qutation_order_id`, `created_at`, `updated_at`) VALUES
-(11, 'a', '1', 'aah', 30, '2021-01-11 04:35:34', '2021-01-11 04:35:34'),
-(12, 'bb', '1', 'aa', 30, '2021-01-11 04:35:34', '2021-01-11 04:35:34'),
-(13, 'qqqq', '11', 'Aa', 32, '2021-01-19 10:15:50', '2021-01-19 10:15:50'),
-(14, 'cooler', '5', 'vv', 33, '2021-01-19 10:51:29', '2021-01-19 10:51:29'),
-(15, 'eee', '1', 'gg', 34, '2021-01-20 05:19:43', '2021-01-20 05:19:43'),
-(16, 'ttttsettt§', '2', 'ggg', 35, '2021-01-20 05:21:04', '2021-01-20 05:21:04'),
-(17, 'aaa', '1', 'a', 36, '2021-01-20 05:27:13', '2021-01-20 05:27:13'),
-(18, 'dd', '11', 'weee', 37, '2021-01-20 05:29:16', '2021-01-20 05:29:16'),
-(19, 'iiiii', '11', 'bbbb', 38, '2021-01-20 05:49:12', '2021-01-20 05:49:12');
+(21, 'ss', '111', 'zzz', 40, '2021-01-20 07:43:34', '2021-01-20 07:43:34');
 
 -- --------------------------------------------------------
 
@@ -677,14 +647,12 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `group_id`, `phone`, `localization`, `player_id`, `isSuspend`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `city_id`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 1, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'admin@test.com', NULL, '$2y$10$io6l6R9U2Uw/Ax3tIC0tWuMgwbSGLGlHmIvzBinWMrgJXb28D1ym6', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:03:19', '2021-01-07 11:03:19'),
-(2, 'client', 2, '0509875995', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'client@test.com', NULL, '$2y$10$cHvaG4.yfpyqbP0610wUCeg9kRxzhAngAxayPu.e4YrrHlKdx.7A.', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:03:39', '2021-01-07 11:03:39'),
 (3, 'trader', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'asasasA66aaa1as@test.com', NULL, '$2y$10$6OIPfqzhRGel0n.RocAjbui6SDhW9gTnofitt0PrwnIEAGdpzIefK', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:05:26', '2021-01-07 11:05:26'),
 (4, 'trader', 3, '1122334455', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'trader@test.com', NULL, '$2y$10$vcEu1qiiVWktS3qUR3Rgv.AjlhJ1OGnwPbz6hSCf9ULEFoPJ.dHC6', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:10:36', '2021-01-07 11:10:36'),
 (5, 'trader2', 3, '1122334455000', 'lang,lat', 'KXH45ESSDA34553!#@@!J', '1', 'trader2@test.com', NULL, '$2y$10$XlqO.ioJKJ88C5F6Hsbt6eckAfmsNtHGeuANgmxSUXfInpB3X8ykC', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-07 11:11:13', '2021-01-07 11:11:13'),
 (6, 'gfg', 2, '11', 'lat', 'jh', '0', 'aa@q.cv', NULL, '$2y$10$NtzfkHfnQJTyH8TKmoUAfefwq0edto8oOpS5Fqq5GbX2/KdHQfxf2', NULL, NULL, NULL, NULL, NULL, 4, '2021-01-18 12:03:11', '2021-01-18 12:03:11'),
 (7, 'hhg', 2, '5555454', 'lat', 'jh', '0', 'aaa@www.com', NULL, '$2y$10$pOBClaASTwCrGD9fCh3N1OqWIQe9wK38teZ7SQwYsdXf2JxUavhtC', NULL, NULL, NULL, NULL, NULL, 4, '2021-01-18 12:06:33', '2021-01-18 12:06:33'),
 (8, 'ggg', 2, '111111', 'lat', 'jh', '0', 'aa@ww.cn', NULL, '$2y$10$FduHSRNSSBCTNJAFzcuQuO8brR1jOhK4qsw.VvShZMCCgnkM0YZmO', NULL, NULL, NULL, NULL, NULL, 3, '2021-01-18 12:10:11', '2021-01-18 12:10:11'),
-(9, 'ashraf', 2, '0509875995', 'lat', 'jh', '0', 'aaaa@sss.cn', NULL, '$2y$10$H9Wg5q1bHnOCWfYLRfC3.OYSY5p3P/6nXLoJXRYIwPOrZFx8X3LEe', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 05:13:39', '2021-01-19 05:13:39'),
 (10, 'Ashraf', 2, '0965480887', 'lat', 'jh', '0', 'Adming2010@fmaik.com', NULL, '$2y$10$fFbAyzZ8U6IkQ2dWEZh1hOKWL5/40/ytxKq8bmK8OccAHm.AZNF8i', NULL, NULL, NULL, NULL, NULL, 4, '2021-01-19 05:25:27', '2021-01-19 05:25:27'),
 (11, 'asas', 3, '050987', 'lat', 'jh', '1', 'asas@w.cn', NULL, '$2y$10$9iOGmo4JKYsV/1tMQbB2eOrGJzuCTU47S6clUSvMTasehrAME4Tea', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 06:13:32', '2021-01-19 06:13:32'),
 (12, 'asasasa', 3, '05098711', 'lat', 'jh', '1', 'aas@bv.cn', NULL, '$2y$10$nxiPFPw3ply7JD5KXfERnuaSslnD.i9wtJoudYYsJk79OhVfdZbPW', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 06:17:00', '2021-01-19 06:17:00'),
@@ -695,7 +663,8 @@ INSERT INTO `users` (`id`, `name`, `group_id`, `phone`, `localization`, `player_
 (17, 'dsdsd', 3, '111', 'lat', 'jh', '1', 'dddd@qq.cn', NULL, '$2y$10$HRpYaD9TpGCexuc4w20LaOZ0YXP5C8bBavYx9M95kRgybfBQ7X0s6', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-19 06:52:17', '2021-01-19 06:52:17'),
 (18, 'assa', 3, '12121212', 'lat', 'jh', '1', 'asas@gmail.com', NULL, '$2y$10$qlFittpPGtclRugFOw.d1O1I9aJMBUgxZbM1ManJMfCsZWp5NAA4y', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-20 05:14:48', '2021-01-20 05:14:48'),
 (19, 'assa', 3, '12121212', 'lat', 'jh', '1', 'asaaas@gmail.com', NULL, '$2y$10$6DnWCqrS4QyRdNjgBQbUB.n4EO9rmLXD6DHoLChb57Te9DGUDs9ty', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-20 05:17:25', '2021-01-20 05:17:25'),
-(20, 'assa', 3, '12121212', 'lat', 'jh', '1', 'asaaaaas@gmail.com', NULL, '$2y$10$KYKZhqnB6fNOTLUbcwHSTOqfIOJ3koD/7zX/a58Uyu7xB6PEMVebe', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-20 05:19:09', '2021-01-20 05:19:09');
+(20, 'assa', 3, '12121212', 'lat', 'jh', '1', 'asaaaaas@gmail.com', NULL, '$2y$10$m0baFu5M.0t0rwrplAhbKufKuVY99ZbuRI8p0qfSjNKBg99QSFRcS', NULL, NULL, NULL, NULL, NULL, 1, '2021-01-20 05:19:09', '2021-01-20 05:19:09'),
+(22, 'aaa', 2, '0509875995', 'lat', 'jh', '0', 'asas@f.cn', NULL, '$2y$10$m0baFu5M.0t0rwrplAhbKufKuVY99ZbuRI8p0qfSjNKBg99QSFRcS', NULL, NULL, NULL, NULL, NULL, 2, '2021-01-20 06:19:38', '2021-01-20 06:19:38');
 
 -- --------------------------------------------------------
 
@@ -1045,25 +1014,25 @@ ALTER TABLE `prove_types`
 -- AUTO_INCREMENT for table `qutations`
 --
 ALTER TABLE `qutations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `qutation_items`
 --
 ALTER TABLE `qutation_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `qutation_orders`
 --
 ALTER TABLE `qutation_orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `qutation_order_items`
 --
 ALTER TABLE `qutation_order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `qutation_reports`
@@ -1093,7 +1062,7 @@ ALTER TABLE `traders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `wallets`
