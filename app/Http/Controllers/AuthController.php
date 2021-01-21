@@ -30,6 +30,7 @@ class AuthController extends Controller
     	$validator = Validator::make($request->all(), [
             'phone' => 'required',
             'password' => 'required|string|min:6',
+            'playerId'=>'string'
         ]);
 
         if ($validator->fails()) {
