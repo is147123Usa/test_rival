@@ -80,3 +80,6 @@ INSERT INTO `qutation_items` (`id`, `price`, `qty`, `img`, `item_desc`, `note`, 
 (15, 12, 111, 'kk', 'asas', 'asas', 27, NULL, '2021-01-20 07:44:28', '2021-01-20 07:44:28'),
 (16, 12, 111, 'kk', 'asas', 'asas', 28, NULL, '2021-01-20 07:47:44', '2021-01-20 07:47:44'),
 (17, 12, 111, 'kk', 'rr', 'rr', 31, NULL, '2021-01-20 09:24:46', '2021-01-20 09:24:46');
+
+INSERT INTO `qutation_orders` ( `qutastion_status`, `payMethod`, `Status`, `client_id`, `cat_id`, `created_at`, `updated_at`) VALUES
+(NULL, 'visa', 'pending', 24, 1, '2021-01-20 11:27:11', '2021-01-20 11:27:11');

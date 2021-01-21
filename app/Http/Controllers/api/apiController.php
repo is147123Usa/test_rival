@@ -8,6 +8,7 @@ use App\Models\Driver;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Setting;
+use App\Models\Order;
 
 use App\Models\Trader;
 use App\Models\Country;
@@ -167,5 +168,13 @@ class apiController extends Controller
         $payload = Qutation_item::where('qutition_id',$req->qutition_id)->get();
         
         return response()->json(['status'=>true,'payload'=>$payload],200);
+    }
+    public function RequestDeliver(Request $req){
+        
+        $payload = Order::all();//where(['trader_id','=',$re->user_id],[])->get()
+        return response()->json(['payload'=>$payload,'status'=>true],200);
+    }
+    public function SendToDriver(Request $req){
+        return response()->json(['status'=>'should send notifications to Drivers'],200);
     }
 }

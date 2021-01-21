@@ -36,5 +36,8 @@ Route::group([
     Route::post('/getQutation_offers', [apiController::class, 'getQutation_offers']);
     Route::post('/user/getItems', [apiController::class, 'getItems']);
     Route::post('/ItemQutations', [apiController::class, 'ItemQutations']);
+    Route::post('/RequestDeliver', [apiController::class, 'RequestDeliver']);
+    
+    Route::post('/SendToDriver', [apiController::class, 'SendToDriver']);
 
 });
