@@ -172,7 +172,13 @@ class apiController extends Controller
     public function RequestDeliver(Request $req){
         
         $payload = Order::all();//where(['trader_id','=',$re->user_id],[])->get()
-        return response()->json(['payload'=>$payload,'status'=>true],200);
+        if(count($payload)>0){
+            return response()->json(['payload'=>$payload,'status'=>true],200);
+
+        }else{
+            return response()->json(['payload'=>$payload,'status'=>false],200);
+
+        }
     }
     public function SendToDriver(Request $req){
         return response()->json(['status'=>'should send notifications to Drivers'],200);
