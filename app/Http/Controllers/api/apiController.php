@@ -61,6 +61,18 @@ class apiController extends Controller
             $item->qutation_order_id = $qutation_ord->id;
             $item->save();
         } 
+        $clientName = Qutation_order::where('id',$qutation_ord->id)->first();
+        $stringToSend = array(
+        "en" => 'العميل ' .$clientName->client->name .', ارسل لك طلب تسعيرة ',
+        "ar" => 'client ' .$clientName->client->name .', send A Qutation Order  '
+        );
+        $playersArray = array();
+        //foreach all traders e
+        $traders = Trader::where('spicalizition_id',$request->cat_id)->get();
+        foreach($traders as $value){
+            array_push($playersArray, $value->user->player_id);
+        }
+        //
         return response()->json(['status'=>true],200);
     }
     public function inbox(Request $request){
@@ -88,6 +100,52 @@ class apiController extends Controller
         }else{
             return response()->json(['msg'=>'Didnt find user credntiolas'],200);
         }
+    }
+    public function sendMessage($stringToSend,$players) {
+        $content=$stringToSend;
+        $hashes_array = array();
+        array_push($hashes_array, array(
+            "id" => "like-button",
+            "text" => "Like",
+            "icon" => "http://i.imgur.com/N8SN8ZS.png",
+            "url" => "https://yoursite.com"
+        ));
+        array_push($hashes_array, array(
+            "id" => "like-button-2",
+            "text" => "Like2",
+            "icon" => "http://i.imgur.com/N8SN8ZS.png",
+            "url" => "https://yoursite.com"
+        ));
+        $fields = array(
+            'app_id' => "c928c3d1-a6b2-42d5-84fb-dfeaf2a06b25",
+            'include_player_ids' => $players,
+            'data' => array(
+                "foo" => "bar"
+            ),
+            'contents' => $content,
+            'web_buttons' => $hashes_array
+        );
+        
+        $fields = json_encode($fields);
+      //  print("\nJSON sent:\n");
+       // print($fields);
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json; charset=utf-8',
+            'Authorization: Basic YTQzYjAyMDAtZDczOC00OWM4LWEwMmMtZGUwZTk1MWI0YTNk'
+        ));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+       // return $response;
     }
     public function getItems(Request $request){
         $payload = qutation_order_item::where('qutation_order_id',$request->qutation_id)->get();

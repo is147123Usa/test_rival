@@ -28,20 +28,30 @@ class AuthController extends Controller
      */
     public function login(Request $request){
     	$validator = Validator::make($request->all(), [
-            'phone' => 'required',
+            'phone' => 'required|',
             'password' => 'required|string|min:6',
-            'playerId'=>'string'
+             
+            
         ]);
-
+       
         if ($validator->fails()) {
             $res = array('status' =>false ,'error'=> $validator->errors());
             return response()->json($res, 200);
         }
-
+        
         if (! $token = auth()->attempt($validator->validated())) {
             return response()->json(['status'=>false,'error' => 'Unauthorized'], 200);
         }
+        
+         
+            $user = User::where('id',auth()->user()->id)->first();
+           //$user->id
+           
 
+            $user->player_id = $request->player_id;
+            
+            $user->save();
+       
         return $this->createNewToken($token);
     }
 
@@ -56,7 +66,7 @@ class AuthController extends Controller
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
             'group_id'=>'required',
-            'phone'=>'required|unique:users',
+            'phone'=>'required|max:14|unique:users',
             'localization'=>'required',
             'player_id'=>'required',
             'city_id'=>'required',
@@ -82,7 +92,7 @@ class AuthController extends Controller
                 $trader->address = $request->address;
                 $trader->address_2 = $request->address_2;
                 $trader->mailBox = $request->mailBox;
-                $trader->status = $request->status;
+                $trader->account_status = $request->account_status;
                 $trader->spicalizition_id = $request->spicalizition_id;
                 $trader->user_id = $user->id;
                 $trader->save();
